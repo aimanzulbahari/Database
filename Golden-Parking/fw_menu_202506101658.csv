@@ -1,0 +1,6 @@
+"m_id","m_keterangan","m_submenu","m_href","m_class","m_susunan","m_status","m_gen_code","m_gen_by","m_gen_date"
+3,Borang Permohonan,Y,#,fa fa-file-text bg-purple,2,A,,,2025-05-29 08:52:51.466
+4,Penilaian,Y,#,fa fa-star-half-o bg-yellow,3,A,,,2025-05-29 08:55:53.332
+5,Laporan,Y,#,fa fa-file-pdf-o bg-green,4,A,,,2025-05-29 09:01:19.308
+6,Pengguna,Y,#,fa fa-user bg-grey,5,A,,,2025-05-29 09:02:34.028
+2,Tetapan,Y,#,fa fa-cogs bg-red,6,A,,,2025-05-29 07:54:44.752
