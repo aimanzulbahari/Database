@@ -5,7 +5,7 @@
 -- Dumped from database version 14.2
 -- Dumped by pg_dump version 17.0
 
--- Started on 2025-06-12 17:11:42
+-- Started on 2025-06-18 17:36:18
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -39,10 +39,26 @@ SET default_table_access_method = heap;
 --
 
 CREATE TABLE mympp.application_attachment (
+    appattach_id character varying NOT NULL,
+    ad_id integer,
+    filename text NOT NULL,
+    filepath text NOT NULL,
+    mime_type text,
+    created_at timestamp without time zone,
+    uploaded_by character varying NOT NULL
 );
 
 
 ALTER TABLE mympp.application_attachment OWNER TO aiman;
+
+--
+-- TOC entry 3589 (class 0 OID 0)
+-- Dependencies: 276
+-- Name: COLUMN application_attachment.ad_id; Type: COMMENT; Schema: mympp; Owner: aiman
+--
+
+COMMENT ON COLUMN mympp.application_attachment.ad_id IS 'Refer application_data table';
+
 
 --
 -- TOC entry 270 (class 1259 OID 16970)
@@ -66,14 +82,15 @@ CREATE TABLE mympp.application_data (
     ad_insert_by character varying,
     ad_insert_timestamp timestamp without time zone,
     ad_update_by character varying,
-    ad_update_timestamp timestamp without time zone
+    ad_update_timestamp timestamp without time zone,
+    ad_application_type_other character varying
 );
 
 
 ALTER TABLE mympp.application_data OWNER TO aiman;
 
 --
--- TOC entry 3554 (class 0 OID 0)
+-- TOC entry 3590 (class 0 OID 0)
 -- Dependencies: 270
 -- Name: COLUMN application_data.ad_mpp_zone; Type: COMMENT; Schema: mympp; Owner: aiman
 --
@@ -82,7 +99,7 @@ COMMENT ON COLUMN mympp.application_data.ad_mpp_zone IS 'Refer table ref_zone_li
 
 
 --
--- TOC entry 3555 (class 0 OID 0)
+-- TOC entry 3591 (class 0 OID 0)
 -- Dependencies: 270
 -- Name: COLUMN application_data.ad_application_type; Type: COMMENT; Schema: mympp; Owner: aiman
 --
@@ -91,7 +108,7 @@ COMMENT ON COLUMN mympp.application_data.ad_application_type IS 'Refer table ref
 
 
 --
--- TOC entry 3556 (class 0 OID 0)
+-- TOC entry 3592 (class 0 OID 0)
 -- Dependencies: 270
 -- Name: COLUMN application_data.ad_activity_type; Type: COMMENT; Schema: mympp; Owner: aiman
 --
@@ -100,7 +117,7 @@ COMMENT ON COLUMN mympp.application_data.ad_activity_type IS 'Refer ref_activity
 
 
 --
--- TOC entry 3557 (class 0 OID 0)
+-- TOC entry 3593 (class 0 OID 0)
 -- Dependencies: 270
 -- Name: COLUMN application_data.ad_sdg_type; Type: COMMENT; Schema: mympp; Owner: aiman
 --
@@ -109,7 +126,7 @@ COMMENT ON COLUMN mympp.application_data.ad_sdg_type IS 'Refer ref_sdg_type';
 
 
 --
--- TOC entry 3558 (class 0 OID 0)
+-- TOC entry 3594 (class 0 OID 0)
 -- Dependencies: 270
 -- Name: COLUMN application_data.ad_status_process; Type: COMMENT; Schema: mympp; Owner: aiman
 --
@@ -133,7 +150,7 @@ CREATE SEQUENCE mympp.application_data_ad_id_seq
 ALTER SEQUENCE mympp.application_data_ad_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3559 (class 0 OID 0)
+-- TOC entry 3595 (class 0 OID 0)
 -- Dependencies: 271
 -- Name: application_data_ad_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
 --
@@ -174,7 +191,7 @@ CREATE SEQUENCE mympp.fw_akses_fa_id_seq
 ALTER SEQUENCE mympp.fw_akses_fa_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3560 (class 0 OID 0)
+-- TOC entry 3596 (class 0 OID 0)
 -- Dependencies: 260
 -- Name: fw_akses_fa_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
 --
@@ -214,7 +231,7 @@ CREATE SEQUENCE mympp.fw_audittrail_id_seq
 ALTER SEQUENCE mympp.fw_audittrail_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3561 (class 0 OID 0)
+-- TOC entry 3597 (class 0 OID 0)
 -- Dependencies: 248
 -- Name: fw_audittrail_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
 --
@@ -255,7 +272,7 @@ CREATE SEQUENCE mympp.fw_lang_fl_id_seq
 ALTER SEQUENCE mympp.fw_lang_fl_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3562 (class 0 OID 0)
+-- TOC entry 3598 (class 0 OID 0)
 -- Dependencies: 252
 -- Name: fw_lang_fl_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
 --
@@ -300,7 +317,7 @@ CREATE SEQUENCE mympp.fw_menu_m_id_seq
 ALTER SEQUENCE mympp.fw_menu_m_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3563 (class 0 OID 0)
+-- TOC entry 3599 (class 0 OID 0)
 -- Dependencies: 254
 -- Name: fw_menu_m_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
 --
@@ -345,7 +362,7 @@ CREATE SEQUENCE mympp.fw_submenu_sm_id_seq
 ALTER SEQUENCE mympp.fw_submenu_sm_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3564 (class 0 OID 0)
+-- TOC entry 3600 (class 0 OID 0)
 -- Dependencies: 256
 -- Name: fw_submenu_sm_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
 --
@@ -389,7 +406,7 @@ CREATE SEQUENCE mympp.fw_uploads_id_seq
 ALTER SEQUENCE mympp.fw_uploads_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3565 (class 0 OID 0)
+-- TOC entry 3601 (class 0 OID 0)
 -- Dependencies: 250
 -- Name: fw_uploads_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
 --
@@ -412,7 +429,7 @@ CREATE TABLE mympp.ref_activity_type (
 ALTER TABLE mympp.ref_activity_type OWNER TO aiman;
 
 --
--- TOC entry 3566 (class 0 OID 0)
+-- TOC entry 3602 (class 0 OID 0)
 -- Dependencies: 272
 -- Name: COLUMN ref_activity_type.ract_status_ind; Type: COMMENT; Schema: mympp; Owner: aiman
 --
@@ -436,7 +453,7 @@ CREATE SEQUENCE mympp.ref_activity_type_ract_id_seq
 ALTER SEQUENCE mympp.ref_activity_type_ract_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3567 (class 0 OID 0)
+-- TOC entry 3603 (class 0 OID 0)
 -- Dependencies: 274
 -- Name: ref_activity_type_ract_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
 --
@@ -459,7 +476,7 @@ CREATE TABLE mympp.ref_application_type (
 ALTER TABLE mympp.ref_application_type OWNER TO aiman;
 
 --
--- TOC entry 3568 (class 0 OID 0)
+-- TOC entry 3604 (class 0 OID 0)
 -- Dependencies: 266
 -- Name: COLUMN ref_application_type.rat_status_ind; Type: COMMENT; Schema: mympp; Owner: aiman
 --
@@ -483,12 +500,59 @@ CREATE SEQUENCE mympp.ref_application_type_rat_id_seq
 ALTER SEQUENCE mympp.ref_application_type_rat_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3569 (class 0 OID 0)
+-- TOC entry 3605 (class 0 OID 0)
 -- Dependencies: 267
 -- Name: ref_application_type_rat_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
 --
 
 ALTER SEQUENCE mympp.ref_application_type_rat_id_seq OWNED BY mympp.ref_application_type.rat_id;
+
+
+--
+-- TOC entry 284 (class 1259 OID 17475)
+-- Name: ref_department; Type: TABLE; Schema: mympp; Owner: aiman
+--
+
+CREATE TABLE mympp.ref_department (
+    rd_id bigint NOT NULL,
+    rd_desc character varying,
+    rd_ind_status integer
+);
+
+
+ALTER TABLE mympp.ref_department OWNER TO aiman;
+
+--
+-- TOC entry 3606 (class 0 OID 0)
+-- Dependencies: 284
+-- Name: COLUMN ref_department.rd_ind_status; Type: COMMENT; Schema: mympp; Owner: aiman
+--
+
+COMMENT ON COLUMN mympp.ref_department.rd_ind_status IS 'Refer Table Ref_Status';
+
+
+--
+-- TOC entry 285 (class 1259 OID 17478)
+-- Name: ref_department_rd_id_seq; Type: SEQUENCE; Schema: mympp; Owner: aiman
+--
+
+CREATE SEQUENCE mympp.ref_department_rd_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE mympp.ref_department_rd_id_seq OWNER TO aiman;
+
+--
+-- TOC entry 3607 (class 0 OID 0)
+-- Dependencies: 285
+-- Name: ref_department_rd_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
+--
+
+ALTER SEQUENCE mympp.ref_department_rd_id_seq OWNED BY mympp.ref_department.rd_id;
 
 
 --
@@ -521,7 +585,7 @@ CREATE SEQUENCE mympp.ref_process_rp_id_seq
 ALTER SEQUENCE mympp.ref_process_rp_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3570 (class 0 OID 0)
+-- TOC entry 3608 (class 0 OID 0)
 -- Dependencies: 269
 -- Name: ref_process_rp_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
 --
@@ -545,7 +609,7 @@ CREATE TABLE mympp.ref_role (
 ALTER TABLE mympp.ref_role OWNER TO aiman;
 
 --
--- TOC entry 3571 (class 0 OID 0)
+-- TOC entry 3609 (class 0 OID 0)
 -- Dependencies: 259
 -- Name: COLUMN ref_role.rr_status_ind; Type: COMMENT; Schema: mympp; Owner: aiman
 --
@@ -569,7 +633,7 @@ CREATE SEQUENCE mympp.ref_role_rr_id_seq
 ALTER SEQUENCE mympp.ref_role_rr_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3572 (class 0 OID 0)
+-- TOC entry 3610 (class 0 OID 0)
 -- Dependencies: 258
 -- Name: ref_role_rr_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
 --
@@ -592,7 +656,7 @@ CREATE TABLE mympp.ref_sdg_type (
 ALTER TABLE mympp.ref_sdg_type OWNER TO aiman;
 
 --
--- TOC entry 3573 (class 0 OID 0)
+-- TOC entry 3611 (class 0 OID 0)
 -- Dependencies: 273
 -- Name: COLUMN ref_sdg_type.rst_status_ind; Type: COMMENT; Schema: mympp; Owner: aiman
 --
@@ -616,7 +680,7 @@ CREATE SEQUENCE mympp.ref_sdg_type_rst_id_seq
 ALTER SEQUENCE mympp.ref_sdg_type_rst_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3574 (class 0 OID 0)
+-- TOC entry 3612 (class 0 OID 0)
 -- Dependencies: 275
 -- Name: ref_sdg_type_rst_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
 --
@@ -654,7 +718,7 @@ CREATE SEQUENCE mympp.ref_status_rs_id_seq
 ALTER SEQUENCE mympp.ref_status_rs_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3575 (class 0 OID 0)
+-- TOC entry 3613 (class 0 OID 0)
 -- Dependencies: 263
 -- Name: ref_status_rs_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
 --
@@ -677,7 +741,7 @@ CREATE TABLE mympp.ref_zone_list (
 ALTER TABLE mympp.ref_zone_list OWNER TO aiman;
 
 --
--- TOC entry 3576 (class 0 OID 0)
+-- TOC entry 3614 (class 0 OID 0)
 -- Dependencies: 264
 -- Name: COLUMN ref_zone_list.rzl_status_ind; Type: COMMENT; Schema: mympp; Owner: aiman
 --
@@ -701,7 +765,7 @@ CREATE SEQUENCE mympp.ref_zone_list_rzl_id_seq
 ALTER SEQUENCE mympp.ref_zone_list_rzl_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3577 (class 0 OID 0)
+-- TOC entry 3615 (class 0 OID 0)
 -- Dependencies: 265
 -- Name: ref_zone_list_rzl_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
 --
@@ -710,7 +774,30 @@ ALTER SEQUENCE mympp.ref_zone_list_rzl_id_seq OWNED BY mympp.ref_zone_list.rzl_i
 
 
 --
--- TOC entry 3338 (class 2604 OID 16974)
+-- TOC entry 283 (class 1259 OID 17468)
+-- Name: user; Type: TABLE; Schema: mympp; Owner: aiman
+--
+
+CREATE TABLE mympp."user" (
+    u_id character varying NOT NULL,
+    u_fullname character varying,
+    u_ic character varying,
+    u_email character varying,
+    u_phone_number character varying,
+    u_dept integer,
+    u_mpp_zone integer,
+    u_ref_role integer,
+    u_ind_status integer,
+    u_password text,
+    u_created_by character varying,
+    u_insert_timestamp timestamp without time zone
+);
+
+
+ALTER TABLE mympp."user" OWNER TO aiman;
+
+--
+-- TOC entry 3362 (class 2604 OID 16974)
 -- Name: application_data ad_id; Type: DEFAULT; Schema: mympp; Owner: aiman
 --
 
@@ -718,7 +805,7 @@ ALTER TABLE ONLY mympp.application_data ALTER COLUMN ad_id SET DEFAULT nextval('
 
 
 --
--- TOC entry 3332 (class 2604 OID 16904)
+-- TOC entry 3356 (class 2604 OID 16904)
 -- Name: fw_akses fa_id; Type: DEFAULT; Schema: mympp; Owner: aiman
 --
 
@@ -726,7 +813,7 @@ ALTER TABLE ONLY mympp.fw_akses ALTER COLUMN fa_id SET DEFAULT nextval('mympp.fw
 
 
 --
--- TOC entry 3319 (class 2604 OID 16843)
+-- TOC entry 3343 (class 2604 OID 16843)
 -- Name: fw_audittrail id; Type: DEFAULT; Schema: mympp; Owner: aiman
 --
 
@@ -734,7 +821,7 @@ ALTER TABLE ONLY mympp.fw_audittrail ALTER COLUMN id SET DEFAULT nextval('mympp.
 
 
 --
--- TOC entry 3323 (class 2604 OID 16865)
+-- TOC entry 3347 (class 2604 OID 16865)
 -- Name: fw_lang fl_id; Type: DEFAULT; Schema: mympp; Owner: aiman
 --
 
@@ -742,7 +829,7 @@ ALTER TABLE ONLY mympp.fw_lang ALTER COLUMN fl_id SET DEFAULT nextval('mympp.fw_
 
 
 --
--- TOC entry 3325 (class 2604 OID 16875)
+-- TOC entry 3349 (class 2604 OID 16875)
 -- Name: fw_menu m_id; Type: DEFAULT; Schema: mympp; Owner: aiman
 --
 
@@ -750,7 +837,7 @@ ALTER TABLE ONLY mympp.fw_menu ALTER COLUMN m_id SET DEFAULT nextval('mympp.fw_m
 
 
 --
--- TOC entry 3328 (class 2604 OID 16886)
+-- TOC entry 3352 (class 2604 OID 16886)
 -- Name: fw_submenu sm_id; Type: DEFAULT; Schema: mympp; Owner: aiman
 --
 
@@ -758,7 +845,7 @@ ALTER TABLE ONLY mympp.fw_submenu ALTER COLUMN sm_id SET DEFAULT nextval('mympp.
 
 
 --
--- TOC entry 3321 (class 2604 OID 16853)
+-- TOC entry 3345 (class 2604 OID 16853)
 -- Name: fw_uploads id; Type: DEFAULT; Schema: mympp; Owner: aiman
 --
 
@@ -766,7 +853,7 @@ ALTER TABLE ONLY mympp.fw_uploads ALTER COLUMN id SET DEFAULT nextval('mympp.fw_
 
 
 --
--- TOC entry 3339 (class 2604 OID 16990)
+-- TOC entry 3363 (class 2604 OID 16990)
 -- Name: ref_activity_type ract_id; Type: DEFAULT; Schema: mympp; Owner: aiman
 --
 
@@ -774,7 +861,7 @@ ALTER TABLE ONLY mympp.ref_activity_type ALTER COLUMN ract_id SET DEFAULT nextva
 
 
 --
--- TOC entry 3336 (class 2604 OID 16941)
+-- TOC entry 3360 (class 2604 OID 16941)
 -- Name: ref_application_type rat_id; Type: DEFAULT; Schema: mympp; Owner: aiman
 --
 
@@ -782,7 +869,15 @@ ALTER TABLE ONLY mympp.ref_application_type ALTER COLUMN rat_id SET DEFAULT next
 
 
 --
--- TOC entry 3337 (class 2604 OID 16963)
+-- TOC entry 3365 (class 2604 OID 17479)
+-- Name: ref_department rd_id; Type: DEFAULT; Schema: mympp; Owner: aiman
+--
+
+ALTER TABLE ONLY mympp.ref_department ALTER COLUMN rd_id SET DEFAULT nextval('mympp.ref_department_rd_id_seq'::regclass);
+
+
+--
+-- TOC entry 3361 (class 2604 OID 16963)
 -- Name: ref_process rp_id; Type: DEFAULT; Schema: mympp; Owner: aiman
 --
 
@@ -790,7 +885,7 @@ ALTER TABLE ONLY mympp.ref_process ALTER COLUMN rp_id SET DEFAULT nextval('mympp
 
 
 --
--- TOC entry 3331 (class 2604 OID 16897)
+-- TOC entry 3355 (class 2604 OID 16897)
 -- Name: ref_role rr_id; Type: DEFAULT; Schema: mympp; Owner: aiman
 --
 
@@ -798,7 +893,7 @@ ALTER TABLE ONLY mympp.ref_role ALTER COLUMN rr_id SET DEFAULT nextval('mympp.re
 
 
 --
--- TOC entry 3340 (class 2604 OID 16997)
+-- TOC entry 3364 (class 2604 OID 16997)
 -- Name: ref_sdg_type rst_id; Type: DEFAULT; Schema: mympp; Owner: aiman
 --
 
@@ -806,7 +901,7 @@ ALTER TABLE ONLY mympp.ref_sdg_type ALTER COLUMN rst_id SET DEFAULT nextval('mym
 
 
 --
--- TOC entry 3334 (class 2604 OID 16912)
+-- TOC entry 3358 (class 2604 OID 16912)
 -- Name: ref_status rs_id; Type: DEFAULT; Schema: mympp; Owner: aiman
 --
 
@@ -814,7 +909,7 @@ ALTER TABLE ONLY mympp.ref_status ALTER COLUMN rs_id SET DEFAULT nextval('mympp.
 
 
 --
--- TOC entry 3335 (class 2604 OID 16924)
+-- TOC entry 3359 (class 2604 OID 16924)
 -- Name: ref_zone_list rzl_id; Type: DEFAULT; Schema: mympp; Owner: aiman
 --
 
@@ -822,7 +917,7 @@ ALTER TABLE ONLY mympp.ref_zone_list ALTER COLUMN rzl_id SET DEFAULT nextval('my
 
 
 --
--- TOC entry 3548 (class 0 OID 17270)
+-- TOC entry 3580 (class 0 OID 17270)
 -- Dependencies: 276
 -- Data for Name: application_attachment; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
@@ -830,26 +925,28 @@ ALTER TABLE ONLY mympp.ref_zone_list ALTER COLUMN rzl_id SET DEFAULT nextval('my
 
 
 --
--- TOC entry 3542 (class 0 OID 16970)
+-- TOC entry 3574 (class 0 OID 16970)
 -- Dependencies: 270
 -- Data for Name: application_data; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
 
-INSERT INTO mympp.application_data VALUES (9, 'Array', 1, 3, 'koaddada', 'dadadad', '2025-06-05', 1000, '2025-06-05', 1, 1, 'dadada', 1, 'admin', '2025-06-05 14:01:21', NULL, NULL);
-INSERT INTO mympp.application_data VALUES (10, 'Array', 1, 2, '3432', 'dadadadada', '2025-06-05', 32344, '2025-06-05', 1, 1, 'adada', 3, 'admin', '2025-06-05 14:30:33', NULL, NULL);
-INSERT INTO mympp.application_data VALUES (11, 'Array', 1, 3, '6767676', 'tesd', '2025-06-05', 67888, '2025-06-05', 1, 1, 'dadadad', 3, 'admin', '2025-06-05 16:49:47', NULL, NULL);
-INSERT INTO mympp.application_data VALUES (12, 'Array', 5, 4, '3333', 'dadadad', '2025-06-05', 676767, '2025-06-05', 1, 1, 'dadadad', 3, 'admin', '2025-06-05 16:58:16', NULL, NULL);
-INSERT INTO mympp.application_data VALUES (13, 'Array', 7, 1, '3333', 'dadadada', '2025-06-06', 67899, '2025-06-06', 1, 1, 'dadad', 3, 'admin', '2025-06-06 14:32:42', NULL, NULL);
-INSERT INTO mympp.application_data VALUES (14, 'Array', 1, 1, 'test', 'dadadad', '2025-06-09', 456577, '2025-06-09', 1, 1, 'dadadad', 1, 'admin', '2025-06-09 14:53:35', NULL, NULL);
+INSERT INTO mympp.application_data VALUES (9, 'Array', 1, 3, 'koaddada', 'dadadad', '2025-06-05', 1000, '2025-06-05', 1, 1, 'dadada', 1, 'admin', '2025-06-05 14:01:21', NULL, NULL, NULL);
+INSERT INTO mympp.application_data VALUES (10, 'Array', 1, 2, '3432', 'dadadadada', '2025-06-05', 32344, '2025-06-05', 1, 1, 'adada', 3, 'admin', '2025-06-05 14:30:33', NULL, NULL, NULL);
+INSERT INTO mympp.application_data VALUES (11, 'Array', 1, 3, '6767676', 'tesd', '2025-06-05', 67888, '2025-06-05', 1, 1, 'dadadad', 3, 'admin', '2025-06-05 16:49:47', NULL, NULL, NULL);
+INSERT INTO mympp.application_data VALUES (12, 'Array', 5, 4, '3333', 'dadadad', '2025-06-05', 676767, '2025-06-05', 1, 1, 'dadadad', 3, 'admin', '2025-06-05 16:58:16', NULL, NULL, NULL);
+INSERT INTO mympp.application_data VALUES (13, 'Array', 7, 1, '3333', 'dadadada', '2025-06-06', 67899, '2025-06-06', 1, 1, 'dadad', 3, 'admin', '2025-06-06 14:32:42', NULL, NULL, NULL);
+INSERT INTO mympp.application_data VALUES (14, 'Array', 1, 1, 'test', 'dadadad', '2025-06-09', 456577, '2025-06-09', 1, 1, 'dadadad', 1, 'admin', '2025-06-09 14:53:35', NULL, NULL, NULL);
+INSERT INTO mympp.application_data VALUES (15, 'MBSA/MYMPP/2025/00001', 2, 1, 'test', 'test', '2025-06-17', 10000, '2025-06-17', 1, 1, 'test', 3, 'admin', '2025-06-17 11:39:24', NULL, NULL, NULL);
+INSERT INTO mympp.application_data VALUES (16, 'MBSA/MYMPP/2025/00001', 18, 3, 'ererere', 'dadad', '2025-06-17', 129000, '2025-06-17', 1, 1, 'adad', 3, 'admin', '2025-06-17 11:51:38', NULL, NULL, NULL);
+INSERT INTO mympp.application_data VALUES (17, 'MBSA/MYMPP/2025/00001', 1, 1, '45454', 'test', '2025-06-18', 10000, '2025-06-18', 1, 1, 'test', 3, 'admin', '2025-06-18 11:51:51', NULL, NULL, '');
 
 
 --
--- TOC entry 3533 (class 0 OID 16901)
+-- TOC entry 3565 (class 0 OID 16901)
 -- Dependencies: 261
 -- Data for Name: fw_akses; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
 
-INSERT INTO mympp.fw_akses VALUES (6, 2, 0, 1, 'admin', '2025-05-29 08:05:30.734702');
 INSERT INTO mympp.fw_akses VALUES (7, 3, 0, 1, 'admin', '2025-05-29 08:54:17.564352');
 INSERT INTO mympp.fw_akses VALUES (10, 4, 0, 1, 'admin', '2025-05-29 08:58:53.463415');
 INSERT INTO mympp.fw_akses VALUES (11, 4, 9, 1, 'admin', '2025-05-29 08:58:56.64719');
@@ -859,18 +956,22 @@ INSERT INTO mympp.fw_akses VALUES (14, 5, 11, 1, 'admin', '2025-05-29 09:01:45.1
 INSERT INTO mympp.fw_akses VALUES (17, 2, 6, 1, 'admin', '2025-05-29 09:02:02.599465');
 INSERT INTO mympp.fw_akses VALUES (19, 6, 0, 1, 'admin', '2025-05-29 09:03:19.39975');
 INSERT INTO mympp.fw_akses VALUES (20, 6, 12, 1, 'admin', '2025-05-29 09:03:22.351146');
-INSERT INTO mympp.fw_akses VALUES (24, 2, 13, 1, 'admin', '2025-05-29 11:17:15.252673');
 INSERT INTO mympp.fw_akses VALUES (25, 2, 3, 1, 'admin', '2025-05-29 11:17:17.723708');
-INSERT INTO mympp.fw_akses VALUES (26, 2, 2, 1, 'admin', '2025-05-29 14:29:41.323187');
 INSERT INTO mympp.fw_akses VALUES (27, 3, 7, 1, 'admin', '2025-05-29 14:45:17.797021');
 INSERT INTO mympp.fw_akses VALUES (28, 3, 8, 1, 'admin', '2025-05-29 15:35:39.582703');
 INSERT INTO mympp.fw_akses VALUES (29, 2, 5, 1, 'admin', '2025-06-03 09:10:27.967873');
 INSERT INTO mympp.fw_akses VALUES (30, 2, 4, 1, 'admin', '2025-06-03 09:15:03.965388');
 INSERT INTO mympp.fw_akses VALUES (31, 2, 4, 1, 'admin', '2025-06-03 09:15:06.023523');
+INSERT INTO mympp.fw_akses VALUES (32, 7, 0, 1, 'admin', '2025-06-17 09:15:42.459253');
+INSERT INTO mympp.fw_akses VALUES (33, 7, 14, 1, 'admin', '2025-06-17 14:54:34.914019');
+INSERT INTO mympp.fw_akses VALUES (34, 7, 15, 1, 'admin', '2025-06-17 14:55:11.164007');
+INSERT INTO mympp.fw_akses VALUES (35, 7, 16, 1, 'admin', '2025-06-17 14:55:13.230533');
+INSERT INTO mympp.fw_akses VALUES (36, 7, 17, 1, 'admin', '2025-06-17 14:55:45.801172');
+INSERT INTO mympp.fw_akses VALUES (37, 2, 0, 1, 'admin', '2025-06-17 14:55:50.141767');
 
 
 --
--- TOC entry 3521 (class 0 OID 16840)
+-- TOC entry 3553 (class 0 OID 16840)
 -- Dependencies: 249
 -- Data for Name: fw_audittrail; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
@@ -1050,6 +1151,7 @@ INSERT INTO mympp.fw_audittrail VALUES (171, '{"username":"admin","nama":"Admini
 INSERT INTO mympp.fw_audittrail VALUES (172, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''File No'',''File No'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_SEC_CH_UA":"\"Chromium\";v=\"136\", \"Google Chrome\";v=\"136\", \"Not.A\/Brand\";v=\"99\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/136.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/mympp\/action.do?do=sFmwKCzw6C5CEeI~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=dth9kal240ktnpiu49hjsp869i","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/mympp\/home.php","REMOTE_PORT":"54271","REDIRECT_URL":"\/mympp\/action.do","REDIRECT_QUERY_STRING":"do=LQYHlinAkwvm9A8l7VcFiWmOpV0~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=LQYHlinAkwvm9A8l7VcFiWmOpV0~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","REQUEST_URI":"\/mympp\/action.do?do=LQYHlinAkwvm9A8l7VcFiWmOpV0~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","SCRIPT_NAME":"\/mympp\/home.php","PHP_SELF":"\/mympp\/home.php","REQUEST_TIME_FLOAT":1748501335.318242,"REQUEST_TIME":1748501335}', '2025-05-29 14:48:57.386845');
 INSERT INTO mympp.fw_audittrail VALUES (173, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Detail Application'',''Detail Application'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_SEC_CH_UA":"\"Chromium\";v=\"136\", \"Google Chrome\";v=\"136\", \"Not.A\/Brand\";v=\"99\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/136.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/mympp\/action.do?do=sFmwKCzw6C5CEeI~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=dth9kal240ktnpiu49hjsp869i","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/mympp\/home.php","REMOTE_PORT":"54271","REDIRECT_URL":"\/mympp\/action.do","REDIRECT_QUERY_STRING":"do=LQYHlinAkwvm9A8l7VcFiWmOpV0~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=LQYHlinAkwvm9A8l7VcFiWmOpV0~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","REQUEST_URI":"\/mympp\/action.do?do=LQYHlinAkwvm9A8l7VcFiWmOpV0~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","SCRIPT_NAME":"\/mympp\/home.php","PHP_SELF":"\/mympp\/home.php","REQUEST_TIME_FLOAT":1748501335.318242,"REQUEST_TIME":1748501335}', '2025-05-29 14:48:57.387337');
 INSERT INTO mympp.fw_audittrail VALUES (174, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Request Date'',''Request Date'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_SEC_CH_UA":"\"Chromium\";v=\"136\", \"Google Chrome\";v=\"136\", \"Not.A\/Brand\";v=\"99\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/136.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/mympp\/action.do?do=sFmwKCzw6C5CEeI~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=dth9kal240ktnpiu49hjsp869i","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/mympp\/home.php","REMOTE_PORT":"54271","REDIRECT_URL":"\/mympp\/action.do","REDIRECT_QUERY_STRING":"do=LQYHlinAkwvm9A8l7VcFiWmOpV0~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=LQYHlinAkwvm9A8l7VcFiWmOpV0~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","REQUEST_URI":"\/mympp\/action.do?do=LQYHlinAkwvm9A8l7VcFiWmOpV0~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","SCRIPT_NAME":"\/mympp\/home.php","PHP_SELF":"\/mympp\/home.php","REQUEST_TIME_FLOAT":1748501335.318242,"REQUEST_TIME":1748501335}', '2025-05-29 14:48:57.387797');
+INSERT INTO mympp.fw_audittrail VALUES (258, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"DELETE FROM fw_akses WHERE fa_m_id=''2'' AND fa_sm_id=0 "}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"362","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryn1BThxEYLSMB7lVh","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=tEV8C7t3z9Bs2iM~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=m2vohvms0miosbv8chi55cl6c1","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/ajax.php","REMOTE_PORT":"60720","REDIRECT_URL":"\/My-MPP\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&update=2","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&update=2","REQUEST_URI":"\/My-MPP\/action.ajax?do=qENfFx7P&func=process&update=2","SCRIPT_NAME":"\/My-MPP\/ajax.php","PHP_SELF":"\/My-MPP\/ajax.php","REQUEST_TIME_FLOAT":1750143076.505619,"REQUEST_TIME":1750143076}', '2025-06-17 14:51:18.584221');
 INSERT INTO mympp.fw_audittrail VALUES (175, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Total'',''Total'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_SEC_CH_UA":"\"Chromium\";v=\"136\", \"Google Chrome\";v=\"136\", \"Not.A\/Brand\";v=\"99\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/136.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/mympp\/action.do?do=sFmwKCzw6C5CEeI~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=dth9kal240ktnpiu49hjsp869i","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/mympp\/home.php","REMOTE_PORT":"54271","REDIRECT_URL":"\/mympp\/action.do","REDIRECT_QUERY_STRING":"do=LQYHlinAkwvm9A8l7VcFiWmOpV0~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=LQYHlinAkwvm9A8l7VcFiWmOpV0~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","REQUEST_URI":"\/mympp\/action.do?do=LQYHlinAkwvm9A8l7VcFiWmOpV0~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","SCRIPT_NAME":"\/mympp\/home.php","PHP_SELF":"\/mympp\/home.php","REQUEST_TIME_FLOAT":1748501335.318242,"REQUEST_TIME":1748501335}', '2025-05-29 14:48:57.388247');
 INSERT INTO mympp.fw_audittrail VALUES (176, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Activitiy Date'',''Activitiy Date'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_SEC_CH_UA":"\"Chromium\";v=\"136\", \"Google Chrome\";v=\"136\", \"Not.A\/Brand\";v=\"99\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/136.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/mympp\/action.do?do=sFmwKCzw6C5CEeI~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=dth9kal240ktnpiu49hjsp869i","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/mympp\/home.php","REMOTE_PORT":"54271","REDIRECT_URL":"\/mympp\/action.do","REDIRECT_QUERY_STRING":"do=LQYHlinAkwvm9A8l7VcFiWmOpV0~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=LQYHlinAkwvm9A8l7VcFiWmOpV0~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","REQUEST_URI":"\/mympp\/action.do?do=LQYHlinAkwvm9A8l7VcFiWmOpV0~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","SCRIPT_NAME":"\/mympp\/home.php","PHP_SELF":"\/mympp\/home.php","REQUEST_TIME_FLOAT":1748501335.318242,"REQUEST_TIME":1748501335}', '2025-05-29 14:48:57.389384');
 INSERT INTO mympp.fw_audittrail VALUES (177, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Activity Type'',''Activity Type'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_SEC_CH_UA":"\"Chromium\";v=\"136\", \"Google Chrome\";v=\"136\", \"Not.A\/Brand\";v=\"99\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/136.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/mympp\/action.do?do=sFmwKCzw6C5CEeI~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=dth9kal240ktnpiu49hjsp869i","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/mympp\/home.php","REMOTE_PORT":"54271","REDIRECT_URL":"\/mympp\/action.do","REDIRECT_QUERY_STRING":"do=LQYHlinAkwvm9A8l7VcFiWmOpV0~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=LQYHlinAkwvm9A8l7VcFiWmOpV0~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","REQUEST_URI":"\/mympp\/action.do?do=LQYHlinAkwvm9A8l7VcFiWmOpV0~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","SCRIPT_NAME":"\/mympp\/home.php","PHP_SELF":"\/mympp\/home.php","REQUEST_TIME_FLOAT":1748501335.318242,"REQUEST_TIME":1748501335}', '2025-05-29 14:48:57.390435');
@@ -1074,6 +1176,7 @@ INSERT INTO mympp.fw_audittrail VALUES (196, '{"username":"admin","nama":"Admini
 INSERT INTO mympp.fw_audittrail VALUES (197, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''No.Permohonan'',''No.Permohonan'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/136.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Chromium\";v=\"136\", \"Google Chrome\";v=\"136\", \"Not.A\/Brand\";v=\"99\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryNndHnFj4AH0m7hYC","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/mympp\/action.do?do=FZKHHOIBD4XhNZdkTOl-9QGX59E~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=dth9kal240ktnpiu49hjsp869i","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/mympp\/ajax.php","REMOTE_PORT":"55745","REDIRECT_URL":"\/mympp\/action.ajax","REDIRECT_QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&add=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&add=1","REQUEST_URI":"\/mympp\/action.ajax?do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&add=1","SCRIPT_NAME":"\/mympp\/ajax.php","PHP_SELF":"\/mympp\/ajax.php","REQUEST_TIME_FLOAT":1748507912.621832,"REQUEST_TIME":1748507912}', '2025-05-29 16:38:34.687001');
 INSERT INTO mympp.fw_audittrail VALUES (198, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''MPP Zone : '',''MPP Zone : '')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/136.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Chromium\";v=\"136\", \"Google Chrome\";v=\"136\", \"Not.A\/Brand\";v=\"99\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryNndHnFj4AH0m7hYC","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/mympp\/action.do?do=FZKHHOIBD4XhNZdkTOl-9QGX59E~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=dth9kal240ktnpiu49hjsp869i","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/mympp\/ajax.php","REMOTE_PORT":"55745","REDIRECT_URL":"\/mympp\/action.ajax","REDIRECT_QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&add=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&add=1","REQUEST_URI":"\/mympp\/action.ajax?do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&add=1","SCRIPT_NAME":"\/mympp\/ajax.php","PHP_SELF":"\/mympp\/ajax.php","REQUEST_TIME_FLOAT":1748507912.621832,"REQUEST_TIME":1748507912}', '2025-05-29 16:38:34.68788');
 INSERT INTO mympp.fw_audittrail VALUES (199, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Jenis Permohonan : '',''Jenis Permohonan : '')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/136.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Chromium\";v=\"136\", \"Google Chrome\";v=\"136\", \"Not.A\/Brand\";v=\"99\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryNndHnFj4AH0m7hYC","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/mympp\/action.do?do=FZKHHOIBD4XhNZdkTOl-9QGX59E~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=dth9kal240ktnpiu49hjsp869i","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/mympp\/ajax.php","REMOTE_PORT":"55745","REDIRECT_URL":"\/mympp\/action.ajax","REDIRECT_QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&add=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&add=1","REQUEST_URI":"\/mympp\/action.ajax?do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&add=1","SCRIPT_NAME":"\/mympp\/ajax.php","PHP_SELF":"\/mympp\/ajax.php","REQUEST_TIME_FLOAT":1748507912.621832,"REQUEST_TIME":1748507912}', '2025-05-29 16:38:34.689124');
+INSERT INTO mympp.fw_audittrail VALUES (275, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"DELETE FROM fw_submenu WHERE sm_id=''2''"}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundarywCYqCFznFM7qBxcw","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=AuVd8CPzfvSJKHA~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=58u1be3mdkam0n8s876gl13f9q","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/ajax.php","REMOTE_PORT":"65030","REDIRECT_URL":"\/My-MPP\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&delsub=2","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&delsub=2","REQUEST_URI":"\/My-MPP\/action.ajax?do=qENfFx7P&func=process&delsub=2","SCRIPT_NAME":"\/My-MPP\/ajax.php","PHP_SELF":"\/My-MPP\/ajax.php","REQUEST_TIME_FLOAT":1750216766.606601,"REQUEST_TIME":1750216766}', '2025-06-18 11:19:28.833542');
 INSERT INTO mympp.fw_audittrail VALUES (200, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''No Fail :'',''No Fail :'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/136.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Chromium\";v=\"136\", \"Google Chrome\";v=\"136\", \"Not.A\/Brand\";v=\"99\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryNndHnFj4AH0m7hYC","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/mympp\/action.do?do=FZKHHOIBD4XhNZdkTOl-9QGX59E~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=dth9kal240ktnpiu49hjsp869i","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/mympp\/ajax.php","REMOTE_PORT":"55745","REDIRECT_URL":"\/mympp\/action.ajax","REDIRECT_QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&add=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&add=1","REQUEST_URI":"\/mympp\/action.ajax?do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&add=1","SCRIPT_NAME":"\/mympp\/ajax.php","PHP_SELF":"\/mympp\/ajax.php","REQUEST_TIME_FLOAT":1748507912.621832,"REQUEST_TIME":1748507912}', '2025-05-29 16:38:34.689616');
 INSERT INTO mympp.fw_audittrail VALUES (201, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Butiran Permohonan : '',''Butiran Permohonan : '')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/136.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Chromium\";v=\"136\", \"Google Chrome\";v=\"136\", \"Not.A\/Brand\";v=\"99\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryNndHnFj4AH0m7hYC","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/mympp\/action.do?do=FZKHHOIBD4XhNZdkTOl-9QGX59E~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=dth9kal240ktnpiu49hjsp869i","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/mympp\/ajax.php","REMOTE_PORT":"55745","REDIRECT_URL":"\/mympp\/action.ajax","REDIRECT_QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&add=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&add=1","REQUEST_URI":"\/mympp\/action.ajax?do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&add=1","SCRIPT_NAME":"\/mympp\/ajax.php","PHP_SELF":"\/mympp\/ajax.php","REQUEST_TIME_FLOAT":1748507912.621832,"REQUEST_TIME":1748507912}', '2025-05-29 16:38:34.690514');
 INSERT INTO mympp.fw_audittrail VALUES (202, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Tarikh Permohonan : '',''Tarikh Permohonan : '')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/136.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Chromium\";v=\"136\", \"Google Chrome\";v=\"136\", \"Not.A\/Brand\";v=\"99\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryNndHnFj4AH0m7hYC","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/mympp\/action.do?do=FZKHHOIBD4XhNZdkTOl-9QGX59E~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=dth9kal240ktnpiu49hjsp869i","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/mympp\/ajax.php","REMOTE_PORT":"55745","REDIRECT_URL":"\/mympp\/action.ajax","REDIRECT_QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&add=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&add=1","REQUEST_URI":"\/mympp\/action.ajax?do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&add=1","SCRIPT_NAME":"\/mympp\/ajax.php","PHP_SELF":"\/mympp\/ajax.php","REQUEST_TIME_FLOAT":1748507912.621832,"REQUEST_TIME":1748507912}', '2025-05-29 16:38:34.691018');
@@ -1107,6 +1210,7 @@ INSERT INTO mympp.fw_audittrail VALUES (229, '{"username":"admin","nama":"Admini
 INSERT INTO mympp.fw_audittrail VALUES (230, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''MAKLUMAT PERMOHONAN'',''MAKLUMAT PERMOHONAN'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_CACHE_CONTROL":"max-age=0","HTTP_SEC_CH_UA":"\"Chromium\";v=\"136\", \"Google Chrome\";v=\"136\", \"Not.A\/Brand\";v=\"99\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/136.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/mympp\/action.do","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=aicg6nqmpird5f1gai20dbd4si","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/mympp\/home.php","REMOTE_PORT":"53783","REDIRECT_URL":"\/mympp\/action.do","REDIRECT_QUERY_STRING":"do=e2smbBtXbtutr2mgbhE6K33qX7o~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=e2smbBtXbtutr2mgbhE6K33qX7o~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","REQUEST_URI":"\/mympp\/action.do?do=e2smbBtXbtutr2mgbhE6K33qX7o~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","SCRIPT_NAME":"\/mympp\/home.php","PHP_SELF":"\/mympp\/home.php","REQUEST_TIME_FLOAT":1748940699.386859,"REQUEST_TIME":1748940699}', '2025-06-03 16:51:41.558075');
 INSERT INTO mympp.fw_audittrail VALUES (231, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''MAKLUMAT AKTIVITI'',''MAKLUMAT AKTIVITI'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_CACHE_CONTROL":"max-age=0","HTTP_SEC_CH_UA":"\"Chromium\";v=\"136\", \"Google Chrome\";v=\"136\", \"Not.A\/Brand\";v=\"99\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/136.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/mympp\/action.do","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=aicg6nqmpird5f1gai20dbd4si","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/mympp\/home.php","REMOTE_PORT":"54103","REDIRECT_URL":"\/mympp\/action.do","REDIRECT_QUERY_STRING":"do=e2smbBtXbtutr2mgbhE6K33qX7o~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=e2smbBtXbtutr2mgbhE6K33qX7o~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","REQUEST_URI":"\/mympp\/action.do?do=e2smbBtXbtutr2mgbhE6K33qX7o~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","SCRIPT_NAME":"\/mympp\/home.php","PHP_SELF":"\/mympp\/home.php","REQUEST_TIME_FLOAT":1748941654.363455,"REQUEST_TIME":1748941654}', '2025-06-03 17:07:36.537691');
 INSERT INTO mympp.fw_audittrail VALUES (232, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Close'',''Close'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/mympp\/action.check","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=jisdihpujm5nqlh2o8meerse0e","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/mympp\/home.php","REMOTE_PORT":"55209","REDIRECT_URL":"\/mympp\/action.do","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"","REQUEST_URI":"\/mympp\/action.do","SCRIPT_NAME":"\/mympp\/home.php","PHP_SELF":"\/mympp\/home.php","REQUEST_TIME_FLOAT":1748995684.804142,"REQUEST_TIME":1748995684}', '2025-06-04 08:08:06.901747');
+INSERT INTO mympp.fw_audittrail VALUES (247, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Gambar Aktiviti 2 : '',''Gambar Aktiviti 2 : '')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_CACHE_CONTROL":"max-age=0","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=of5iqalgovd9h5vqoesf1dnns3","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"127.0.0.1","SERVER_PORT":"80","REMOTE_ADDR":"127.0.0.1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/home.php","REMOTE_PORT":"54819","REDIRECT_URL":"\/My-MPP\/action.do","REDIRECT_QUERY_STRING":"do=6vfuRG2AFQRg2FoTO79ckLfpjFo~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=6vfuRG2AFQRg2FoTO79ckLfpjFo~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","REQUEST_URI":"\/My-MPP\/action.do?do=6vfuRG2AFQRg2FoTO79ckLfpjFo~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","SCRIPT_NAME":"\/My-MPP\/home.php","PHP_SELF":"\/My-MPP\/home.php","REQUEST_TIME_FLOAT":1750121464.939268,"REQUEST_TIME":1750121464}', '2025-06-17 08:51:07.106635');
 INSERT INTO mympp.fw_audittrail VALUES (233, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO application_data(ad_ref_no,ad_mpp_zone,ad_application_type,ad_detail_application,ad_request_date,ad_total,ad_activitiy_date,ad_activity_type,ad_sdg_type,ad_detail_activity,ad_insert_by,ad_insert_timestamp) VALUES(:ad_ref_no,:ad_mpp_zone,:ad_application_type,:ad_detail_application,:ad_request_date,:ad_total,:ad_activitiy_date,:ad_activity_type,:ad_sdg_type,:ad_detail_activity,:ad_insert_by,:ad_insert_timestamp)","data":{"do":"r0RiHhnZMtQE1ysDfi8m7g~~","func":"process","save":"1","ad_ref_no":"ree","ad_mpp_zone":"1","ad_application_type":"1","ad_detail_application":"adadad","ad_request_date":"2025-06-04","ad_total":"10000","ad_activitiy_date":"2025-06-04","ad_activity_type":"1","ad_sdg_type":"1","ad_detail_activity":"adadad","ad_insert_by":null,"ad_insert_timestamp":"2025-06-04 09:07:43am"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"1252","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundary6nE6gn2ueV7gTqqi","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/mympp\/action.do?do=LTt0V0wHQAnEa_kJFhjDpdmV2Hk~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=jisdihpujm5nqlh2o8meerse0e","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"127.0.0.1","SERVER_PORT":"80","REMOTE_ADDR":"127.0.0.1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/mympp\/ajax.php","REMOTE_PORT":"56051","REDIRECT_URL":"\/mympp\/action.ajax","REDIRECT_QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&save=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&save=1","REQUEST_URI":"\/mympp\/action.ajax?do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&save=1","SCRIPT_NAME":"\/mympp\/ajax.php","PHP_SELF":"\/mympp\/ajax.php","REQUEST_TIME_FLOAT":1748999261.933635,"REQUEST_TIME":1748999261}', '2025-06-04 09:07:43.997061');
 INSERT INTO mympp.fw_audittrail VALUES (234, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO application_data(ad_insert_by,ad_insert_timestamp) VALUES(:ad_insert_by,:ad_insert_timestamp)","data":{"do":"r0RiHhnZMtQE1ysDfi8m7g~~","func":"process","save":"1","ad_insert_by":null,"ad_insert_timestamp":"2025-06-04 09:09:09am"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryo22VBMegBUL2UAjA","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/mympp\/action.do?do=LTt0V0wHQAnEa_kJFhjDpdmV2Hk~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=jisdihpujm5nqlh2o8meerse0e","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/mympp\/ajax.php","REMOTE_PORT":"56068","REDIRECT_URL":"\/mympp\/action.ajax","REDIRECT_QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&save=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&save=1","REQUEST_URI":"\/mympp\/action.ajax?do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&save=1","SCRIPT_NAME":"\/mympp\/ajax.php","PHP_SELF":"\/mympp\/ajax.php","REQUEST_TIME_FLOAT":1748999347.258407,"REQUEST_TIME":1748999347}', '2025-06-04 09:09:09.319204');
 INSERT INTO mympp.fw_audittrail VALUES (235, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Borang Permohonan Program Aktiviti'',''Borang Permohonan Program Aktiviti'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundary8NOoiqsbQpBBDSQn","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/mympp\/action.do?do=1mxe7fccSMAq541LZ0LgvNNFwQU~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=d17aavt2iaob44nl5qgfbui8lm","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/mympp\/ajax.php","REMOTE_PORT":"51938","REDIRECT_URL":"\/mympp\/action.ajax","REDIRECT_QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&save=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&save=1","REQUEST_URI":"\/mympp\/action.ajax?do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&save=1","SCRIPT_NAME":"\/mympp\/ajax.php","PHP_SELF":"\/mympp\/ajax.php","REQUEST_TIME_FLOAT":1749096422.721686,"REQUEST_TIME":1749096422}', '2025-06-05 12:07:04.815438');
@@ -1120,10 +1224,48 @@ INSERT INTO mympp.fw_audittrail VALUES (242, '{"username":"admin","nama":"Admini
 INSERT INTO mympp.fw_audittrail VALUES (243, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO application_data(ad_file_no,ad_mpp_zone,ad_application_type,ad_detail_application,ad_request_date,ad_total,ad_activitiy_date,ad_activity_type,ad_sdg_type,ad_detail_activity,ad_ref_no,ad_status_process,ad_insert_by,ad_insert_timestamp) VALUES(:ad_file_no,:ad_mpp_zone,:ad_application_type,:ad_detail_application,:ad_request_date,:ad_total,:ad_activitiy_date,:ad_activity_type,:ad_sdg_type,:ad_detail_activity,:ad_ref_no,:ad_status_process,:ad_insert_by,:ad_insert_timestamp)","data":{"do":"r0RiHhnZMtQE1ysDfi8m7g~~","func":"process","save":"1","ad_file_no":"3333","ad_mpp_zone":"5","ad_application_type":"4","ad_detail_application":"dadadad","ad_request_date":"2025-06-05","ad_total":"676767","ad_activitiy_date":"2025-06-05","ad_activity_type":"1","ad_sdg_type":"1","ad_detail_activity":"dadadad","ad_ref_no":"Array","ad_status_process":"3","ad_insert_by":"admin","ad_insert_timestamp":"2025-06-05 04:58:16pm"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"1257","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundarynm66ZAsENnAtZvOF","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/mympp\/action.do?do=6AJUSdM5OPIKJ3I_gNzD4jq95jk~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=d17aavt2iaob44nl5qgfbui8lm","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/mympp\/ajax.php","REMOTE_PORT":"55129","REDIRECT_URL":"\/mympp\/action.ajax","REDIRECT_QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&save=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&save=1","REQUEST_URI":"\/mympp\/action.ajax?do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&save=1","SCRIPT_NAME":"\/mympp\/ajax.php","PHP_SELF":"\/mympp\/ajax.php","REQUEST_TIME_FLOAT":1749113894.579125,"REQUEST_TIME":1749113894}', '2025-06-05 16:58:16.655984');
 INSERT INTO mympp.fw_audittrail VALUES (244, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO application_data(ad_file_no,ad_mpp_zone,ad_application_type,ad_detail_application,ad_request_date,ad_total,ad_activitiy_date,ad_activity_type,ad_sdg_type,ad_detail_activity,ad_ref_no,ad_status_process,ad_insert_by,ad_insert_timestamp) VALUES(:ad_file_no,:ad_mpp_zone,:ad_application_type,:ad_detail_application,:ad_request_date,:ad_total,:ad_activitiy_date,:ad_activity_type,:ad_sdg_type,:ad_detail_activity,:ad_ref_no,:ad_status_process,:ad_insert_by,:ad_insert_timestamp)","data":{"do":"r0RiHhnZMtQE1ysDfi8m7g~~","func":"process","save":"1","ad_file_no":"3333","ad_mpp_zone":"7","ad_application_type":"1","ad_detail_application":"dadadada","ad_request_date":"2025-06-06","ad_total":"67899","ad_activitiy_date":"2025-06-06","ad_activity_type":"1","ad_sdg_type":"1","ad_detail_activity":"dadad","ad_ref_no":"Array","ad_status_process":"3","ad_insert_by":"admin","ad_insert_timestamp":"2025-06-06 02:32:42pm"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"1255","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryA0zV2QFnZH3ejEBh","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/mympp\/action.do?do=mNcUvfSgaZHKcb2NEPynS1RsxvY~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=jevtbllqb4mn9b53l176dam99v","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/mympp\/ajax.php","REMOTE_PORT":"55512","REDIRECT_URL":"\/mympp\/action.ajax","REDIRECT_QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&save=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&save=1","REQUEST_URI":"\/mympp\/action.ajax?do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&save=1","SCRIPT_NAME":"\/mympp\/ajax.php","PHP_SELF":"\/mympp\/ajax.php","REQUEST_TIME_FLOAT":1749191560.445536,"REQUEST_TIME":1749191560}', '2025-06-06 14:32:42.555928');
 INSERT INTO mympp.fw_audittrail VALUES (245, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO application_data(ad_file_no,ad_mpp_zone,ad_application_type,ad_detail_application,ad_request_date,ad_total,ad_activitiy_date,ad_activity_type,ad_sdg_type,ad_detail_activity,ad_ref_no,ad_status_process,ad_insert_by,ad_insert_timestamp) VALUES(:ad_file_no,:ad_mpp_zone,:ad_application_type,:ad_detail_application,:ad_request_date,:ad_total,:ad_activitiy_date,:ad_activity_type,:ad_sdg_type,:ad_detail_activity,:ad_ref_no,:ad_status_process,:ad_insert_by,:ad_insert_timestamp)","data":{"do":"r0RiHhnZMtQE1ysDfi8m7g~~","func":"process","draft":"1","ad_file_no":"test","ad_mpp_zone":"1","ad_application_type":"1","ad_detail_application":"dadadad","ad_request_date":"2025-06-09","ad_total":"456577","ad_activitiy_date":"2025-06-09","ad_activity_type":"1","ad_sdg_type":"1","ad_detail_activity":"dadadad","ad_ref_no":"Array","ad_status_process":"1","ad_insert_by":"admin","ad_insert_timestamp":"2025-06-09 02:53:35pm"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"1257","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundarykAhwWL8d9Ic4y7Zq","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/mympp\/action.do?do=CNYVZOQNLV_vl343PAwnTTMyV5s~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=p9bgacrnvdp7d57fa3df93dk9f","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/mympp\/ajax.php","REMOTE_PORT":"49227","REDIRECT_URL":"\/mympp\/action.ajax","REDIRECT_QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&draft=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&draft=1","REQUEST_URI":"\/mympp\/action.ajax?do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&draft=1","SCRIPT_NAME":"\/mympp\/ajax.php","PHP_SELF":"\/mympp\/ajax.php","REQUEST_TIME_FLOAT":1749452013.015468,"REQUEST_TIME":1749452013}', '2025-06-09 14:53:35.101901');
+INSERT INTO mympp.fw_audittrail VALUES (246, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Gambar Aktiviti 1 : '',''Gambar Aktiviti 1 : '')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_CACHE_CONTROL":"max-age=0","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=of5iqalgovd9h5vqoesf1dnns3","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"127.0.0.1","SERVER_PORT":"80","REMOTE_ADDR":"127.0.0.1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/home.php","REMOTE_PORT":"54819","REDIRECT_URL":"\/My-MPP\/action.do","REDIRECT_QUERY_STRING":"do=6vfuRG2AFQRg2FoTO79ckLfpjFo~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=6vfuRG2AFQRg2FoTO79ckLfpjFo~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","REQUEST_URI":"\/My-MPP\/action.do?do=6vfuRG2AFQRg2FoTO79ckLfpjFo~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","SCRIPT_NAME":"\/My-MPP\/home.php","PHP_SELF":"\/My-MPP\/home.php","REQUEST_TIME_FLOAT":1750121464.939268,"REQUEST_TIME":1750121464}', '2025-06-17 08:51:07.103775');
+INSERT INTO mympp.fw_audittrail VALUES (248, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Gambar Aktiviti 3 : '',''Gambar Aktiviti 3 : '')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_CACHE_CONTROL":"max-age=0","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=of5iqalgovd9h5vqoesf1dnns3","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"127.0.0.1","SERVER_PORT":"80","REMOTE_ADDR":"127.0.0.1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/home.php","REMOTE_PORT":"54819","REDIRECT_URL":"\/My-MPP\/action.do","REDIRECT_QUERY_STRING":"do=6vfuRG2AFQRg2FoTO79ckLfpjFo~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=6vfuRG2AFQRg2FoTO79ckLfpjFo~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","REQUEST_URI":"\/My-MPP\/action.do?do=6vfuRG2AFQRg2FoTO79ckLfpjFo~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","SCRIPT_NAME":"\/My-MPP\/home.php","PHP_SELF":"\/My-MPP\/home.php","REQUEST_TIME_FLOAT":1750121464.939268,"REQUEST_TIME":1750121464}', '2025-06-17 08:51:07.107513');
+INSERT INTO mympp.fw_audittrail VALUES (249, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Gambar Aktiviti 4 : '',''Gambar Aktiviti 4 : '')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_CACHE_CONTROL":"max-age=0","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=of5iqalgovd9h5vqoesf1dnns3","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"127.0.0.1","SERVER_PORT":"80","REMOTE_ADDR":"127.0.0.1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/home.php","REMOTE_PORT":"54819","REDIRECT_URL":"\/My-MPP\/action.do","REDIRECT_QUERY_STRING":"do=6vfuRG2AFQRg2FoTO79ckLfpjFo~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=6vfuRG2AFQRg2FoTO79ckLfpjFo~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","REQUEST_URI":"\/My-MPP\/action.do?do=6vfuRG2AFQRg2FoTO79ckLfpjFo~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","SCRIPT_NAME":"\/My-MPP\/home.php","PHP_SELF":"\/My-MPP\/home.php","REQUEST_TIME_FLOAT":1750121464.939268,"REQUEST_TIME":1750121464}', '2025-06-17 08:51:07.108079');
+INSERT INTO mympp.fw_audittrail VALUES (250, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO fw_menu(m_keterangan,m_submenu,m_href,m_class,m_susunan) VALUES(:m_keterangan,:m_submenu,:m_href,:m_class,:m_susunan)","data":{"do":"qENfFx7P","func":"process","save":"1","m_keterangan":"Tetapan Pengguna","m_submenu":"Y","m_href":"#","m_class":"fa fa-users bg-blue","m_susunan":"7"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"463","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundarycMaCYTfdHfMmLovY","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=AQnwNSY6uiRy1Es~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=of5iqalgovd9h5vqoesf1dnns3","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/ajax.php","REMOTE_PORT":"55398","REDIRECT_URL":"\/My-MPP\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&save=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&save=1","REQUEST_URI":"\/My-MPP\/action.ajax?do=qENfFx7P&func=process&save=1","SCRIPT_NAME":"\/My-MPP\/ajax.php","PHP_SELF":"\/My-MPP\/ajax.php","REQUEST_TIME_FLOAT":1750122890.034809,"REQUEST_TIME":1750122890}', '2025-06-17 09:14:52.108309');
+INSERT INTO mympp.fw_audittrail VALUES (251, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO fw_akses(fa_m_id,fa_sm_id,fa_rr_id,fa_insertby) VALUES(:fa_m_id,:fa_sm_id,:fa_rr_id,:fa_insertby)","data":{"fa_m_id":"7","fa_sm_id":"0","fa_rr_id":"1","fa_insertby":"admin"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundarymXjrPFQhFxCSlzoA","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=AQnwNSY6uiRy1Es~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=of5iqalgovd9h5vqoesf1dnns3","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/ajax.php","REMOTE_PORT":"55431","REDIRECT_URL":"\/My-MPP\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=7&fa_rr_id=1&valakses=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=7&fa_rr_id=1&valakses=1","REQUEST_URI":"\/My-MPP\/action.ajax?do=qENfFx7P&func=process&fa_m_id=7&fa_rr_id=1&valakses=1","SCRIPT_NAME":"\/My-MPP\/ajax.php","PHP_SELF":"\/My-MPP\/ajax.php","REQUEST_TIME_FLOAT":1750122940.392232,"REQUEST_TIME":1750122940}', '2025-06-17 09:15:42.460939');
+INSERT INTO mympp.fw_audittrail VALUES (252, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Tetapan Pengguna'',''Tetapan Pengguna'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_CACHE_CONTROL":"max-age=0","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=BvX2nC5GuJ8vAtIcFGxKb9XJ29M~&menu=Borang+Permohonan&submenu=Senarai+Permohonan","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=of5iqalgovd9h5vqoesf1dnns3","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/home.php","REMOTE_PORT":"55431","REDIRECT_URL":"\/My-MPP\/action.do","REDIRECT_QUERY_STRING":"do=AQnwNSY6uiRy1Es~&menu=Superadmin&submenu=Menu","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=AQnwNSY6uiRy1Es~&menu=Superadmin&submenu=Menu","REQUEST_URI":"\/My-MPP\/action.do?do=AQnwNSY6uiRy1Es~&menu=Superadmin&submenu=Menu","SCRIPT_NAME":"\/My-MPP\/home.php","PHP_SELF":"\/My-MPP\/home.php","REQUEST_TIME_FLOAT":1750122943.829059,"REQUEST_TIME":1750122943}', '2025-06-17 09:15:45.898142');
+INSERT INTO mympp.fw_audittrail VALUES (253, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO application_data(ad_ref_no,ad_file_no,ad_mpp_zone,ad_application_type,ad_detail_application,ad_request_date,ad_total,ad_activitiy_date,ad_activity_type,ad_sdg_type,ad_detail_activity,ad_status_process,ad_insert_by,ad_insert_timestamp) VALUES(:ad_ref_no,:ad_file_no,:ad_mpp_zone,:ad_application_type,:ad_detail_application,:ad_request_date,:ad_total,:ad_activitiy_date,:ad_activity_type,:ad_sdg_type,:ad_detail_activity,:ad_status_process,:ad_insert_by,:ad_insert_timestamp)","data":{"do":"r0RiHhnZMtQE1ysDfi8m7g~~","func":"process","save":"1","ad_ref_no":"MBSA\/MYMPP\/2025\/00001","ad_file_no":"test","ad_mpp_zone":"2","ad_application_type":"1","ad_detail_application":"test","ad_request_date":"2025-06-17","ad_total":"10000","ad_activitiy_date":"2025-06-17","ad_activity_type":"1","ad_sdg_type":"1","ad_detail_activity":"test","ad_status_process":"3","ad_insert_by":"admin","ad_insert_timestamp":"2025-06-17 11:39:24am"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"1369","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryooGDgd2Juk8l7XXO","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=oFzvD_hDxL6Pj0B-wZEbiPu35jw~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=of5iqalgovd9h5vqoesf1dnns3","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/ajax.php","REMOTE_PORT":"58718","REDIRECT_URL":"\/My-MPP\/action.ajax","REDIRECT_QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&save=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&save=1","REQUEST_URI":"\/My-MPP\/action.ajax?do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&save=1","SCRIPT_NAME":"\/My-MPP\/ajax.php","PHP_SELF":"\/My-MPP\/ajax.php","REQUEST_TIME_FLOAT":1750131562.062641,"REQUEST_TIME":1750131562}', '2025-06-17 11:39:24.127317');
+INSERT INTO mympp.fw_audittrail VALUES (254, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO application_data(ad_ref_no,ad_file_no,ad_mpp_zone,ad_application_type,ad_detail_application,ad_request_date,ad_total,ad_activitiy_date,ad_activity_type,ad_sdg_type,ad_detail_activity,ad_status_process,ad_insert_by,ad_insert_timestamp) VALUES(:ad_ref_no,:ad_file_no,:ad_mpp_zone,:ad_application_type,:ad_detail_application,:ad_request_date,:ad_total,:ad_activitiy_date,:ad_activity_type,:ad_sdg_type,:ad_detail_activity,:ad_status_process,:ad_insert_by,:ad_insert_timestamp)","data":{"do":"r0RiHhnZMtQE1ysDfi8m7g~~","func":"process","save":"1","ad_ref_no":"MBSA\/MYMPP\/2025\/00001","ad_file_no":"ererere","ad_mpp_zone":"18","ad_application_type":"3","ad_detail_application":"dadad","ad_request_date":"2025-06-17","ad_total":"129000","ad_activitiy_date":"2025-06-17","ad_activity_type":"1","ad_sdg_type":"1","ad_detail_activity":"adad","ad_status_process":"3","ad_insert_by":"admin","ad_insert_timestamp":"2025-06-17 11:51:38am"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"1354","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryrm7pUt1wNa8TnA5J","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=OinRjUng-FEmAWkB46FosQSvqqk~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=of5iqalgovd9h5vqoesf1dnns3","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/ajax.php","REMOTE_PORT":"58851","REDIRECT_URL":"\/My-MPP\/action.ajax","REDIRECT_QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&save=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&save=1","REQUEST_URI":"\/My-MPP\/action.ajax?do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&save=1","SCRIPT_NAME":"\/My-MPP\/ajax.php","PHP_SELF":"\/My-MPP\/ajax.php","REQUEST_TIME_FLOAT":1750132296.661055,"REQUEST_TIME":1750132296}', '2025-06-17 11:51:38.719469');
+INSERT INTO mympp.fw_audittrail VALUES (255, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Lain-Lain :'',''Lain-Lain :'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_CACHE_CONTROL":"max-age=0","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=SPho7dld67YPMFbnIYJz4l5ScJE~&menu=Borang+Permohonan&submenu=Senarai+Permohonan","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=of5iqalgovd9h5vqoesf1dnns3","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/home.php","REMOTE_PORT":"59274","REDIRECT_URL":"\/My-MPP\/action.do","REDIRECT_QUERY_STRING":"do=r3CO9uKm_BuEaVeAPgfJy4ZtsbI~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=r3CO9uKm_BuEaVeAPgfJy4ZtsbI~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","REQUEST_URI":"\/My-MPP\/action.do?do=r3CO9uKm_BuEaVeAPgfJy4ZtsbI~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","SCRIPT_NAME":"\/My-MPP\/home.php","PHP_SELF":"\/My-MPP\/home.php","REQUEST_TIME_FLOAT":1750133196.043759,"REQUEST_TIME":1750133196}', '2025-06-17 12:06:38.229079');
+INSERT INTO mympp.fw_audittrail VALUES (256, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"DELETE FROM fw_akses WHERE fa_m_id=''2'' AND fa_sm_id=0 "}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"355","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryI3Ah8qM1uBy42lKX","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=tEV8C7t3z9Bs2iM~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=m2vohvms0miosbv8chi55cl6c1","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/ajax.php","REMOTE_PORT":"60720","REDIRECT_URL":"\/My-MPP\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&update=2","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&update=2","REQUEST_URI":"\/My-MPP\/action.ajax?do=qENfFx7P&func=process&update=2","SCRIPT_NAME":"\/My-MPP\/ajax.php","PHP_SELF":"\/My-MPP\/ajax.php","REQUEST_TIME_FLOAT":1750143066.936817,"REQUEST_TIME":1750143066}', '2025-06-17 14:51:08.998022');
+INSERT INTO mympp.fw_audittrail VALUES (257, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"UPDATE fw_menu SET m_keterangan=:m_keterangan,m_href=:m_href,m_class=:m_class WHERE m_id=''2''","data":{"m_keterangan":"Tetapan","m_href":"#","m_class":"fa fa-cogs bg-red"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"355","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryI3Ah8qM1uBy42lKX","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=tEV8C7t3z9Bs2iM~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=m2vohvms0miosbv8chi55cl6c1","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/ajax.php","REMOTE_PORT":"60720","REDIRECT_URL":"\/My-MPP\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&update=2","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&update=2","REQUEST_URI":"\/My-MPP\/action.ajax?do=qENfFx7P&func=process&update=2","SCRIPT_NAME":"\/My-MPP\/ajax.php","PHP_SELF":"\/My-MPP\/ajax.php","REQUEST_TIME_FLOAT":1750143066.936817,"REQUEST_TIME":1750143066}', '2025-06-17 14:51:09.003062');
+INSERT INTO mympp.fw_audittrail VALUES (259, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"UPDATE fw_menu SET m_keterangan=:m_keterangan,m_href=:m_href,m_class=:m_class WHERE m_id=''2''","data":{"m_keterangan":"Tetapan Sistem","m_href":"#","m_class":"fa fa-cogs bg-red"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"362","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryn1BThxEYLSMB7lVh","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=tEV8C7t3z9Bs2iM~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=m2vohvms0miosbv8chi55cl6c1","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/ajax.php","REMOTE_PORT":"60720","REDIRECT_URL":"\/My-MPP\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&update=2","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&update=2","REQUEST_URI":"\/My-MPP\/action.ajax?do=qENfFx7P&func=process&update=2","SCRIPT_NAME":"\/My-MPP\/ajax.php","PHP_SELF":"\/My-MPP\/ajax.php","REQUEST_TIME_FLOAT":1750143076.505619,"REQUEST_TIME":1750143076}', '2025-06-17 14:51:18.589848');
+INSERT INTO mympp.fw_audittrail VALUES (260, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO fw_submenu(sm_m_id,sm_keterangan,sm_href,sm_class,sm_susunan) VALUES(:sm_m_id,:sm_keterangan,:sm_href,:sm_class,:sm_susunan)","data":{"do":"qENfFx7P","func":"process","savesub":"1","sm_m_id":"7","sm_keterangan":"Pengguna","sm_href":"m\/m.user","sm_class":"","sm_susunan":"14"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"349","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundary6oPUAEB2sPYGN0t6","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=tEV8C7t3z9Bs2iM~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=m2vohvms0miosbv8chi55cl6c1","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/ajax.php","REMOTE_PORT":"60798","REDIRECT_URL":"\/My-MPP\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&savesub=1&sm_m_id=7","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&savesub=1&sm_m_id=7","REQUEST_URI":"\/My-MPP\/action.ajax?do=qENfFx7P&func=process&savesub=1&sm_m_id=7","SCRIPT_NAME":"\/My-MPP\/ajax.php","PHP_SELF":"\/My-MPP\/ajax.php","REQUEST_TIME_FLOAT":1750143252.049853,"REQUEST_TIME":1750143252}', '2025-06-17 14:54:14.104748');
+INSERT INTO mympp.fw_audittrail VALUES (261, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Tetapan Sistem'',''Tetapan Sistem'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_CACHE_CONTROL":"max-age=0","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=KYr_2emSKC5-Oi2zsRzX4o_Ksx0~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=m2vohvms0miosbv8chi55cl6c1","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/home.php","REMOTE_PORT":"60803","REDIRECT_URL":"\/My-MPP\/action.do","REDIRECT_QUERY_STRING":"do=tEV8C7t3z9Bs2iM~&menu=Superadmin&submenu=Menu","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=tEV8C7t3z9Bs2iM~&menu=Superadmin&submenu=Menu","REQUEST_URI":"\/My-MPP\/action.do?do=tEV8C7t3z9Bs2iM~&menu=Superadmin&submenu=Menu","SCRIPT_NAME":"\/My-MPP\/home.php","PHP_SELF":"\/My-MPP\/home.php","REQUEST_TIME_FLOAT":1750143267.10505,"REQUEST_TIME":1750143267}', '2025-06-17 14:54:29.196099');
+INSERT INTO mympp.fw_audittrail VALUES (262, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO fw_akses(fa_m_id,fa_sm_id,fa_rr_id,fa_insertby) VALUES(:fa_m_id,:fa_sm_id,:fa_rr_id,:fa_insertby)","data":{"fa_m_id":"7","fa_sm_id":"14","fa_rr_id":"1","fa_insertby":"admin"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryXj6MUhmXLBUDh2Ql","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=tEV8C7t3z9Bs2iM~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=m2vohvms0miosbv8chi55cl6c1","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/ajax.php","REMOTE_PORT":"60803","REDIRECT_URL":"\/My-MPP\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=7&fa_sm_id=14&fa_rr_id=1&valakses=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=7&fa_sm_id=14&fa_rr_id=1&valakses=1","REQUEST_URI":"\/My-MPP\/action.ajax?do=qENfFx7P&func=process&fa_m_id=7&fa_sm_id=14&fa_rr_id=1&valakses=1","SCRIPT_NAME":"\/My-MPP\/ajax.php","PHP_SELF":"\/My-MPP\/ajax.php","REQUEST_TIME_FLOAT":1750143272.835591,"REQUEST_TIME":1750143272}', '2025-06-17 14:54:34.915417');
+INSERT INTO mympp.fw_audittrail VALUES (263, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO fw_submenu(sm_m_id,sm_keterangan,sm_href,sm_class,sm_susunan) VALUES(:sm_m_id,:sm_keterangan,:sm_href,:sm_class,:sm_susunan)","data":{"do":"qENfFx7P","func":"process","savesub":"1","sm_m_id":"7","sm_keterangan":"Peranan Pengguna","sm_href":"m\/m.ref_role","sm_class":"","sm_susunan":"15"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"361","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryqKd40s8jpf279N3u","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=tEV8C7t3z9Bs2iM~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=m2vohvms0miosbv8chi55cl6c1","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/ajax.php","REMOTE_PORT":"60804","REDIRECT_URL":"\/My-MPP\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&savesub=1&sm_m_id=7","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&savesub=1&sm_m_id=7","REQUEST_URI":"\/My-MPP\/action.ajax?do=qENfFx7P&func=process&savesub=1&sm_m_id=7","SCRIPT_NAME":"\/My-MPP\/ajax.php","PHP_SELF":"\/My-MPP\/ajax.php","REQUEST_TIME_FLOAT":1750143288.364111,"REQUEST_TIME":1750143288}', '2025-06-17 14:54:50.433468');
+INSERT INTO mympp.fw_audittrail VALUES (264, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO fw_submenu(sm_m_id,sm_keterangan,sm_href,sm_class,sm_susunan) VALUES(:sm_m_id,:sm_keterangan,:sm_href,:sm_class,:sm_susunan)","data":{"do":"qENfFx7P","func":"process","savesub":"1","sm_m_id":"7","sm_keterangan":"Senarai Jabatan","sm_href":"m\/m.dept_list","sm_class":"","sm_susunan":"16"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"361","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryCpLMiErNnJlL4S9y","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=tEV8C7t3z9Bs2iM~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=m2vohvms0miosbv8chi55cl6c1","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/ajax.php","REMOTE_PORT":"60821","REDIRECT_URL":"\/My-MPP\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&savesub=1&sm_m_id=7","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&savesub=1&sm_m_id=7","REQUEST_URI":"\/My-MPP\/action.ajax?do=qENfFx7P&func=process&savesub=1&sm_m_id=7","SCRIPT_NAME":"\/My-MPP\/ajax.php","PHP_SELF":"\/My-MPP\/ajax.php","REQUEST_TIME_FLOAT":1750143305.164317,"REQUEST_TIME":1750143305}', '2025-06-17 14:55:07.228935');
+INSERT INTO mympp.fw_audittrail VALUES (265, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO fw_akses(fa_m_id,fa_sm_id,fa_rr_id,fa_insertby) VALUES(:fa_m_id,:fa_sm_id,:fa_rr_id,:fa_insertby)","data":{"fa_m_id":"7","fa_sm_id":"15","fa_rr_id":"1","fa_insertby":"admin"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryY0Rt1JAksxAkuABE","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=tEV8C7t3z9Bs2iM~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=m2vohvms0miosbv8chi55cl6c1","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/ajax.php","REMOTE_PORT":"60821","REDIRECT_URL":"\/My-MPP\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=7&fa_sm_id=15&fa_rr_id=1&valakses=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=7&fa_sm_id=15&fa_rr_id=1&valakses=1","REQUEST_URI":"\/My-MPP\/action.ajax?do=qENfFx7P&func=process&fa_m_id=7&fa_sm_id=15&fa_rr_id=1&valakses=1","SCRIPT_NAME":"\/My-MPP\/ajax.php","PHP_SELF":"\/My-MPP\/ajax.php","REQUEST_TIME_FLOAT":1750143309.104536,"REQUEST_TIME":1750143309}', '2025-06-17 14:55:11.16483');
+INSERT INTO mympp.fw_audittrail VALUES (266, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO fw_akses(fa_m_id,fa_sm_id,fa_rr_id,fa_insertby) VALUES(:fa_m_id,:fa_sm_id,:fa_rr_id,:fa_insertby)","data":{"fa_m_id":"7","fa_sm_id":"16","fa_rr_id":"1","fa_insertby":"admin"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundarybC9tk9wwBOKt6MLV","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=tEV8C7t3z9Bs2iM~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=m2vohvms0miosbv8chi55cl6c1","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/ajax.php","REMOTE_PORT":"60825","REDIRECT_URL":"\/My-MPP\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=7&fa_sm_id=16&fa_rr_id=1&valakses=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=7&fa_sm_id=16&fa_rr_id=1&valakses=1","REQUEST_URI":"\/My-MPP\/action.ajax?do=qENfFx7P&func=process&fa_m_id=7&fa_sm_id=16&fa_rr_id=1&valakses=1","SCRIPT_NAME":"\/My-MPP\/ajax.php","PHP_SELF":"\/My-MPP\/ajax.php","REQUEST_TIME_FLOAT":1750143310.685475,"REQUEST_TIME":1750143310}', '2025-06-17 14:55:13.231246');
+INSERT INTO mympp.fw_audittrail VALUES (267, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO fw_submenu(sm_m_id,sm_keterangan,sm_href,sm_class,sm_susunan) VALUES(:sm_m_id,:sm_keterangan,:sm_href,:sm_class,:sm_susunan)","data":{"do":"qENfFx7P","func":"process","savesub":"1","sm_m_id":"7","sm_keterangan":"Senarai Zone","sm_href":"m\/m.zone_list","sm_class":"","sm_susunan":"17"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"358","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundary9Shi2zp7OTzIRJr2","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=tEV8C7t3z9Bs2iM~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=m2vohvms0miosbv8chi55cl6c1","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/ajax.php","REMOTE_PORT":"60832","REDIRECT_URL":"\/My-MPP\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&savesub=1&sm_m_id=7","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&savesub=1&sm_m_id=7","REQUEST_URI":"\/My-MPP\/action.ajax?do=qENfFx7P&func=process&savesub=1&sm_m_id=7","SCRIPT_NAME":"\/My-MPP\/ajax.php","PHP_SELF":"\/My-MPP\/ajax.php","REQUEST_TIME_FLOAT":1750143328.284184,"REQUEST_TIME":1750143328}', '2025-06-17 14:55:30.380585');
+INSERT INTO mympp.fw_audittrail VALUES (268, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"DELETE FROM fw_akses WHERE fa_sm_id=''17''"}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"361","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundary9L5bb0DvO0hRTr0m","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=tEV8C7t3z9Bs2iM~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=m2vohvms0miosbv8chi55cl6c1","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/ajax.php","REMOTE_PORT":"60837","REDIRECT_URL":"\/My-MPP\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&updatesub=17&m_id=7","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&updatesub=17&m_id=7","REQUEST_URI":"\/My-MPP\/action.ajax?do=qENfFx7P&func=process&updatesub=17&m_id=7","SCRIPT_NAME":"\/My-MPP\/ajax.php","PHP_SELF":"\/My-MPP\/ajax.php","REQUEST_TIME_FLOAT":1750143340.065337,"REQUEST_TIME":1750143340}', '2025-06-17 14:55:42.13479');
+INSERT INTO mympp.fw_audittrail VALUES (269, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"UPDATE fw_submenu SET sm_keterangan=:sm_keterangan,sm_href=:sm_href,sm_class=:sm_class WHERE sm_id=''17''","data":{"sm_keterangan":"Senarai Zon MPP","sm_href":"m\/m.zone_list","sm_class":""}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"361","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundary9L5bb0DvO0hRTr0m","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=tEV8C7t3z9Bs2iM~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=m2vohvms0miosbv8chi55cl6c1","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/ajax.php","REMOTE_PORT":"60837","REDIRECT_URL":"\/My-MPP\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&updatesub=17&m_id=7","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&updatesub=17&m_id=7","REQUEST_URI":"\/My-MPP\/action.ajax?do=qENfFx7P&func=process&updatesub=17&m_id=7","SCRIPT_NAME":"\/My-MPP\/ajax.php","PHP_SELF":"\/My-MPP\/ajax.php","REQUEST_TIME_FLOAT":1750143340.065337,"REQUEST_TIME":1750143340}', '2025-06-17 14:55:42.137108');
+INSERT INTO mympp.fw_audittrail VALUES (270, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO fw_akses(fa_m_id,fa_sm_id,fa_rr_id,fa_insertby) VALUES(:fa_m_id,:fa_sm_id,:fa_rr_id,:fa_insertby)","data":{"fa_m_id":"7","fa_sm_id":"17","fa_rr_id":"1","fa_insertby":"admin"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundary7qBRsu25giQVFPCy","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=tEV8C7t3z9Bs2iM~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=m2vohvms0miosbv8chi55cl6c1","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/ajax.php","REMOTE_PORT":"60837","REDIRECT_URL":"\/My-MPP\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=7&fa_sm_id=17&fa_rr_id=1&valakses=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=7&fa_sm_id=17&fa_rr_id=1&valakses=1","REQUEST_URI":"\/My-MPP\/action.ajax?do=qENfFx7P&func=process&fa_m_id=7&fa_sm_id=17&fa_rr_id=1&valakses=1","SCRIPT_NAME":"\/My-MPP\/ajax.php","PHP_SELF":"\/My-MPP\/ajax.php","REQUEST_TIME_FLOAT":1750143343.715621,"REQUEST_TIME":1750143343}', '2025-06-17 14:55:45.80189');
+INSERT INTO mympp.fw_audittrail VALUES (271, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO fw_akses(fa_m_id,fa_sm_id,fa_rr_id,fa_insertby) VALUES(:fa_m_id,:fa_sm_id,:fa_rr_id,:fa_insertby)","data":{"fa_m_id":"2","fa_sm_id":"0","fa_rr_id":"1","fa_insertby":"admin"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundary9c6oYGOjsHqSqlTA","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=tEV8C7t3z9Bs2iM~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=m2vohvms0miosbv8chi55cl6c1","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/ajax.php","REMOTE_PORT":"60837","REDIRECT_URL":"\/My-MPP\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=2&fa_rr_id=1&valakses=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=2&fa_rr_id=1&valakses=1","REQUEST_URI":"\/My-MPP\/action.ajax?do=qENfFx7P&func=process&fa_m_id=2&fa_rr_id=1&valakses=1","SCRIPT_NAME":"\/My-MPP\/ajax.php","PHP_SELF":"\/My-MPP\/ajax.php","REQUEST_TIME_FLOAT":1750143348.10496,"REQUEST_TIME":1750143348}', '2025-06-17 14:55:50.142416');
+INSERT INTO mympp.fw_audittrail VALUES (272, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Senarai Jabatan'',''Senarai Jabatan'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_CACHE_CONTROL":"max-age=0","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=KYr_2emSKC5-Oi2zsRzX4o_Ksx0~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=m2vohvms0miosbv8chi55cl6c1","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/home.php","REMOTE_PORT":"60837","REDIRECT_URL":"\/My-MPP\/action.do","REDIRECT_QUERY_STRING":"do=tEV8C7t3z9Bs2iM~&menu=Superadmin&submenu=Menu","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=tEV8C7t3z9Bs2iM~&menu=Superadmin&submenu=Menu","REQUEST_URI":"\/My-MPP\/action.do?do=tEV8C7t3z9Bs2iM~&menu=Superadmin&submenu=Menu","SCRIPT_NAME":"\/My-MPP\/home.php","PHP_SELF":"\/My-MPP\/home.php","REQUEST_TIME_FLOAT":1750143351.184522,"REQUEST_TIME":1750143351}', '2025-06-17 14:55:53.239912');
+INSERT INTO mympp.fw_audittrail VALUES (273, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Senarai Zon MPP'',''Senarai Zon MPP'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_CACHE_CONTROL":"max-age=0","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=KYr_2emSKC5-Oi2zsRzX4o_Ksx0~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=m2vohvms0miosbv8chi55cl6c1","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/home.php","REMOTE_PORT":"60837","REDIRECT_URL":"\/My-MPP\/action.do","REDIRECT_QUERY_STRING":"do=tEV8C7t3z9Bs2iM~&menu=Superadmin&submenu=Menu","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=tEV8C7t3z9Bs2iM~&menu=Superadmin&submenu=Menu","REQUEST_URI":"\/My-MPP\/action.do?do=tEV8C7t3z9Bs2iM~&menu=Superadmin&submenu=Menu","SCRIPT_NAME":"\/My-MPP\/home.php","PHP_SELF":"\/My-MPP\/home.php","REQUEST_TIME_FLOAT":1750143351.184522,"REQUEST_TIME":1750143351}', '2025-06-17 14:55:53.240725');
+INSERT INTO mympp.fw_audittrail VALUES (274, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"DELETE FROM fw_akses WHERE fa_sm_id=''2''"}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundarywCYqCFznFM7qBxcw","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=AuVd8CPzfvSJKHA~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=58u1be3mdkam0n8s876gl13f9q","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/ajax.php","REMOTE_PORT":"65030","REDIRECT_URL":"\/My-MPP\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&delsub=2","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&delsub=2","REQUEST_URI":"\/My-MPP\/action.ajax?do=qENfFx7P&func=process&delsub=2","SCRIPT_NAME":"\/My-MPP\/ajax.php","PHP_SELF":"\/My-MPP\/ajax.php","REQUEST_TIME_FLOAT":1750216766.606601,"REQUEST_TIME":1750216766}', '2025-06-18 11:19:28.830724');
+INSERT INTO mympp.fw_audittrail VALUES (276, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"DELETE FROM fw_akses WHERE fa_sm_id=''13''"}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundarykbV9omzpMwWNekU1","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=AuVd8CPzfvSJKHA~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=58u1be3mdkam0n8s876gl13f9q","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/ajax.php","REMOTE_PORT":"65033","REDIRECT_URL":"\/My-MPP\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&delsub=13","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&delsub=13","REQUEST_URI":"\/My-MPP\/action.ajax?do=qENfFx7P&func=process&delsub=13","SCRIPT_NAME":"\/My-MPP\/ajax.php","PHP_SELF":"\/My-MPP\/ajax.php","REQUEST_TIME_FLOAT":1750216776.207111,"REQUEST_TIME":1750216776}', '2025-06-18 11:19:38.290148');
+INSERT INTO mympp.fw_audittrail VALUES (277, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"DELETE FROM fw_submenu WHERE sm_id=''13''"}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundarykbV9omzpMwWNekU1","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=AuVd8CPzfvSJKHA~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=58u1be3mdkam0n8s876gl13f9q","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/ajax.php","REMOTE_PORT":"65033","REDIRECT_URL":"\/My-MPP\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&delsub=13","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&delsub=13","REQUEST_URI":"\/My-MPP\/action.ajax?do=qENfFx7P&func=process&delsub=13","SCRIPT_NAME":"\/My-MPP\/ajax.php","PHP_SELF":"\/My-MPP\/ajax.php","REQUEST_TIME_FLOAT":1750216776.207111,"REQUEST_TIME":1750216776}', '2025-06-18 11:19:38.291114');
+INSERT INTO mympp.fw_audittrail VALUES (278, 'null', '{"sql":"UPDATE fw_submenu SET sm_gen_code=:sm_gen_code,sm_gen_by=:sm_gen_by,sm_gen_date=:sm_gen_date WHERE sm_m_id=''7'' AND sm_id=''15''","data":{"sm_gen_code":"{\"m_id\":\"7\",\"sm_id\":\"15\",\"modul\":\"RefRoleClass\",\"dbschema\":\"mympp\",\"tabledb\":\"ref_role\",\"order\":{\"rr_id\":\"0\",\"rr_acronym\":\"1\",\"rr_description\":\"2\",\"rr_status_ind\":\"3\"},\"fields\":[\"rr_id\",\"rr_acronym\",\"rr_description\",\"rr_status_ind\"],\"typeselection\":{\"rr_acronym\":\"tf\",\"rr_description\":\"tf\",\"rr_status_ind\":\"tf\"},\"compulsory\":[\"rr_acronym\",\"rr_description\",\"rr_status_ind\"],\"data_style\":\"dlg\",\"form_style\":\"rt\"}","sm_gen_by":null,"sm_gen_date":"2025-06-18 11:21:06"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"2076","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundary3jlDAsOJOQIyBFU6","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=AuVd8CPzfvSJKHA~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=58u1be3mdkam0n8s876gl13f9q","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/ajax.php","REMOTE_PORT":"65104","REDIRECT_URL":"\/My-MPP\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=generate&m_id=7&sm_id=15&save=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=generate&m_id=7&sm_id=15&save=1","REQUEST_URI":"\/My-MPP\/action.ajax?do=qENfFx7P&func=generate&m_id=7&sm_id=15&save=1","SCRIPT_NAME":"\/My-MPP\/ajax.php","PHP_SELF":"\/My-MPP\/ajax.php","REQUEST_TIME_FLOAT":1750216866.886011,"REQUEST_TIME":1750216866}', '2025-06-18 11:21:08.988579');
+INSERT INTO mympp.fw_audittrail VALUES (279, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"UPDATE fw_submenu SET sm_gen_code=:sm_gen_code,sm_gen_by=:sm_gen_by,sm_gen_date=:sm_gen_date WHERE sm_m_id=''7'' AND sm_id=''17''","data":{"sm_gen_code":"{\"m_id\":\"7\",\"sm_id\":\"17\",\"modul\":\"RefZoneList\",\"dbschema\":\"mympp\",\"tabledb\":\"ref_zone_list\",\"order\":{\"rzl_id\":\"0\",\"rzl_desc\":\"1\",\"rzl_status_ind\":\"2\"},\"fields\":[\"rzl_id\",\"rzl_desc\",\"rzl_status_ind\"],\"typeselection\":{\"rzl_desc\":\"tf\",\"rzl_status_ind\":\"tf\"},\"compulsory\":[\"rzl_desc\",\"rzl_status_ind\"],\"data_style\":\"dlg\",\"form_style\":\"rt\"}","sm_gen_by":"admin","sm_gen_date":"2025-06-18 11:22:05"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"1629","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryJistEu9AA4R5wrXd","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=QXp_OB6nWyv_DVc~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=58u1be3mdkam0n8s876gl13f9q","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/ajax.php","REMOTE_PORT":"65143","REDIRECT_URL":"\/My-MPP\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=generate&m_id=7&sm_id=17&save=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=generate&m_id=7&sm_id=17&save=1","REQUEST_URI":"\/My-MPP\/action.ajax?do=qENfFx7P&func=generate&m_id=7&sm_id=17&save=1","SCRIPT_NAME":"\/My-MPP\/ajax.php","PHP_SELF":"\/My-MPP\/ajax.php","REQUEST_TIME_FLOAT":1750216925.342583,"REQUEST_TIME":1750216925}', '2025-06-18 11:22:07.431556');
+INSERT INTO mympp.fw_audittrail VALUES (280, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES('' Peranan Pengguna'','' Peranan Pengguna'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=1xUc718iGa4~&menu=Tetapan+Pengguna&submenu=Pengguna","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=58u1be3mdkam0n8s876gl13f9q","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/home.php","REMOTE_PORT":"65143","REDIRECT_URL":"\/My-MPP\/action.do","REDIRECT_QUERY_STRING":"do=TqfT1u0G2Den5ewR&menu=Tetapan+Pengguna&submenu=Peranan+Pengguna","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=TqfT1u0G2Den5ewR&menu=Tetapan+Pengguna&submenu=Peranan+Pengguna","REQUEST_URI":"\/My-MPP\/action.do?do=TqfT1u0G2Den5ewR&menu=Tetapan+Pengguna&submenu=Peranan+Pengguna","SCRIPT_NAME":"\/My-MPP\/home.php","PHP_SELF":"\/My-MPP\/home.php","REQUEST_TIME_FLOAT":1750216931.550084,"REQUEST_TIME":1750216931}', '2025-06-18 11:22:13.637051');
+INSERT INTO mympp.fw_audittrail VALUES (281, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Senarai Senarai Zon MPP'',''Senarai Senarai Zon MPP'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=TqfT1u0G2Den5ewR&menu=Tetapan+Pengguna&submenu=Peranan+Pengguna","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=58u1be3mdkam0n8s876gl13f9q","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/home.php","REMOTE_PORT":"65143","REDIRECT_URL":"\/My-MPP\/action.do","REDIRECT_QUERY_STRING":"do=KHkm2vt-5AH0_nQLSg~~&menu=Tetapan+Pengguna&submenu=Senarai+Zon+MPP","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=KHkm2vt-5AH0_nQLSg~~&menu=Tetapan+Pengguna&submenu=Senarai+Zon+MPP","REQUEST_URI":"\/My-MPP\/action.do?do=KHkm2vt-5AH0_nQLSg~~&menu=Tetapan+Pengguna&submenu=Senarai+Zon+MPP","SCRIPT_NAME":"\/My-MPP\/home.php","PHP_SELF":"\/My-MPP\/home.php","REQUEST_TIME_FLOAT":1750216934.836763,"REQUEST_TIME":1750216934}', '2025-06-18 11:22:16.889747');
+INSERT INTO mympp.fw_audittrail VALUES (282, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO application_data(ad_ref_no,ad_file_no,ad_mpp_zone,ad_application_type,ad_application_type_other,ad_detail_application,ad_request_date,ad_total,ad_activitiy_date,ad_activity_type,ad_sdg_type,ad_detail_activity,ad_status_process,ad_insert_by,ad_insert_timestamp) VALUES(:ad_ref_no,:ad_file_no,:ad_mpp_zone,:ad_application_type,:ad_application_type_other,:ad_detail_application,:ad_request_date,:ad_total,:ad_activitiy_date,:ad_activity_type,:ad_sdg_type,:ad_detail_activity,:ad_status_process,:ad_insert_by,:ad_insert_timestamp)","data":{"do":"r0RiHhnZMtQE1ysDfi8m7g~~","func":"process","save":"1","ad_ref_no":"MBSA\/MYMPP\/2025\/00001","ad_file_no":"45454","ad_mpp_zone":"1","ad_application_type":"1","ad_application_type_other":"","ad_detail_application":"test","ad_request_date":"2025-06-18","ad_total":"10000","ad_activitiy_date":"2025-06-18","ad_activity_type":"1","ad_sdg_type":"1","ad_detail_activity":"test","ad_status_process":"3","ad_insert_by":"admin","ad_insert_timestamp":"2025-06-18 11:51:51am"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"1482","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundarye3Hu0A4Q8FaC6e04","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=pg1SszRgQobGyYhxTzpcZJpSg0Y~&menu=Borang+Permohonan&submenu=Permohonan+Baharu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=58u1be3mdkam0n8s876gl13f9q","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/ajax.php","REMOTE_PORT":"65501","REDIRECT_URL":"\/My-MPP\/action.ajax","REDIRECT_QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&save=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&save=1","REQUEST_URI":"\/My-MPP\/action.ajax?do=r0RiHhnZMtQE1ysDfi8m7g~~&func=process&save=1","SCRIPT_NAME":"\/My-MPP\/ajax.php","PHP_SELF":"\/My-MPP\/ajax.php","REQUEST_TIME_FLOAT":1750218709.199048,"REQUEST_TIME":1750218709}', '2025-06-18 11:51:51.278696');
+INSERT INTO mympp.fw_audittrail VALUES (283, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"UPDATE fw_submenu SET sm_gen_code=:sm_gen_code,sm_gen_by=:sm_gen_by,sm_gen_date=:sm_gen_date WHERE sm_m_id=''7'' AND sm_id=''16''","data":{"sm_gen_code":"{\"m_id\":\"7\",\"sm_id\":\"16\",\"modul\":\"RefDeptList\",\"dbschema\":\"mympp\",\"tabledb\":\"ref_department\",\"order\":{\"rd_id\":\"0\",\"rd_desc\":\"1\",\"rd_ind_status\":\"2\"},\"fields\":[\"rd_id\",\"rd_desc\",\"rd_ind_status\"],\"typeselection\":{\"rd_desc\":\"tf\",\"rd_ind_status\":\"tf\"},\"compulsory\":[\"rd_desc\",\"rd_ind_status\"],\"data_style\":\"dlg\",\"form_style\":\"rt\"}","sm_gen_by":"admin","sm_gen_date":"2025-06-18 12:00:53"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"1620","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryeRDhX64VD3sGreTN","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=J3riOXM_7BeAqsg~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=58u1be3mdkam0n8s876gl13f9q","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/ajax.php","REMOTE_PORT":"49187","REDIRECT_URL":"\/My-MPP\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=generate&m_id=7&sm_id=16&save=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=generate&m_id=7&sm_id=16&save=1","REQUEST_URI":"\/My-MPP\/action.ajax?do=qENfFx7P&func=generate&m_id=7&sm_id=16&save=1","SCRIPT_NAME":"\/My-MPP\/ajax.php","PHP_SELF":"\/My-MPP\/ajax.php","REQUEST_TIME_FLOAT":1750219253.922539,"REQUEST_TIME":1750219253}', '2025-06-18 12:00:55.987537');
+INSERT INTO mympp.fw_audittrail VALUES (284, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Senarai Senarai Jabatan'',''Senarai Senarai Jabatan'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=J3riOXM_7BeAqsg~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=58u1be3mdkam0n8s876gl13f9q","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/home.php","REMOTE_PORT":"49187","REDIRECT_URL":"\/My-MPP\/action.do","REDIRECT_QUERY_STRING":"do=L7rdG3vS2T_iz_dGIg~~&menu=Tetapan+Pengguna&submenu=Senarai+Jabatan","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=L7rdG3vS2T_iz_dGIg~~&menu=Tetapan+Pengguna&submenu=Senarai+Jabatan","REQUEST_URI":"\/My-MPP\/action.do?do=L7rdG3vS2T_iz_dGIg~~&menu=Tetapan+Pengguna&submenu=Senarai+Jabatan","SCRIPT_NAME":"\/My-MPP\/home.php","PHP_SELF":"\/My-MPP\/home.php","REQUEST_TIME_FLOAT":1750219261.906581,"REQUEST_TIME":1750219261}', '2025-06-18 12:01:04.028444');
+INSERT INTO mympp.fw_audittrail VALUES (285, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Ind Status'',''Ind Status'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=J3riOXM_7BeAqsg~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=58u1be3mdkam0n8s876gl13f9q","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/home.php","REMOTE_PORT":"49187","REDIRECT_URL":"\/My-MPP\/action.do","REDIRECT_QUERY_STRING":"do=L7rdG3vS2T_iz_dGIg~~&menu=Tetapan+Pengguna&submenu=Senarai+Jabatan","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=L7rdG3vS2T_iz_dGIg~~&menu=Tetapan+Pengguna&submenu=Senarai+Jabatan","REQUEST_URI":"\/My-MPP\/action.do?do=L7rdG3vS2T_iz_dGIg~~&menu=Tetapan+Pengguna&submenu=Senarai+Jabatan","SCRIPT_NAME":"\/My-MPP\/home.php","PHP_SELF":"\/My-MPP\/home.php","REQUEST_TIME_FLOAT":1750219261.906581,"REQUEST_TIME":1750219261}', '2025-06-18 12:01:04.033415');
+INSERT INTO mympp.fw_audittrail VALUES (286, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Function Framework'',''Function Framework'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=WUivyMyBxel_s_V0tYBZOBPf3YI~&menu=Borang+Permohonan&submenu=Senarai+Permohonan","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=58u1be3mdkam0n8s876gl13f9q","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/home.php","REMOTE_PORT":"49506","REDIRECT_URL":"\/My-MPP\/action.do","REDIRECT_QUERY_STRING":"do=vegWARxLjtONXR8~&menu=Superadmin&submenu=Fw%20Function","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=vegWARxLjtONXR8~&menu=Superadmin&submenu=Fw%20Function","REQUEST_URI":"\/My-MPP\/action.do?do=vegWARxLjtONXR8~&menu=Superadmin&submenu=Fw%20Function","SCRIPT_NAME":"\/My-MPP\/home.php","PHP_SELF":"\/My-MPP\/home.php","REQUEST_TIME_FLOAT":1750222047.095733,"REQUEST_TIME":1750222047}', '2025-06-18 12:47:29.192274');
 
 
 --
--- TOC entry 3525 (class 0 OID 16862)
+-- TOC entry 3557 (class 0 OID 16862)
 -- Dependencies: 253
 -- Data for Name: fw_lang; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
@@ -1241,10 +1383,24 @@ INSERT INTO mympp.fw_lang VALUES (110, 'MAKLUMAT PERMOHONAN', 'MAKLUMAT PERMOHON
 INSERT INTO mympp.fw_lang VALUES (111, 'MAKLUMAT AKTIVITI', 'MAKLUMAT AKTIVITI', NULL, '2025-06-03 17:07:36.536374', NULL);
 INSERT INTO mympp.fw_lang VALUES (112, 'Close', 'Close', NULL, '2025-06-04 08:08:06.894236', NULL);
 INSERT INTO mympp.fw_lang VALUES (113, 'Borang Permohonan Program Aktiviti', 'Borang Permohonan Program Aktiviti', NULL, '2025-06-05 12:07:04.811708', NULL);
+INSERT INTO mympp.fw_lang VALUES (114, 'Gambar Aktiviti 1 : ', 'Gambar Aktiviti 1 : ', NULL, '2025-06-17 08:51:07.098506', NULL);
+INSERT INTO mympp.fw_lang VALUES (115, 'Gambar Aktiviti 2 : ', 'Gambar Aktiviti 2 : ', NULL, '2025-06-17 08:51:07.106398', NULL);
+INSERT INTO mympp.fw_lang VALUES (116, 'Gambar Aktiviti 3 : ', 'Gambar Aktiviti 3 : ', NULL, '2025-06-17 08:51:07.107314', NULL);
+INSERT INTO mympp.fw_lang VALUES (117, 'Gambar Aktiviti 4 : ', 'Gambar Aktiviti 4 : ', NULL, '2025-06-17 08:51:07.107894', NULL);
+INSERT INTO mympp.fw_lang VALUES (118, 'Tetapan Pengguna', 'Tetapan Pengguna', NULL, '2025-06-17 09:15:45.896276', NULL);
+INSERT INTO mympp.fw_lang VALUES (119, 'Lain-Lain :', 'Lain-Lain :', NULL, '2025-06-17 12:06:38.227688', NULL);
+INSERT INTO mympp.fw_lang VALUES (120, 'Tetapan Sistem', 'Tetapan Sistem', NULL, '2025-06-17 14:54:29.183854', NULL);
+INSERT INTO mympp.fw_lang VALUES (121, 'Senarai Jabatan', 'Senarai Jabatan', NULL, '2025-06-17 14:55:53.23918', NULL);
+INSERT INTO mympp.fw_lang VALUES (122, 'Senarai Zon MPP', 'Senarai Zon MPP', NULL, '2025-06-17 14:55:53.240511', NULL);
+INSERT INTO mympp.fw_lang VALUES (123, ' Peranan Pengguna', ' Peranan Pengguna', NULL, '2025-06-18 11:22:13.635701', NULL);
+INSERT INTO mympp.fw_lang VALUES (124, 'Senarai Senarai Zon MPP', 'Senarai Senarai Zon MPP', NULL, '2025-06-18 11:22:16.889074', NULL);
+INSERT INTO mympp.fw_lang VALUES (125, 'Senarai Senarai Jabatan', 'Senarai Senarai Jabatan', NULL, '2025-06-18 12:01:04.010976', NULL);
+INSERT INTO mympp.fw_lang VALUES (126, 'Ind Status', 'Ind Status', NULL, '2025-06-18 12:01:04.033179', NULL);
+INSERT INTO mympp.fw_lang VALUES (127, 'Function Framework', 'Function Framework', NULL, '2025-06-18 12:47:29.1907', NULL);
 
 
 --
--- TOC entry 3527 (class 0 OID 16872)
+-- TOC entry 3559 (class 0 OID 16872)
 -- Dependencies: 255
 -- Data for Name: fw_menu; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
@@ -1253,32 +1409,35 @@ INSERT INTO mympp.fw_menu VALUES (3, 'Borang Permohonan', 'Y', '#', 'fa fa-file-
 INSERT INTO mympp.fw_menu VALUES (4, 'Penilaian', 'Y', '#', 'fa fa-star-half-o bg-yellow', 3, 'A', NULL, NULL, '2025-05-29 08:55:53.332419');
 INSERT INTO mympp.fw_menu VALUES (5, 'Laporan', 'Y', '#', 'fa fa-file-pdf-o bg-green', 4, 'A', NULL, NULL, '2025-05-29 09:01:19.308863');
 INSERT INTO mympp.fw_menu VALUES (6, 'Pengguna', 'Y', '#', 'fa fa-user bg-grey', 5, 'A', NULL, NULL, '2025-05-29 09:02:34.028669');
-INSERT INTO mympp.fw_menu VALUES (2, 'Tetapan', 'Y', '#', 'fa fa-cogs bg-red', 6, 'A', NULL, NULL, '2025-05-29 07:54:44.752461');
+INSERT INTO mympp.fw_menu VALUES (7, 'Tetapan Pengguna', 'Y', '#', 'fa fa-users bg-blue', 7, 'A', NULL, NULL, '2025-06-17 09:14:52.08433');
+INSERT INTO mympp.fw_menu VALUES (2, 'Tetapan Sistem', 'Y', '#', 'fa fa-cogs bg-red', 6, 'A', NULL, NULL, '2025-05-29 07:54:44.752461');
 
 
 --
--- TOC entry 3529 (class 0 OID 16883)
+-- TOC entry 3561 (class 0 OID 16883)
 -- Dependencies: 257
 -- Data for Name: fw_submenu; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
 
 INSERT INTO mympp.fw_submenu VALUES (1, 1, 'Terjemahan', 'm/m.fw_lang', 'fa fa-language text-theme m-l-5', 1, 'A', NULL, NULL, '2025-05-29 07:51:27.28741');
-INSERT INTO mympp.fw_submenu VALUES (13, 2, 'Peranan Pengguna', 'm/m.ref_role', '', 13, 'A', '{"m_id":"2","sm_id":"13","modul":"RefRole","dbschema":"mympp","tabledb":"ref_role","order":{"rr_id":"0","rr_acronym":"1","rr_description":"2","rr_status_ind":"3"},"fields":["rr_id","rr_acronym","rr_description","rr_status_ind"],"typeselection":{"rr_acronym":"tf","rr_description":"tf","rr_status_ind":"tf"},"compulsory":["rr_acronym","rr_description","rr_status_ind"],"data_style":"dlg","form_style":"rt"}', 'admin', '2025-05-29 11:17:02');
 INSERT INTO mympp.fw_submenu VALUES (3, 2, 'Jenis Permohonan', 'm/m.application_type', '', 6, 'A', '{"m_id":"2","sm_id":"3","modul":"ApplicationType","dbschema":"mympp","tabledb":"ref_application_type","order":{"rat_id":"0","rat_desc":"1","rat_status_ind":"2"},"fields":["rat_id","rat_desc","rat_status_ind"],"typeselection":{"rat_desc":"tf","rat_status_ind":"tf"},"compulsory":["rat_desc","rat_status_ind"],"data_style":"dlg","form_style":"rt"}', 'admin', '2025-05-29 14:33:56');
+INSERT INTO mympp.fw_submenu VALUES (14, 7, 'Pengguna', 'm/m.user', '', 14, 'A', NULL, NULL, '2025-06-17 14:54:14.102958');
 INSERT INTO mympp.fw_submenu VALUES (8, 3, 'Senarai Permohonan', 'm/m.application_list', '', 8, 'A', '{"m_id":"3","sm_id":"8","modul":"ApplicationList","dbschema":"mympp","tabledb":"application_data","order":{"ad_id":"0","ad_ref_no":"1","ad_mpp_zone":"2","ad_application_type":"3","ad_file_no":"4","ad_detail_application":"5","ad_request_date":"6","ad_total":"7","ad_activitiy_date":"8","ad_activity_type":"9","ad_sdg_type":"10","ad_detail_activity":"11","ad_status_process":"12"},"fields":["ad_id","ad_ref_no","ad_mpp_zone","ad_application_type","ad_file_no","ad_detail_application","ad_request_date","ad_total","ad_activitiy_date","ad_activity_type","ad_sdg_type","ad_detail_activity","ad_status_process"],"typeselection":{"ad_ref_no":"","ad_mpp_zone":"","ad_application_type":"","ad_file_no":"","ad_detail_application":"","ad_request_date":"","ad_total":"","ad_activitiy_date":"","ad_activity_type":"","ad_sdg_type":"","ad_detail_activity":"","ad_status_process":""},"data_style":"dlg","form_style":"rt"}', 'admin', '2025-05-29 16:53:10');
 INSERT INTO mympp.fw_submenu VALUES (7, 3, 'Permohonan Baharu', 'm/m.application_form', '', 7, 'A', '{"m_id":"3","sm_id":"7","modul":"ApplicationClass","dbschema":"mympp","tabledb":"application_data","order":{"ad_id":"0","ad_ref_no":"1","ad_mpp_zone":"2","ad_application_type":"3","ad_file_no":"4","ad_detail_application":"5","ad_request_date":"6","ad_total":"7","ad_activitiy_date":"8","ad_activity_type":"9","ad_sdg_type":"10","ad_detail_activity":"11"},"fields":["ad_id","ad_ref_no","ad_mpp_zone","ad_application_type","ad_file_no","ad_detail_application","ad_request_date","ad_total","ad_activitiy_date","ad_activity_type","ad_sdg_type","ad_detail_activity"],"typeselection":{"ad_ref_no":"tf","ad_mpp_zone":"","ad_application_type":"","ad_file_no":"","ad_detail_application":"ta","ad_request_date":"","ad_total":"","ad_activitiy_date":"","ad_activity_type":"","ad_sdg_type":"","ad_detail_activity":"ta"},"compulsory":["ad_mpp_zone","ad_detail_application","ad_detail_activity"],"data_style":"dl","form_style":"df"}', 'admin', '2025-05-29 15:03:57');
 INSERT INTO mympp.fw_submenu VALUES (5, 2, 'Senarai SDG', 'm/m.sdg_list', '', 3, 'A', '{"m_id":"2","sm_id":"5","modul":"SdgType","dbschema":"mympp","tabledb":"ref_sdg_type","order":{"rst_id":"0","rst_desc":"1","rst_status_ind":"2"},"fields":["rst_id","rst_desc","rst_status_ind"],"typeselection":{"rst_desc":"tf","rst_status_ind":"tf"},"compulsory":["rst_desc","rst_status_ind"],"data_style":"dlg","form_style":"rt"}', 'admin', '2025-06-03 09:10:13');
 INSERT INTO mympp.fw_submenu VALUES (4, 2, 'Senarai Aktiviti', 'm/m.activitiy_list', '', 4, 'A', '{"m_id":"2","sm_id":"4","modul":"ActivitiyType","dbschema":"mympp","tabledb":"ref_activity_type","order":{"ract_id":"0","ract_desc":"1","ract_status_ind":"2"},"fields":["ract_id","ract_desc","ract_status_ind"],"typeselection":{"ract_desc":"tf","ract_status_ind":"tf"},"compulsory":["ract_desc","ract_status_ind"],"data_style":"dlg","form_style":"rt"}', 'admin', '2025-06-03 09:15:50');
 INSERT INTO mympp.fw_submenu VALUES (9, 4, 'Penilaian Program', 'm/p.program_assesment', '', 9, 'A', NULL, NULL, '2025-05-29 08:56:19.098702');
 INSERT INTO mympp.fw_submenu VALUES (10, 4, 'Senarai Penilaian', 'm/p.assesment_list', '', 10, 'A', NULL, NULL, '2025-05-29 08:56:53.214123');
+INSERT INTO mympp.fw_submenu VALUES (15, 7, 'Peranan Pengguna', 'm/m.ref_role', '', 15, 'A', '{"m_id":"7","sm_id":"15","modul":"RefRoleClass","dbschema":"mympp","tabledb":"ref_role","order":{"rr_id":"0","rr_acronym":"1","rr_description":"2","rr_status_ind":"3"},"fields":["rr_id","rr_acronym","rr_description","rr_status_ind"],"typeselection":{"rr_acronym":"tf","rr_description":"tf","rr_status_ind":"tf"},"compulsory":["rr_acronym","rr_description","rr_status_ind"],"data_style":"dlg","form_style":"rt"}', NULL, '2025-06-18 11:21:06');
+INSERT INTO mympp.fw_submenu VALUES (17, 7, 'Senarai Zon MPP', 'm/m.zone_list', '', 17, 'A', '{"m_id":"7","sm_id":"17","modul":"RefZoneList","dbschema":"mympp","tabledb":"ref_zone_list","order":{"rzl_id":"0","rzl_desc":"1","rzl_status_ind":"2"},"fields":["rzl_id","rzl_desc","rzl_status_ind"],"typeselection":{"rzl_desc":"tf","rzl_status_ind":"tf"},"compulsory":["rzl_desc","rzl_status_ind"],"data_style":"dlg","form_style":"rt"}', 'admin', '2025-06-18 11:22:05');
 INSERT INTO mympp.fw_submenu VALUES (6, 2, 'Senarai Negeri', 'm/t.state_list', '', 5, 'A', NULL, NULL, '2025-05-29 08:03:07.077257');
+INSERT INTO mympp.fw_submenu VALUES (16, 7, 'Senarai Jabatan', 'm/m.dept_list', '', 16, 'A', '{"m_id":"7","sm_id":"16","modul":"RefDeptList","dbschema":"mympp","tabledb":"ref_department","order":{"rd_id":"0","rd_desc":"1","rd_ind_status":"2"},"fields":["rd_id","rd_desc","rd_ind_status"],"typeselection":{"rd_desc":"tf","rd_ind_status":"tf"},"compulsory":["rd_desc","rd_ind_status"],"data_style":"dlg","form_style":"rt"}', 'admin', '2025-06-18 12:00:53');
 INSERT INTO mympp.fw_submenu VALUES (11, 5, 'Senarai Laporan', 'm/l.report_list', '', 11, 'A', NULL, NULL, '2025-05-29 09:01:37.49292');
 INSERT INTO mympp.fw_submenu VALUES (12, 6, 'Profil Pengguna', 'm/m.pg_user_profile', '', 12, 'A', NULL, NULL, '2025-05-29 09:03:04.456187');
-INSERT INTO mympp.fw_submenu VALUES (2, 2, 'Senarai Zon', 'm/m.zone_list', '', 2, 'A', '{"m_id":"2","sm_id":"2","modul":"ZoneClass","dbschema":"mympp","tabledb":"ref_zone_list","order":{"rzl_id":"0","rzl_desc":"1","rzl_status_ind":"2"},"fields":["rzl_id","rzl_desc","rzl_status_ind"],"typeselection":{"rzl_desc":"tf","rzl_status_ind":"tf"},"compulsory":["rzl_desc","rzl_status_ind"],"data_style":"dlg","form_style":"rt"}', 'admin', '2025-05-29 11:14:04');
 
 
 --
--- TOC entry 3523 (class 0 OID 16850)
+-- TOC entry 3555 (class 0 OID 16850)
 -- Dependencies: 251
 -- Data for Name: fw_uploads; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
@@ -1286,7 +1445,7 @@ INSERT INTO mympp.fw_submenu VALUES (2, 2, 'Senarai Zon', 'm/m.zone_list', '', 2
 
 
 --
--- TOC entry 3544 (class 0 OID 16983)
+-- TOC entry 3576 (class 0 OID 16983)
 -- Dependencies: 272
 -- Data for Name: ref_activity_type; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
@@ -1295,7 +1454,7 @@ INSERT INTO mympp.ref_activity_type VALUES (1, 'Program Gotong-Royong', 1);
 
 
 --
--- TOC entry 3538 (class 0 OID 16937)
+-- TOC entry 3570 (class 0 OID 16937)
 -- Dependencies: 266
 -- Data for Name: ref_application_type; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
@@ -1308,7 +1467,15 @@ INSERT INTO mympp.ref_application_type VALUES (5, 'test', 2);
 
 
 --
--- TOC entry 3540 (class 0 OID 16959)
+-- TOC entry 3582 (class 0 OID 17475)
+-- Dependencies: 284
+-- Data for Name: ref_department; Type: TABLE DATA; Schema: mympp; Owner: aiman
+--
+
+
+
+--
+-- TOC entry 3572 (class 0 OID 16959)
 -- Dependencies: 268
 -- Data for Name: ref_process; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
@@ -1321,7 +1488,7 @@ INSERT INTO mympp.ref_process VALUES (2, 'Dalam Proses Semakan', 1);
 
 
 --
--- TOC entry 3531 (class 0 OID 16894)
+-- TOC entry 3563 (class 0 OID 16894)
 -- Dependencies: 259
 -- Data for Name: ref_role; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
@@ -1336,7 +1503,7 @@ INSERT INTO mympp.ref_role VALUES (7, 'system admin', 'Pentadbir Sistem', 1);
 
 
 --
--- TOC entry 3545 (class 0 OID 16986)
+-- TOC entry 3577 (class 0 OID 16986)
 -- Dependencies: 273
 -- Data for Name: ref_sdg_type; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
@@ -1345,7 +1512,7 @@ INSERT INTO mympp.ref_sdg_type VALUES (1, 'Tiada Kemiskininan', 1);
 
 
 --
--- TOC entry 3534 (class 0 OID 16908)
+-- TOC entry 3566 (class 0 OID 16908)
 -- Dependencies: 262
 -- Data for Name: ref_status; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
@@ -1355,7 +1522,7 @@ INSERT INTO mympp.ref_status VALUES (2, 2, 'Tidak Aktif');
 
 
 --
--- TOC entry 3536 (class 0 OID 16920)
+-- TOC entry 3568 (class 0 OID 16920)
 -- Dependencies: 264
 -- Data for Name: ref_zone_list; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
@@ -1387,61 +1554,69 @@ INSERT INTO mympp.ref_zone_list VALUES (10, 'MPP Zon 10', 1);
 
 
 --
--- TOC entry 3578 (class 0 OID 0)
+-- TOC entry 3581 (class 0 OID 17468)
+-- Dependencies: 283
+-- Data for Name: user; Type: TABLE DATA; Schema: mympp; Owner: aiman
+--
+
+
+
+--
+-- TOC entry 3616 (class 0 OID 0)
 -- Dependencies: 271
 -- Name: application_data_ad_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
 --
 
-SELECT pg_catalog.setval('mympp.application_data_ad_id_seq', 14, true);
+SELECT pg_catalog.setval('mympp.application_data_ad_id_seq', 17, true);
 
 
 --
--- TOC entry 3579 (class 0 OID 0)
+-- TOC entry 3617 (class 0 OID 0)
 -- Dependencies: 260
 -- Name: fw_akses_fa_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
 --
 
-SELECT pg_catalog.setval('mympp.fw_akses_fa_id_seq', 31, true);
+SELECT pg_catalog.setval('mympp.fw_akses_fa_id_seq', 37, true);
 
 
 --
--- TOC entry 3580 (class 0 OID 0)
+-- TOC entry 3618 (class 0 OID 0)
 -- Dependencies: 248
 -- Name: fw_audittrail_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
 --
 
-SELECT pg_catalog.setval('mympp.fw_audittrail_id_seq', 245, true);
+SELECT pg_catalog.setval('mympp.fw_audittrail_id_seq', 286, true);
 
 
 --
--- TOC entry 3581 (class 0 OID 0)
+-- TOC entry 3619 (class 0 OID 0)
 -- Dependencies: 252
 -- Name: fw_lang_fl_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
 --
 
-SELECT pg_catalog.setval('mympp.fw_lang_fl_id_seq', 113, true);
+SELECT pg_catalog.setval('mympp.fw_lang_fl_id_seq', 127, true);
 
 
 --
--- TOC entry 3582 (class 0 OID 0)
+-- TOC entry 3620 (class 0 OID 0)
 -- Dependencies: 254
 -- Name: fw_menu_m_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
 --
 
-SELECT pg_catalog.setval('mympp.fw_menu_m_id_seq', 6, true);
+SELECT pg_catalog.setval('mympp.fw_menu_m_id_seq', 7, true);
 
 
 --
--- TOC entry 3583 (class 0 OID 0)
+-- TOC entry 3621 (class 0 OID 0)
 -- Dependencies: 256
 -- Name: fw_submenu_sm_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
 --
 
-SELECT pg_catalog.setval('mympp.fw_submenu_sm_id_seq', 13, true);
+SELECT pg_catalog.setval('mympp.fw_submenu_sm_id_seq', 17, true);
 
 
 --
--- TOC entry 3584 (class 0 OID 0)
+-- TOC entry 3622 (class 0 OID 0)
 -- Dependencies: 250
 -- Name: fw_uploads_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
 --
@@ -1450,7 +1625,7 @@ SELECT pg_catalog.setval('mympp.fw_uploads_id_seq', 1, false);
 
 
 --
--- TOC entry 3585 (class 0 OID 0)
+-- TOC entry 3623 (class 0 OID 0)
 -- Dependencies: 274
 -- Name: ref_activity_type_ract_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
 --
@@ -1459,7 +1634,7 @@ SELECT pg_catalog.setval('mympp.ref_activity_type_ract_id_seq', 1, true);
 
 
 --
--- TOC entry 3586 (class 0 OID 0)
+-- TOC entry 3624 (class 0 OID 0)
 -- Dependencies: 267
 -- Name: ref_application_type_rat_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
 --
@@ -1468,7 +1643,16 @@ SELECT pg_catalog.setval('mympp.ref_application_type_rat_id_seq', 5, true);
 
 
 --
--- TOC entry 3587 (class 0 OID 0)
+-- TOC entry 3625 (class 0 OID 0)
+-- Dependencies: 285
+-- Name: ref_department_rd_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
+--
+
+SELECT pg_catalog.setval('mympp.ref_department_rd_id_seq', 1, false);
+
+
+--
+-- TOC entry 3626 (class 0 OID 0)
 -- Dependencies: 269
 -- Name: ref_process_rp_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
 --
@@ -1477,7 +1661,7 @@ SELECT pg_catalog.setval('mympp.ref_process_rp_id_seq', 5, true);
 
 
 --
--- TOC entry 3588 (class 0 OID 0)
+-- TOC entry 3627 (class 0 OID 0)
 -- Dependencies: 258
 -- Name: ref_role_rr_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
 --
@@ -1486,7 +1670,7 @@ SELECT pg_catalog.setval('mympp.ref_role_rr_id_seq', 7, true);
 
 
 --
--- TOC entry 3589 (class 0 OID 0)
+-- TOC entry 3628 (class 0 OID 0)
 -- Dependencies: 275
 -- Name: ref_sdg_type_rst_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
 --
@@ -1495,7 +1679,7 @@ SELECT pg_catalog.setval('mympp.ref_sdg_type_rst_id_seq', 1, true);
 
 
 --
--- TOC entry 3590 (class 0 OID 0)
+-- TOC entry 3629 (class 0 OID 0)
 -- Dependencies: 263
 -- Name: ref_status_rs_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
 --
@@ -1504,7 +1688,7 @@ SELECT pg_catalog.setval('mympp.ref_status_rs_id_seq', 2, true);
 
 
 --
--- TOC entry 3591 (class 0 OID 0)
+-- TOC entry 3630 (class 0 OID 0)
 -- Dependencies: 265
 -- Name: ref_zone_list_rzl_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
 --
@@ -1513,7 +1697,16 @@ SELECT pg_catalog.setval('mympp.ref_zone_list_rzl_id_seq', 24, true);
 
 
 --
--- TOC entry 3366 (class 2606 OID 16979)
+-- TOC entry 3397 (class 2606 OID 17461)
+-- Name: application_attachment application_attachment_pk; Type: CONSTRAINT; Schema: mympp; Owner: aiman
+--
+
+ALTER TABLE ONLY mympp.application_attachment
+    ADD CONSTRAINT application_attachment_pk PRIMARY KEY (appattach_id);
+
+
+--
+-- TOC entry 3391 (class 2606 OID 16979)
 -- Name: application_data application_data_pk; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1522,7 +1715,7 @@ ALTER TABLE ONLY mympp.application_data
 
 
 --
--- TOC entry 3356 (class 2606 OID 16907)
+-- TOC entry 3381 (class 2606 OID 16907)
 -- Name: fw_akses fw_akses_pkey; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1531,7 +1724,7 @@ ALTER TABLE ONLY mympp.fw_akses
 
 
 --
--- TOC entry 3342 (class 2606 OID 16848)
+-- TOC entry 3367 (class 2606 OID 16848)
 -- Name: fw_audittrail fw_audittrail_pkey; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1540,7 +1733,7 @@ ALTER TABLE ONLY mympp.fw_audittrail
 
 
 --
--- TOC entry 3348 (class 2606 OID 16870)
+-- TOC entry 3373 (class 2606 OID 16870)
 -- Name: fw_lang fw_lang_pkey; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1549,7 +1742,7 @@ ALTER TABLE ONLY mympp.fw_lang
 
 
 --
--- TOC entry 3350 (class 2606 OID 16881)
+-- TOC entry 3375 (class 2606 OID 16881)
 -- Name: fw_menu fw_menu_pkey; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1558,7 +1751,7 @@ ALTER TABLE ONLY mympp.fw_menu
 
 
 --
--- TOC entry 3352 (class 2606 OID 16892)
+-- TOC entry 3377 (class 2606 OID 16892)
 -- Name: fw_submenu fw_submenu_pkey; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1567,7 +1760,7 @@ ALTER TABLE ONLY mympp.fw_submenu
 
 
 --
--- TOC entry 3344 (class 2606 OID 16860)
+-- TOC entry 3369 (class 2606 OID 16860)
 -- Name: fw_uploads fw_uploads_link_key; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1576,7 +1769,7 @@ ALTER TABLE ONLY mympp.fw_uploads
 
 
 --
--- TOC entry 3346 (class 2606 OID 16858)
+-- TOC entry 3371 (class 2606 OID 16858)
 -- Name: fw_uploads fw_uploads_pkey; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1585,7 +1778,7 @@ ALTER TABLE ONLY mympp.fw_uploads
 
 
 --
--- TOC entry 3368 (class 2606 OID 16995)
+-- TOC entry 3393 (class 2606 OID 16995)
 -- Name: ref_activity_type ref_activity_type_pk; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1594,7 +1787,7 @@ ALTER TABLE ONLY mympp.ref_activity_type
 
 
 --
--- TOC entry 3362 (class 2606 OID 16948)
+-- TOC entry 3387 (class 2606 OID 16948)
 -- Name: ref_application_type ref_application_type_pk; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1603,7 +1796,16 @@ ALTER TABLE ONLY mympp.ref_application_type
 
 
 --
--- TOC entry 3364 (class 2606 OID 16968)
+-- TOC entry 3401 (class 2606 OID 17484)
+-- Name: ref_department ref_department_pk; Type: CONSTRAINT; Schema: mympp; Owner: aiman
+--
+
+ALTER TABLE ONLY mympp.ref_department
+    ADD CONSTRAINT ref_department_pk PRIMARY KEY (rd_id);
+
+
+--
+-- TOC entry 3389 (class 2606 OID 16968)
 -- Name: ref_process ref_process_pk; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1612,7 +1814,7 @@ ALTER TABLE ONLY mympp.ref_process
 
 
 --
--- TOC entry 3354 (class 2606 OID 16899)
+-- TOC entry 3379 (class 2606 OID 16899)
 -- Name: ref_role ref_role_pkey; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1621,7 +1823,7 @@ ALTER TABLE ONLY mympp.ref_role
 
 
 --
--- TOC entry 3370 (class 2606 OID 17002)
+-- TOC entry 3395 (class 2606 OID 17002)
 -- Name: ref_sdg_type ref_sdg_type_pk; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1630,7 +1832,7 @@ ALTER TABLE ONLY mympp.ref_sdg_type
 
 
 --
--- TOC entry 3358 (class 2606 OID 16919)
+-- TOC entry 3383 (class 2606 OID 16919)
 -- Name: ref_status ref_status_pk; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1639,7 +1841,7 @@ ALTER TABLE ONLY mympp.ref_status
 
 
 --
--- TOC entry 3360 (class 2606 OID 16929)
+-- TOC entry 3385 (class 2606 OID 16929)
 -- Name: ref_zone_list ref_zone_list_pk; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1648,7 +1850,16 @@ ALTER TABLE ONLY mympp.ref_zone_list
 
 
 --
--- TOC entry 3374 (class 2606 OID 17184)
+-- TOC entry 3399 (class 2606 OID 17474)
+-- Name: user user_pk; Type: CONSTRAINT; Schema: mympp; Owner: aiman
+--
+
+ALTER TABLE ONLY mympp."user"
+    ADD CONSTRAINT user_pk PRIMARY KEY (u_id);
+
+
+--
+-- TOC entry 3405 (class 2606 OID 17184)
 -- Name: application_data application_data_ref_activity_type_fk; Type: FK CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1657,7 +1868,7 @@ ALTER TABLE ONLY mympp.application_data
 
 
 --
--- TOC entry 3375 (class 2606 OID 17125)
+-- TOC entry 3406 (class 2606 OID 17125)
 -- Name: application_data application_data_ref_application_type_fk; Type: FK CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1666,7 +1877,7 @@ ALTER TABLE ONLY mympp.application_data
 
 
 --
--- TOC entry 3376 (class 2606 OID 17191)
+-- TOC entry 3407 (class 2606 OID 17191)
 -- Name: application_data application_data_ref_process_fk; Type: FK CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1675,7 +1886,7 @@ ALTER TABLE ONLY mympp.application_data
 
 
 --
--- TOC entry 3377 (class 2606 OID 17179)
+-- TOC entry 3408 (class 2606 OID 17179)
 -- Name: application_data application_data_ref_sdg_type_fk; Type: FK CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1684,7 +1895,7 @@ ALTER TABLE ONLY mympp.application_data
 
 
 --
--- TOC entry 3378 (class 2606 OID 17107)
+-- TOC entry 3409 (class 2606 OID 17107)
 -- Name: application_data application_data_ref_zone_list_fk; Type: FK CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1693,7 +1904,7 @@ ALTER TABLE ONLY mympp.application_data
 
 
 --
--- TOC entry 3379 (class 2606 OID 17095)
+-- TOC entry 3410 (class 2606 OID 17095)
 -- Name: ref_activity_type ref_activity_type_ref_status_fk; Type: FK CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1702,7 +1913,7 @@ ALTER TABLE ONLY mympp.ref_activity_type
 
 
 --
--- TOC entry 3373 (class 2606 OID 16949)
+-- TOC entry 3404 (class 2606 OID 16949)
 -- Name: ref_application_type ref_application_type_ref_status_fk; Type: FK CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1711,7 +1922,16 @@ ALTER TABLE ONLY mympp.ref_application_type
 
 
 --
--- TOC entry 3371 (class 2606 OID 16954)
+-- TOC entry 3412 (class 2606 OID 17487)
+-- Name: ref_department ref_department_ref_status_fk; Type: FK CONSTRAINT; Schema: mympp; Owner: aiman
+--
+
+ALTER TABLE ONLY mympp.ref_department
+    ADD CONSTRAINT ref_department_ref_status_fk FOREIGN KEY (rd_ind_status) REFERENCES mympp.ref_status(rs_id);
+
+
+--
+-- TOC entry 3402 (class 2606 OID 16954)
 -- Name: ref_role ref_role_ref_status_fk; Type: FK CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1720,7 +1940,7 @@ ALTER TABLE ONLY mympp.ref_role
 
 
 --
--- TOC entry 3380 (class 2606 OID 17102)
+-- TOC entry 3411 (class 2606 OID 17102)
 -- Name: ref_sdg_type ref_sdg_type_ref_status_fk; Type: FK CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1729,7 +1949,7 @@ ALTER TABLE ONLY mympp.ref_sdg_type
 
 
 --
--- TOC entry 3372 (class 2606 OID 16932)
+-- TOC entry 3403 (class 2606 OID 16932)
 -- Name: ref_zone_list ref_zone_list_ref_status_fk; Type: FK CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1737,7 +1957,7 @@ ALTER TABLE ONLY mympp.ref_zone_list
     ADD CONSTRAINT ref_zone_list_ref_status_fk FOREIGN KEY (rzl_status_ind) REFERENCES mympp.ref_status(rs_id);
 
 
--- Completed on 2025-06-12 17:11:44
+-- Completed on 2025-06-18 17:36:20
 
 --
 -- PostgreSQL database dump complete
