@@ -5,7 +5,7 @@
 -- Dumped from database version 14.2
 -- Dumped by pg_dump version 17.0
 
--- Started on 2025-06-20 17:32:13
+-- Started on 2025-06-23 17:18:00
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -63,7 +63,7 @@ CREATE SEQUENCE gp_db.applcation_ref_status_ars_id_seq
 ALTER SEQUENCE gp_db.applcation_ref_status_ars_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3600 (class 0 OID 0)
+-- TOC entry 3601 (class 0 OID 0)
 -- Dependencies: 243
 -- Name: applcation_ref_status_ars_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -116,7 +116,7 @@ CREATE SEQUENCE gp_db.application_attachment_attachment_id_seq
 ALTER SEQUENCE gp_db.application_attachment_attachment_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3601 (class 0 OID 0)
+-- TOC entry 3602 (class 0 OID 0)
 -- Dependencies: 281
 -- Name: application_attachment_attachment_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -157,7 +157,7 @@ CREATE TABLE gp_db.application_info (
 ALTER TABLE gp_db.application_info OWNER TO aiman;
 
 --
--- TOC entry 3602 (class 0 OID 0)
+-- TOC entry 3603 (class 0 OID 0)
 -- Dependencies: 240
 -- Name: COLUMN application_info.appinfo_jenis_permohonan; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
@@ -166,7 +166,7 @@ COMMENT ON COLUMN gp_db.application_info.appinfo_jenis_permohonan IS 'Refer tabl
 
 
 --
--- TOC entry 3603 (class 0 OID 0)
+-- TOC entry 3604 (class 0 OID 0)
 -- Dependencies: 240
 -- Name: COLUMN application_info.appinfo_status_permohonan; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
@@ -190,7 +190,7 @@ CREATE SEQUENCE gp_db.application_info_appinfo_id_seq
 ALTER SEQUENCE gp_db.application_info_appinfo_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3604 (class 0 OID 0)
+-- TOC entry 3605 (class 0 OID 0)
 -- Dependencies: 241
 -- Name: application_info_appinfo_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -228,7 +228,7 @@ CREATE SEQUENCE gp_db.application_ref_type_art_id_seq
 ALTER SEQUENCE gp_db.application_ref_type_art_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3605 (class 0 OID 0)
+-- TOC entry 3606 (class 0 OID 0)
 -- Dependencies: 277
 -- Name: application_ref_type_art_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -269,7 +269,7 @@ CREATE SEQUENCE gp_db.fw_akses_fa_id_seq
 ALTER SEQUENCE gp_db.fw_akses_fa_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3606 (class 0 OID 0)
+-- TOC entry 3607 (class 0 OID 0)
 -- Dependencies: 237
 -- Name: fw_akses_fa_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -309,7 +309,7 @@ CREATE SEQUENCE gp_db.fw_audittrail_id_seq
 ALTER SEQUENCE gp_db.fw_audittrail_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3607 (class 0 OID 0)
+-- TOC entry 3608 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: fw_audittrail_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -350,7 +350,7 @@ CREATE SEQUENCE gp_db.fw_lang_fl_id_seq
 ALTER SEQUENCE gp_db.fw_lang_fl_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3608 (class 0 OID 0)
+-- TOC entry 3609 (class 0 OID 0)
 -- Dependencies: 229
 -- Name: fw_lang_fl_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -395,7 +395,7 @@ CREATE SEQUENCE gp_db.fw_menu_m_id_seq
 ALTER SEQUENCE gp_db.fw_menu_m_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3609 (class 0 OID 0)
+-- TOC entry 3610 (class 0 OID 0)
 -- Dependencies: 231
 -- Name: fw_menu_m_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -440,7 +440,7 @@ CREATE SEQUENCE gp_db.fw_submenu_sm_id_seq
 ALTER SEQUENCE gp_db.fw_submenu_sm_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3610 (class 0 OID 0)
+-- TOC entry 3611 (class 0 OID 0)
 -- Dependencies: 233
 -- Name: fw_submenu_sm_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -484,7 +484,7 @@ CREATE SEQUENCE gp_db.fw_uploads_id_seq
 ALTER SEQUENCE gp_db.fw_uploads_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3611 (class 0 OID 0)
+-- TOC entry 3612 (class 0 OID 0)
 -- Dependencies: 227
 -- Name: fw_uploads_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -524,7 +524,7 @@ CREATE SEQUENCE gp_db.ref_applicaton_status_ras_id_seq
 ALTER SEQUENCE gp_db.ref_applicaton_status_ras_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3612 (class 0 OID 0)
+-- TOC entry 3613 (class 0 OID 0)
 -- Dependencies: 279
 -- Name: ref_applicaton_status_ras_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -533,7 +533,7 @@ ALTER SEQUENCE gp_db.ref_applicaton_status_ras_id_seq OWNED BY gp_db.ref_applica
 
 
 --
--- TOC entry 288 (class 1259 OID 17511)
+-- TOC entry 287 (class 1259 OID 17511)
 -- Name: ref_branch; Type: TABLE; Schema: gp_db; Owner: aiman
 --
 
@@ -549,7 +549,7 @@ CREATE TABLE gp_db.ref_branch (
 ALTER TABLE gp_db.ref_branch OWNER TO aiman;
 
 --
--- TOC entry 289 (class 1259 OID 17514)
+-- TOC entry 288 (class 1259 OID 17514)
 -- Name: ref_branch_rb_id_seq; Type: SEQUENCE; Schema: gp_db; Owner: aiman
 --
 
@@ -564,8 +564,8 @@ CREATE SEQUENCE gp_db.ref_branch_rb_id_seq
 ALTER SEQUENCE gp_db.ref_branch_rb_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3613 (class 0 OID 0)
--- Dependencies: 289
+-- TOC entry 3614 (class 0 OID 0)
+-- Dependencies: 288
 -- Name: ref_branch_rb_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
 
@@ -573,7 +573,7 @@ ALTER SEQUENCE gp_db.ref_branch_rb_id_seq OWNED BY gp_db.ref_branch.rb_id;
 
 
 --
--- TOC entry 286 (class 1259 OID 17499)
+-- TOC entry 285 (class 1259 OID 17499)
 -- Name: ref_dept; Type: TABLE; Schema: gp_db; Owner: aiman
 --
 
@@ -589,8 +589,8 @@ CREATE TABLE gp_db.ref_dept (
 ALTER TABLE gp_db.ref_dept OWNER TO aiman;
 
 --
--- TOC entry 3614 (class 0 OID 0)
--- Dependencies: 286
+-- TOC entry 3615 (class 0 OID 0)
+-- Dependencies: 285
 -- Name: COLUMN ref_dept.rd_status_ind; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
 
@@ -598,7 +598,7 @@ COMMENT ON COLUMN gp_db.ref_dept.rd_status_ind IS 'Refer Table Ref_status';
 
 
 --
--- TOC entry 287 (class 1259 OID 17502)
+-- TOC entry 286 (class 1259 OID 17502)
 -- Name: ref_dept_rd_id_seq; Type: SEQUENCE; Schema: gp_db; Owner: aiman
 --
 
@@ -613,8 +613,8 @@ CREATE SEQUENCE gp_db.ref_dept_rd_id_seq
 ALTER SEQUENCE gp_db.ref_dept_rd_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3615 (class 0 OID 0)
--- Dependencies: 287
+-- TOC entry 3616 (class 0 OID 0)
+-- Dependencies: 286
 -- Name: ref_dept_rd_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
 
@@ -654,7 +654,7 @@ CREATE SEQUENCE gp_db.ref_role_rr_id_seq
 ALTER SEQUENCE gp_db.ref_role_rr_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3616 (class 0 OID 0)
+-- TOC entry 3617 (class 0 OID 0)
 -- Dependencies: 235
 -- Name: ref_role_rr_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -663,7 +663,7 @@ ALTER SEQUENCE gp_db.ref_role_rr_id_seq OWNED BY gp_db.ref_role.rr_id;
 
 
 --
--- TOC entry 290 (class 1259 OID 17523)
+-- TOC entry 289 (class 1259 OID 17523)
 -- Name: ref_states; Type: TABLE; Schema: gp_db; Owner: aiman
 --
 
@@ -679,7 +679,7 @@ CREATE TABLE gp_db.ref_states (
 ALTER TABLE gp_db.ref_states OWNER TO aiman;
 
 --
--- TOC entry 291 (class 1259 OID 17526)
+-- TOC entry 290 (class 1259 OID 17526)
 -- Name: ref_states_rstates_id_seq; Type: SEQUENCE; Schema: gp_db; Owner: aiman
 --
 
@@ -694,8 +694,8 @@ CREATE SEQUENCE gp_db.ref_states_rstates_id_seq
 ALTER SEQUENCE gp_db.ref_states_rstates_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3617 (class 0 OID 0)
--- Dependencies: 291
+-- TOC entry 3618 (class 0 OID 0)
+-- Dependencies: 290
 -- Name: ref_states_rstates_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
 
@@ -734,7 +734,7 @@ CREATE SEQUENCE gp_db.ref_user_type_rut_id_seq
 ALTER SEQUENCE gp_db.ref_user_type_rut_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3618 (class 0 OID 0)
+-- TOC entry 3619 (class 0 OID 0)
 -- Dependencies: 247
 -- Name: ref_user_type_rut_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -776,7 +776,7 @@ CREATE TABLE gp_db.users (
 ALTER TABLE gp_db.users OWNER TO aiman;
 
 --
--- TOC entry 3619 (class 0 OID 0)
+-- TOC entry 3620 (class 0 OID 0)
 -- Dependencies: 244
 -- Name: COLUMN users.u_dept; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
@@ -785,7 +785,7 @@ COMMENT ON COLUMN gp_db.users.u_dept IS 'Refer Table ref_dept';
 
 
 --
--- TOC entry 3620 (class 0 OID 0)
+-- TOC entry 3621 (class 0 OID 0)
 -- Dependencies: 244
 -- Name: COLUMN users.u_ref_role; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
@@ -794,7 +794,7 @@ COMMENT ON COLUMN gp_db.users.u_ref_role IS 'Refer Table ref_role';
 
 
 --
--- TOC entry 3621 (class 0 OID 0)
+-- TOC entry 3622 (class 0 OID 0)
 -- Dependencies: 244
 -- Name: COLUMN users.u_user_type; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
@@ -803,7 +803,7 @@ COMMENT ON COLUMN gp_db.users.u_user_type IS 'Refer Table ref_user_type';
 
 
 --
--- TOC entry 3622 (class 0 OID 0)
+-- TOC entry 3623 (class 0 OID 0)
 -- Dependencies: 244
 -- Name: COLUMN users.u_office_branch; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
@@ -812,7 +812,7 @@ COMMENT ON COLUMN gp_db.users.u_office_branch IS 'Refer Table ref_branch';
 
 
 --
--- TOC entry 3623 (class 0 OID 0)
+-- TOC entry 3624 (class 0 OID 0)
 -- Dependencies: 244
 -- Name: COLUMN users.u_status_ind; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
@@ -836,7 +836,7 @@ CREATE SEQUENCE gp_db.users_u_id_seq
 ALTER SEQUENCE gp_db.users_u_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3624 (class 0 OID 0)
+-- TOC entry 3625 (class 0 OID 0)
 -- Dependencies: 245
 -- Name: users_u_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -845,7 +845,7 @@ ALTER SEQUENCE gp_db.users_u_id_seq OWNED BY gp_db.users.u_id;
 
 
 --
--- TOC entry 3365 (class 2604 OID 17430)
+-- TOC entry 3366 (class 2604 OID 17430)
 -- Name: application_attachment attachment_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -853,7 +853,7 @@ ALTER TABLE ONLY gp_db.application_attachment ALTER COLUMN attachment_id SET DEF
 
 
 --
--- TOC entry 3360 (class 2604 OID 17398)
+-- TOC entry 3361 (class 2604 OID 17398)
 -- Name: application_info appinfo_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -861,7 +861,7 @@ ALTER TABLE ONLY gp_db.application_info ALTER COLUMN appinfo_id SET DEFAULT next
 
 
 --
--- TOC entry 3357 (class 2604 OID 17399)
+-- TOC entry 3358 (class 2604 OID 17399)
 -- Name: fw_akses fa_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -869,7 +869,7 @@ ALTER TABLE ONLY gp_db.fw_akses ALTER COLUMN fa_id SET DEFAULT nextval('gp_db.fw
 
 
 --
--- TOC entry 3344 (class 2604 OID 17400)
+-- TOC entry 3345 (class 2604 OID 17400)
 -- Name: fw_audittrail id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -877,7 +877,7 @@ ALTER TABLE ONLY gp_db.fw_audittrail ALTER COLUMN id SET DEFAULT nextval('gp_db.
 
 
 --
--- TOC entry 3348 (class 2604 OID 17401)
+-- TOC entry 3349 (class 2604 OID 17401)
 -- Name: fw_lang fl_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -885,7 +885,7 @@ ALTER TABLE ONLY gp_db.fw_lang ALTER COLUMN fl_id SET DEFAULT nextval('gp_db.fw_
 
 
 --
--- TOC entry 3350 (class 2604 OID 17402)
+-- TOC entry 3351 (class 2604 OID 17402)
 -- Name: fw_menu m_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -893,7 +893,7 @@ ALTER TABLE ONLY gp_db.fw_menu ALTER COLUMN m_id SET DEFAULT nextval('gp_db.fw_m
 
 
 --
--- TOC entry 3353 (class 2604 OID 17403)
+-- TOC entry 3354 (class 2604 OID 17403)
 -- Name: fw_submenu sm_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -901,7 +901,7 @@ ALTER TABLE ONLY gp_db.fw_submenu ALTER COLUMN sm_id SET DEFAULT nextval('gp_db.
 
 
 --
--- TOC entry 3346 (class 2604 OID 17404)
+-- TOC entry 3347 (class 2604 OID 17404)
 -- Name: fw_uploads id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -909,7 +909,7 @@ ALTER TABLE ONLY gp_db.fw_uploads ALTER COLUMN id SET DEFAULT nextval('gp_db.fw_
 
 
 --
--- TOC entry 3359 (class 2604 OID 17405)
+-- TOC entry 3360 (class 2604 OID 17405)
 -- Name: ref_application_type rat_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -917,7 +917,7 @@ ALTER TABLE ONLY gp_db.ref_application_type ALTER COLUMN rat_id SET DEFAULT next
 
 
 --
--- TOC entry 3364 (class 2604 OID 17406)
+-- TOC entry 3365 (class 2604 OID 17406)
 -- Name: ref_applicaton_status ras_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -925,7 +925,7 @@ ALTER TABLE ONLY gp_db.ref_applicaton_status ALTER COLUMN ras_id SET DEFAULT nex
 
 
 --
--- TOC entry 3367 (class 2604 OID 17515)
+-- TOC entry 3368 (class 2604 OID 17515)
 -- Name: ref_branch rb_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -933,7 +933,7 @@ ALTER TABLE ONLY gp_db.ref_branch ALTER COLUMN rb_id SET DEFAULT nextval('gp_db.
 
 
 --
--- TOC entry 3366 (class 2604 OID 17503)
+-- TOC entry 3367 (class 2604 OID 17503)
 -- Name: ref_dept rd_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -941,7 +941,7 @@ ALTER TABLE ONLY gp_db.ref_dept ALTER COLUMN rd_id SET DEFAULT nextval('gp_db.re
 
 
 --
--- TOC entry 3356 (class 2604 OID 17407)
+-- TOC entry 3357 (class 2604 OID 17407)
 -- Name: ref_role rr_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -949,7 +949,7 @@ ALTER TABLE ONLY gp_db.ref_role ALTER COLUMN rr_id SET DEFAULT nextval('gp_db.re
 
 
 --
--- TOC entry 3368 (class 2604 OID 17527)
+-- TOC entry 3369 (class 2604 OID 17527)
 -- Name: ref_states rstates_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -957,7 +957,7 @@ ALTER TABLE ONLY gp_db.ref_states ALTER COLUMN rstates_id SET DEFAULT nextval('g
 
 
 --
--- TOC entry 3361 (class 2604 OID 17408)
+-- TOC entry 3362 (class 2604 OID 17408)
 -- Name: ref_status rs_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -965,7 +965,7 @@ ALTER TABLE ONLY gp_db.ref_status ALTER COLUMN rs_id SET DEFAULT nextval('gp_db.
 
 
 --
--- TOC entry 3363 (class 2604 OID 17409)
+-- TOC entry 3364 (class 2604 OID 17409)
 -- Name: ref_user_type rut_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -973,7 +973,7 @@ ALTER TABLE ONLY gp_db.ref_user_type ALTER COLUMN rut_id SET DEFAULT nextval('gp
 
 
 --
--- TOC entry 3362 (class 2604 OID 17410)
+-- TOC entry 3363 (class 2604 OID 17410)
 -- Name: users u_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -981,7 +981,7 @@ ALTER TABLE ONLY gp_db.users ALTER COLUMN u_id SET DEFAULT nextval('gp_db.users_
 
 
 --
--- TOC entry 3588 (class 0 OID 17462)
+-- TOC entry 3589 (class 0 OID 17462)
 -- Dependencies: 282
 -- Data for Name: application_approval_info; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -989,7 +989,7 @@ ALTER TABLE ONLY gp_db.users ALTER COLUMN u_id SET DEFAULT nextval('gp_db.users_
 
 
 --
--- TOC entry 3586 (class 0 OID 17385)
+-- TOC entry 3587 (class 0 OID 17385)
 -- Dependencies: 280
 -- Data for Name: application_attachment; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -997,7 +997,7 @@ ALTER TABLE ONLY gp_db.users ALTER COLUMN u_id SET DEFAULT nextval('gp_db.users_
 
 
 --
--- TOC entry 3575 (class 0 OID 16568)
+-- TOC entry 3576 (class 0 OID 16568)
 -- Dependencies: 240
 -- Data for Name: application_info; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -1006,7 +1006,7 @@ INSERT INTO gp_db.application_info VALUES (72, 'MBSA/GP/2025/00001', 1, 'AADA', 
 
 
 --
--- TOC entry 3573 (class 0 OID 16552)
+-- TOC entry 3574 (class 0 OID 16552)
 -- Dependencies: 238
 -- Data for Name: fw_akses; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -1036,7 +1036,7 @@ INSERT INTO gp_db.fw_akses VALUES (53, 4, 20, 1, 'admin', '2025-06-18 15:36:43.7
 
 
 --
--- TOC entry 3561 (class 0 OID 16491)
+-- TOC entry 3562 (class 0 OID 16491)
 -- Dependencies: 226
 -- Data for Name: fw_audittrail; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -1695,10 +1695,13 @@ INSERT INTO gp_db.fw_audittrail VALUES (651, '{"username":"admin","nama":"Admini
 INSERT INTO gp_db.fw_audittrail VALUES (652, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"UPDATE users SET u_ic=:u_ic,u_fullname=:u_fullname,u_dept=:u_dept,u_office_branch=:u_office_branch,u_user_type=:u_user_type,u_ref_role=:u_ref_role,u_password=:u_password,u_status_ind=:u_status_ind,u_update_by=:u_update_by,u_update_timestamp=:u_update_timestamp WHERE u_id=''4''","data":{"u_ic":"010605100717","u_fullname":"ahmad aiman bin zulbahari","u_dept":"1","u_office_branch":"3","u_user_type":"1","u_ref_role":"5","u_password":"$2y$10$6dx5n6tYusU0mvoRsal0weCFMJBfRiUV90DzbvmLLYf8CfZ9oDEFW","u_status_ind":"1","u_update_by":"admin","u_update_timestamp":"2025-06-20 02:45:52pm"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"1147","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundarycnMQdP6WAvMkiPM5","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=jTvlWkmbUsE~&menu=Tetapan+Pengguna&submenu=Pengguna","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=du18pe5nmk9rd5o56bfe9aas0j","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"62775","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=vFF0JwPfIeMB2TYz&func=process&update=4","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=vFF0JwPfIeMB2TYz&func=process&update=4","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=vFF0JwPfIeMB2TYz&func=process&update=4","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1750401950.839665,"REQUEST_TIME":1750401950}', '2025-06-20 14:45:52.989555');
 INSERT INTO gp_db.fw_audittrail VALUES (653, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO users(u_ic,u_fullname,u_dept,u_office_branch,u_user_type,u_ref_role,u_password,u_status_ind,u_insert_by,u_insert_timestamp) VALUES(:u_ic,:u_fullname,:u_dept,:u_office_branch,:u_user_type,:u_ref_role,:u_password,:u_status_ind,:u_insert_by,:u_insert_timestamp)","data":{"do":"vFF0JwPfIeMB2TYz","func":"process","save":"1","perpage":"10","cari":"","page":"0","u_ic":"010605100717","u_fullname":"ahmad","u_dept":"1","u_office_branch":"2","u_user_type":"1","u_ref_role":"1","u_password":"$2y$10$yp0182HN69fwr4.EihAIe.sTbwGKylESjbUutUHui\/M8lLLVDejxa","u_status_ind":"1","u_insert_by":"admin","u_insert_timestamp":"2025-06-20 02:47:39pm"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"1128","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryJUbZrgeiLSmW6GPx","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=jTvlWkmbUsE~&menu=Tetapan+Pengguna&submenu=Pengguna","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=du18pe5nmk9rd5o56bfe9aas0j","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"62796","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=vFF0JwPfIeMB2TYz&func=process&save=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=vFF0JwPfIeMB2TYz&func=process&save=1","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=vFF0JwPfIeMB2TYz&func=process&save=1","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1750402057.228249,"REQUEST_TIME":1750402057}', '2025-06-20 14:47:39.317948');
 INSERT INTO gp_db.fw_audittrail VALUES (654, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"UPDATE users SET u_ic=:u_ic,u_fullname=:u_fullname,u_dept=:u_dept,u_office_branch=:u_office_branch,u_user_type=:u_user_type,u_ref_role=:u_ref_role,u_password=:u_password,u_status_ind=:u_status_ind,u_update_by=:u_update_by,u_update_timestamp=:u_update_timestamp WHERE u_id=''5''","data":{"u_ic":"010605100717","u_fullname":"ahmad","u_dept":"1","u_office_branch":"2","u_user_type":"1","u_ref_role":"1","u_password":"$2y$10$..4Xvj\/RsYI0vfoQc7mayeR2VB496kFbbBj1t.d5f7t7TdOe2kBcK","u_status_ind":"1","u_update_by":"admin","u_update_timestamp":"2025-06-20 02:48:08pm"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"1127","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryb3iQFiibA9PryJgv","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=jTvlWkmbUsE~&menu=Tetapan+Pengguna&submenu=Pengguna","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=du18pe5nmk9rd5o56bfe9aas0j","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"62806","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=vFF0JwPfIeMB2TYz&func=process&update=5","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=vFF0JwPfIeMB2TYz&func=process&update=5","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=vFF0JwPfIeMB2TYz&func=process&update=5","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1750402086.378399,"REQUEST_TIME":1750402086}', '2025-06-20 14:48:08.47486');
+INSERT INTO gp_db.fw_audittrail VALUES (655, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO ref_branch(rb_desc,rb_ind_status,rb_insert_by,rb_insert_timestamp) VALUES(:rb_desc,:rb_ind_status,:rb_insert_by,:rb_insert_timestamp)","data":{"do":"vFF0MALbPcMF-ykhYT0~","func":"process","save":"1","rb_desc":"WISMA MBSA","rb_ind_status":"1","rb_insert_by":"admin","rb_insert_timestamp":"2025-06-20 05:57:49pm"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"249","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryoEreS9jYWU5n0BJv","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=J6o3fQvjPIK6susXlZc~&menu=Tetapan+Sistem&submenu=Senarai+Cawangan","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=du18pe5nmk9rd5o56bfe9aas0j","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"64662","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=vFF0MALbPcMF-ykhYT0~&func=process&save=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=vFF0MALbPcMF-ykhYT0~&func=process&save=1","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=vFF0MALbPcMF-ykhYT0~&func=process&save=1","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1750413467.930091,"REQUEST_TIME":1750413467}', '2025-06-20 17:57:49.997985');
+INSERT INTO gp_db.fw_audittrail VALUES (656, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"UPDATE ref_role SET rr_acronym=:rr_acronym,rr_description=:rr_description,rr_status=:rr_status WHERE rr_id=''1''","data":{"rr_acronym":"admin","rr_description":"Administrator","rr_status":"2"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"357","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryuduaJdmTKcmj2qym","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=_SGS_eS7jiFlokG7&menu=Tetapan+Pengguna&submenu=Peranan+Pengguna","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=qv42vthe47ieflhv5s1ktaa2or","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"50619","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=vFF0IB_WNuMB2TYz&func=process&update=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=vFF0IB_WNuMB2TYz&func=process&update=1","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=vFF0IB_WNuMB2TYz&func=process&update=1","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1750643862.408714,"REQUEST_TIME":1750643862}', '2025-06-23 09:57:44.475662');
+INSERT INTO gp_db.fw_audittrail VALUES (657, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"UPDATE ref_role SET rr_acronym=:rr_acronym,rr_description=:rr_description,rr_status=:rr_status WHERE rr_id=''1''","data":{"rr_acronym":"admin","rr_description":"Administrator","rr_status":"1"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"357","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundarysUC3wvCKnYq6fRR2","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=_SGS_eS7jiFlokG7&menu=Tetapan+Pengguna&submenu=Peranan+Pengguna","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=qv42vthe47ieflhv5s1ktaa2or","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"50619","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=vFF0IB_WNuMB2TYz&func=process&update=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=vFF0IB_WNuMB2TYz&func=process&update=1","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=vFF0IB_WNuMB2TYz&func=process&update=1","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1750643871.107049,"REQUEST_TIME":1750643871}', '2025-06-23 09:57:53.180326');
 
 
 --
--- TOC entry 3565 (class 0 OID 16513)
+-- TOC entry 3566 (class 0 OID 16513)
 -- Dependencies: 230
 -- Data for Name: fw_lang; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -2036,7 +2039,7 @@ INSERT INTO gp_db.fw_lang VALUES (330, 'No.Faks', 'No.Faks', NULL, '2025-06-20 1
 
 
 --
--- TOC entry 3567 (class 0 OID 16523)
+-- TOC entry 3568 (class 0 OID 16523)
 -- Dependencies: 232
 -- Data for Name: fw_menu; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -2051,7 +2054,7 @@ INSERT INTO gp_db.fw_menu VALUES (4, 'Tetapan Sistem', 'Y', '#', 'fa fa-cogs bg-
 
 
 --
--- TOC entry 3569 (class 0 OID 16534)
+-- TOC entry 3570 (class 0 OID 16534)
 -- Dependencies: 234
 -- Data for Name: fw_submenu; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -2074,7 +2077,7 @@ INSERT INTO gp_db.fw_submenu VALUES (14, 10, 'Pengguna', 'm/m.user', '', 14, 'A'
 
 
 --
--- TOC entry 3563 (class 0 OID 16501)
+-- TOC entry 3564 (class 0 OID 16501)
 -- Dependencies: 228
 -- Data for Name: fw_uploads; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -2082,7 +2085,7 @@ INSERT INTO gp_db.fw_submenu VALUES (14, 10, 'Pengguna', 'm/m.user', '', 14, 'A'
 
 
 --
--- TOC entry 3574 (class 0 OID 16560)
+-- TOC entry 3575 (class 0 OID 16560)
 -- Dependencies: 239
 -- Data for Name: ref_application_type; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -2092,7 +2095,7 @@ INSERT INTO gp_db.ref_application_type VALUES (2, 'Pembaharuan Permohonan', 1);
 
 
 --
--- TOC entry 3584 (class 0 OID 17363)
+-- TOC entry 3585 (class 0 OID 17363)
 -- Dependencies: 278
 -- Data for Name: ref_applicaton_status; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -2104,19 +2107,20 @@ INSERT INTO gp_db.ref_applicaton_status VALUES (4, 'Dibatalkan', 1, NULL, NULL);
 
 
 --
--- TOC entry 3591 (class 0 OID 17511)
--- Dependencies: 288
+-- TOC entry 3592 (class 0 OID 17511)
+-- Dependencies: 287
 -- Data for Name: ref_branch; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
 INSERT INTO gp_db.ref_branch VALUES (1, 'PEJABAT CAWANGAN SUNGAI BULOH', 1, 'admin', '2025-06-19 10:57:06');
 INSERT INTO gp_db.ref_branch VALUES (2, 'PEJABAT CAWANGAN KOTA KEMUNING', 1, 'admin', '2025-06-19 11:01:34');
 INSERT INTO gp_db.ref_branch VALUES (3, 'PEJABAT CAWANGAN SETIA ALAM', 1, 'admin', '2025-06-19 11:02:01');
+INSERT INTO gp_db.ref_branch VALUES (4, 'WISMA MBSA', 1, 'admin', '2025-06-20 17:57:49');
 
 
 --
--- TOC entry 3589 (class 0 OID 17499)
--- Dependencies: 286
+-- TOC entry 3590 (class 0 OID 17499)
+-- Dependencies: 285
 -- Data for Name: ref_dept; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
@@ -2124,28 +2128,28 @@ INSERT INTO gp_db.ref_dept VALUES (1, 'PEJABAT DATUK BANDAR', 1, 'admin', '2025-
 
 
 --
--- TOC entry 3571 (class 0 OID 16545)
+-- TOC entry 3572 (class 0 OID 16545)
 -- Dependencies: 236
 -- Data for Name: ref_role; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
-INSERT INTO gp_db.ref_role VALUES (1, 'admin', 'Administrator', 1, NULL, NULL);
 INSERT INTO gp_db.ref_role VALUES (3, 'user', 'Pengguna', 1, NULL, NULL);
 INSERT INTO gp_db.ref_role VALUES (4, 'supervisor', 'Penyelia', 1, NULL, NULL);
 INSERT INTO gp_db.ref_role VALUES (5, 'system admin', 'Pentadbir Sistem', 1, NULL, NULL);
 INSERT INTO gp_db.ref_role VALUES (6, 'approval', 'Pelulus', 1, NULL, NULL);
+INSERT INTO gp_db.ref_role VALUES (1, 'admin', 'Administrator', 1, NULL, NULL);
 
 
 --
--- TOC entry 3593 (class 0 OID 17523)
--- Dependencies: 290
+-- TOC entry 3594 (class 0 OID 17523)
+-- Dependencies: 289
 -- Data for Name: ref_states; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
 
 
 --
--- TOC entry 3577 (class 0 OID 16591)
+-- TOC entry 3578 (class 0 OID 16591)
 -- Dependencies: 242
 -- Data for Name: ref_status; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -2155,7 +2159,7 @@ INSERT INTO gp_db.ref_status VALUES (2, 2, 'Tidak Aktif');
 
 
 --
--- TOC entry 3581 (class 0 OID 16700)
+-- TOC entry 3582 (class 0 OID 16700)
 -- Dependencies: 246
 -- Data for Name: ref_user_type; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -2166,7 +2170,7 @@ INSERT INTO gp_db.ref_user_type VALUES (3, 'Syarikat Luar', 2, NULL, NULL);
 
 
 --
--- TOC entry 3579 (class 0 OID 16688)
+-- TOC entry 3580 (class 0 OID 16688)
 -- Dependencies: 244
 -- Data for Name: users; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -2178,7 +2182,7 @@ INSERT INTO gp_db.users VALUES (5, '010605100717', 'ahmad', NULL, NULL, NULL, NU
 
 
 --
--- TOC entry 3625 (class 0 OID 0)
+-- TOC entry 3626 (class 0 OID 0)
 -- Dependencies: 243
 -- Name: applcation_ref_status_ars_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -2187,7 +2191,7 @@ SELECT pg_catalog.setval('gp_db.applcation_ref_status_ars_id_seq', 5, true);
 
 
 --
--- TOC entry 3626 (class 0 OID 0)
+-- TOC entry 3627 (class 0 OID 0)
 -- Dependencies: 281
 -- Name: application_attachment_attachment_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -2196,7 +2200,7 @@ SELECT pg_catalog.setval('gp_db.application_attachment_attachment_id_seq', 1, fa
 
 
 --
--- TOC entry 3627 (class 0 OID 0)
+-- TOC entry 3628 (class 0 OID 0)
 -- Dependencies: 241
 -- Name: application_info_appinfo_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -2205,7 +2209,7 @@ SELECT pg_catalog.setval('gp_db.application_info_appinfo_id_seq', 77, true);
 
 
 --
--- TOC entry 3628 (class 0 OID 0)
+-- TOC entry 3629 (class 0 OID 0)
 -- Dependencies: 277
 -- Name: application_ref_type_art_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -2214,7 +2218,7 @@ SELECT pg_catalog.setval('gp_db.application_ref_type_art_id_seq', 6, true);
 
 
 --
--- TOC entry 3629 (class 0 OID 0)
+-- TOC entry 3630 (class 0 OID 0)
 -- Dependencies: 237
 -- Name: fw_akses_fa_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -2223,16 +2227,16 @@ SELECT pg_catalog.setval('gp_db.fw_akses_fa_id_seq', 53, true);
 
 
 --
--- TOC entry 3630 (class 0 OID 0)
+-- TOC entry 3631 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: fw_audittrail_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
 
-SELECT pg_catalog.setval('gp_db.fw_audittrail_id_seq', 654, true);
+SELECT pg_catalog.setval('gp_db.fw_audittrail_id_seq', 657, true);
 
 
 --
--- TOC entry 3631 (class 0 OID 0)
+-- TOC entry 3632 (class 0 OID 0)
 -- Dependencies: 229
 -- Name: fw_lang_fl_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -2241,7 +2245,7 @@ SELECT pg_catalog.setval('gp_db.fw_lang_fl_id_seq', 330, true);
 
 
 --
--- TOC entry 3632 (class 0 OID 0)
+-- TOC entry 3633 (class 0 OID 0)
 -- Dependencies: 231
 -- Name: fw_menu_m_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -2250,7 +2254,7 @@ SELECT pg_catalog.setval('gp_db.fw_menu_m_id_seq', 10, true);
 
 
 --
--- TOC entry 3633 (class 0 OID 0)
+-- TOC entry 3634 (class 0 OID 0)
 -- Dependencies: 233
 -- Name: fw_submenu_sm_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -2259,7 +2263,7 @@ SELECT pg_catalog.setval('gp_db.fw_submenu_sm_id_seq', 20, true);
 
 
 --
--- TOC entry 3634 (class 0 OID 0)
+-- TOC entry 3635 (class 0 OID 0)
 -- Dependencies: 227
 -- Name: fw_uploads_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -2268,7 +2272,7 @@ SELECT pg_catalog.setval('gp_db.fw_uploads_id_seq', 1, false);
 
 
 --
--- TOC entry 3635 (class 0 OID 0)
+-- TOC entry 3636 (class 0 OID 0)
 -- Dependencies: 279
 -- Name: ref_applicaton_status_ras_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -2277,17 +2281,17 @@ SELECT pg_catalog.setval('gp_db.ref_applicaton_status_ras_id_seq', 5, true);
 
 
 --
--- TOC entry 3636 (class 0 OID 0)
--- Dependencies: 289
+-- TOC entry 3637 (class 0 OID 0)
+-- Dependencies: 288
 -- Name: ref_branch_rb_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
 
-SELECT pg_catalog.setval('gp_db.ref_branch_rb_id_seq', 3, true);
+SELECT pg_catalog.setval('gp_db.ref_branch_rb_id_seq', 4, true);
 
 
 --
--- TOC entry 3637 (class 0 OID 0)
--- Dependencies: 287
+-- TOC entry 3638 (class 0 OID 0)
+-- Dependencies: 286
 -- Name: ref_dept_rd_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
 
@@ -2295,7 +2299,7 @@ SELECT pg_catalog.setval('gp_db.ref_dept_rd_id_seq', 1, true);
 
 
 --
--- TOC entry 3638 (class 0 OID 0)
+-- TOC entry 3639 (class 0 OID 0)
 -- Dependencies: 235
 -- Name: ref_role_rr_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -2304,8 +2308,8 @@ SELECT pg_catalog.setval('gp_db.ref_role_rr_id_seq', 6, true);
 
 
 --
--- TOC entry 3639 (class 0 OID 0)
--- Dependencies: 291
+-- TOC entry 3640 (class 0 OID 0)
+-- Dependencies: 290
 -- Name: ref_states_rstates_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
 
@@ -2313,7 +2317,7 @@ SELECT pg_catalog.setval('gp_db.ref_states_rstates_id_seq', 1, false);
 
 
 --
--- TOC entry 3640 (class 0 OID 0)
+-- TOC entry 3641 (class 0 OID 0)
 -- Dependencies: 247
 -- Name: ref_user_type_rut_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -2322,7 +2326,7 @@ SELECT pg_catalog.setval('gp_db.ref_user_type_rut_id_seq', 3, true);
 
 
 --
--- TOC entry 3641 (class 0 OID 0)
+-- TOC entry 3642 (class 0 OID 0)
 -- Dependencies: 245
 -- Name: users_u_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -2331,7 +2335,7 @@ SELECT pg_catalog.setval('gp_db.users_u_id_seq', 5, true);
 
 
 --
--- TOC entry 3392 (class 2606 OID 16600)
+-- TOC entry 3393 (class 2606 OID 16600)
 -- Name: ref_status applcation_ref_status_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2340,7 +2344,7 @@ ALTER TABLE ONLY gp_db.ref_status
 
 
 --
--- TOC entry 3400 (class 2606 OID 17435)
+-- TOC entry 3401 (class 2606 OID 17435)
 -- Name: application_attachment application_attachment_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2349,7 +2353,7 @@ ALTER TABLE ONLY gp_db.application_attachment
 
 
 --
--- TOC entry 3388 (class 2606 OID 16578)
+-- TOC entry 3389 (class 2606 OID 16578)
 -- Name: application_info application_info_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2358,7 +2362,7 @@ ALTER TABLE ONLY gp_db.application_info
 
 
 --
--- TOC entry 3390 (class 2606 OID 17449)
+-- TOC entry 3391 (class 2606 OID 17449)
 -- Name: application_info application_info_unique; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2367,7 +2371,7 @@ ALTER TABLE ONLY gp_db.application_info
 
 
 --
--- TOC entry 3386 (class 2606 OID 17355)
+-- TOC entry 3387 (class 2606 OID 17355)
 -- Name: ref_application_type application_ref_type_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2376,7 +2380,7 @@ ALTER TABLE ONLY gp_db.ref_application_type
 
 
 --
--- TOC entry 3384 (class 2606 OID 16558)
+-- TOC entry 3385 (class 2606 OID 16558)
 -- Name: fw_akses fw_akses_pkey; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2385,7 +2389,7 @@ ALTER TABLE ONLY gp_db.fw_akses
 
 
 --
--- TOC entry 3370 (class 2606 OID 16499)
+-- TOC entry 3371 (class 2606 OID 16499)
 -- Name: fw_audittrail fw_audittrail_pkey; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2394,7 +2398,7 @@ ALTER TABLE ONLY gp_db.fw_audittrail
 
 
 --
--- TOC entry 3376 (class 2606 OID 16521)
+-- TOC entry 3377 (class 2606 OID 16521)
 -- Name: fw_lang fw_lang_pkey; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2403,7 +2407,7 @@ ALTER TABLE ONLY gp_db.fw_lang
 
 
 --
--- TOC entry 3378 (class 2606 OID 16532)
+-- TOC entry 3379 (class 2606 OID 16532)
 -- Name: fw_menu fw_menu_pkey; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2412,7 +2416,7 @@ ALTER TABLE ONLY gp_db.fw_menu
 
 
 --
--- TOC entry 3380 (class 2606 OID 16543)
+-- TOC entry 3381 (class 2606 OID 16543)
 -- Name: fw_submenu fw_submenu_pkey; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2421,7 +2425,7 @@ ALTER TABLE ONLY gp_db.fw_submenu
 
 
 --
--- TOC entry 3372 (class 2606 OID 16511)
+-- TOC entry 3373 (class 2606 OID 16511)
 -- Name: fw_uploads fw_uploads_link_key; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2430,7 +2434,7 @@ ALTER TABLE ONLY gp_db.fw_uploads
 
 
 --
--- TOC entry 3374 (class 2606 OID 16509)
+-- TOC entry 3375 (class 2606 OID 16509)
 -- Name: fw_uploads fw_uploads_pkey; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2439,7 +2443,7 @@ ALTER TABLE ONLY gp_db.fw_uploads
 
 
 --
--- TOC entry 3398 (class 2606 OID 17372)
+-- TOC entry 3399 (class 2606 OID 17372)
 -- Name: ref_applicaton_status ref_applicaton_status_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2448,7 +2452,7 @@ ALTER TABLE ONLY gp_db.ref_applicaton_status
 
 
 --
--- TOC entry 3404 (class 2606 OID 17522)
+-- TOC entry 3405 (class 2606 OID 17522)
 -- Name: ref_branch ref_branch_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2457,7 +2461,7 @@ ALTER TABLE ONLY gp_db.ref_branch
 
 
 --
--- TOC entry 3402 (class 2606 OID 17508)
+-- TOC entry 3403 (class 2606 OID 17508)
 -- Name: ref_dept ref_dept_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2466,7 +2470,7 @@ ALTER TABLE ONLY gp_db.ref_dept
 
 
 --
--- TOC entry 3382 (class 2606 OID 16550)
+-- TOC entry 3383 (class 2606 OID 16550)
 -- Name: ref_role ref_role_pkey; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2475,7 +2479,7 @@ ALTER TABLE ONLY gp_db.ref_role
 
 
 --
--- TOC entry 3406 (class 2606 OID 17532)
+-- TOC entry 3407 (class 2606 OID 17532)
 -- Name: ref_states ref_states_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2484,7 +2488,7 @@ ALTER TABLE ONLY gp_db.ref_states
 
 
 --
--- TOC entry 3396 (class 2606 OID 16710)
+-- TOC entry 3397 (class 2606 OID 16710)
 -- Name: ref_user_type ref_user_type_unique; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2493,7 +2497,7 @@ ALTER TABLE ONLY gp_db.ref_user_type
 
 
 --
--- TOC entry 3394 (class 2606 OID 16697)
+-- TOC entry 3395 (class 2606 OID 16697)
 -- Name: users users_unique; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2502,7 +2506,7 @@ ALTER TABLE ONLY gp_db.users
 
 
 --
--- TOC entry 3418 (class 2606 OID 17451)
+-- TOC entry 3419 (class 2606 OID 17451)
 -- Name: application_attachment application_attachment_application_info_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2511,7 +2515,7 @@ ALTER TABLE ONLY gp_db.application_attachment
 
 
 --
--- TOC entry 3409 (class 2606 OID 17388)
+-- TOC entry 3410 (class 2606 OID 17589)
 -- Name: application_info application_info_ref_application_type_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2520,7 +2524,7 @@ ALTER TABLE ONLY gp_db.application_info
 
 
 --
--- TOC entry 3410 (class 2606 OID 17438)
+-- TOC entry 3411 (class 2606 OID 17438)
 -- Name: application_info application_info_ref_applicaton_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2529,7 +2533,7 @@ ALTER TABLE ONLY gp_db.application_info
 
 
 --
--- TOC entry 3408 (class 2606 OID 17358)
+-- TOC entry 3409 (class 2606 OID 17358)
 -- Name: ref_application_type application_ref_type_ref_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2538,7 +2542,7 @@ ALTER TABLE ONLY gp_db.ref_application_type
 
 
 --
--- TOC entry 3417 (class 2606 OID 17380)
+-- TOC entry 3418 (class 2606 OID 17380)
 -- Name: ref_applicaton_status ref_applicaton_status_ref_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2547,7 +2551,7 @@ ALTER TABLE ONLY gp_db.ref_applicaton_status
 
 
 --
--- TOC entry 3420 (class 2606 OID 17537)
+-- TOC entry 3421 (class 2606 OID 17537)
 -- Name: ref_branch ref_branch_ref_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2556,7 +2560,7 @@ ALTER TABLE ONLY gp_db.ref_branch
 
 
 --
--- TOC entry 3419 (class 2606 OID 17542)
+-- TOC entry 3420 (class 2606 OID 17542)
 -- Name: ref_dept ref_dept_ref_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2565,7 +2569,7 @@ ALTER TABLE ONLY gp_db.ref_dept
 
 
 --
--- TOC entry 3407 (class 2606 OID 16663)
+-- TOC entry 3408 (class 2606 OID 16663)
 -- Name: ref_role ref_role_applcation_ref_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2574,7 +2578,7 @@ ALTER TABLE ONLY gp_db.ref_role
 
 
 --
--- TOC entry 3416 (class 2606 OID 16718)
+-- TOC entry 3417 (class 2606 OID 16718)
 -- Name: ref_user_type ref_user_type_ref_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2583,7 +2587,7 @@ ALTER TABLE ONLY gp_db.ref_user_type
 
 
 --
--- TOC entry 3411 (class 2606 OID 17568)
+-- TOC entry 3412 (class 2606 OID 17568)
 -- Name: users users_ref_branch_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2592,7 +2596,7 @@ ALTER TABLE ONLY gp_db.users
 
 
 --
--- TOC entry 3412 (class 2606 OID 17563)
+-- TOC entry 3413 (class 2606 OID 17563)
 -- Name: users users_ref_dept_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2601,7 +2605,7 @@ ALTER TABLE ONLY gp_db.users
 
 
 --
--- TOC entry 3413 (class 2606 OID 17573)
+-- TOC entry 3414 (class 2606 OID 17573)
 -- Name: users users_ref_role_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2610,7 +2614,7 @@ ALTER TABLE ONLY gp_db.users
 
 
 --
--- TOC entry 3414 (class 2606 OID 17583)
+-- TOC entry 3415 (class 2606 OID 17583)
 -- Name: users users_ref_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2619,7 +2623,7 @@ ALTER TABLE ONLY gp_db.users
 
 
 --
--- TOC entry 3415 (class 2606 OID 17578)
+-- TOC entry 3416 (class 2606 OID 17578)
 -- Name: users users_ref_user_type_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -2627,7 +2631,7 @@ ALTER TABLE ONLY gp_db.users
     ADD CONSTRAINT users_ref_user_type_fk FOREIGN KEY (u_user_type) REFERENCES gp_db.ref_user_type(rut_id);
 
 
--- Completed on 2025-06-20 17:32:16
+-- Completed on 2025-06-23 17:18:02
 
 --
 -- PostgreSQL database dump complete

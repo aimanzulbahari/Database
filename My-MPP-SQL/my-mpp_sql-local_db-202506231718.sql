@@ -5,7 +5,7 @@
 -- Dumped from database version 14.2
 -- Dumped by pg_dump version 17.0
 
--- Started on 2025-06-20 17:32:50
+-- Started on 2025-06-23 17:18:19
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -52,7 +52,7 @@ CREATE TABLE mympp.application_attachment (
 ALTER TABLE mympp.application_attachment OWNER TO aiman;
 
 --
--- TOC entry 3589 (class 0 OID 0)
+-- TOC entry 3592 (class 0 OID 0)
 -- Dependencies: 276
 -- Name: COLUMN application_attachment.ad_id; Type: COMMENT; Schema: mympp; Owner: aiman
 --
@@ -90,7 +90,7 @@ CREATE TABLE mympp.application_data (
 ALTER TABLE mympp.application_data OWNER TO aiman;
 
 --
--- TOC entry 3590 (class 0 OID 0)
+-- TOC entry 3593 (class 0 OID 0)
 -- Dependencies: 270
 -- Name: COLUMN application_data.ad_mpp_zone; Type: COMMENT; Schema: mympp; Owner: aiman
 --
@@ -99,7 +99,7 @@ COMMENT ON COLUMN mympp.application_data.ad_mpp_zone IS 'Refer table ref_zone_li
 
 
 --
--- TOC entry 3591 (class 0 OID 0)
+-- TOC entry 3594 (class 0 OID 0)
 -- Dependencies: 270
 -- Name: COLUMN application_data.ad_application_type; Type: COMMENT; Schema: mympp; Owner: aiman
 --
@@ -108,7 +108,7 @@ COMMENT ON COLUMN mympp.application_data.ad_application_type IS 'Refer table ref
 
 
 --
--- TOC entry 3592 (class 0 OID 0)
+-- TOC entry 3595 (class 0 OID 0)
 -- Dependencies: 270
 -- Name: COLUMN application_data.ad_activity_type; Type: COMMENT; Schema: mympp; Owner: aiman
 --
@@ -117,7 +117,7 @@ COMMENT ON COLUMN mympp.application_data.ad_activity_type IS 'Refer ref_activity
 
 
 --
--- TOC entry 3593 (class 0 OID 0)
+-- TOC entry 3596 (class 0 OID 0)
 -- Dependencies: 270
 -- Name: COLUMN application_data.ad_sdg_type; Type: COMMENT; Schema: mympp; Owner: aiman
 --
@@ -126,7 +126,7 @@ COMMENT ON COLUMN mympp.application_data.ad_sdg_type IS 'Refer ref_sdg_type';
 
 
 --
--- TOC entry 3594 (class 0 OID 0)
+-- TOC entry 3597 (class 0 OID 0)
 -- Dependencies: 270
 -- Name: COLUMN application_data.ad_status_process; Type: COMMENT; Schema: mympp; Owner: aiman
 --
@@ -150,7 +150,7 @@ CREATE SEQUENCE mympp.application_data_ad_id_seq
 ALTER SEQUENCE mympp.application_data_ad_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3595 (class 0 OID 0)
+-- TOC entry 3598 (class 0 OID 0)
 -- Dependencies: 271
 -- Name: application_data_ad_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
 --
@@ -191,7 +191,7 @@ CREATE SEQUENCE mympp.fw_akses_fa_id_seq
 ALTER SEQUENCE mympp.fw_akses_fa_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3596 (class 0 OID 0)
+-- TOC entry 3599 (class 0 OID 0)
 -- Dependencies: 260
 -- Name: fw_akses_fa_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
 --
@@ -231,7 +231,7 @@ CREATE SEQUENCE mympp.fw_audittrail_id_seq
 ALTER SEQUENCE mympp.fw_audittrail_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3597 (class 0 OID 0)
+-- TOC entry 3600 (class 0 OID 0)
 -- Dependencies: 248
 -- Name: fw_audittrail_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
 --
@@ -272,7 +272,7 @@ CREATE SEQUENCE mympp.fw_lang_fl_id_seq
 ALTER SEQUENCE mympp.fw_lang_fl_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3598 (class 0 OID 0)
+-- TOC entry 3601 (class 0 OID 0)
 -- Dependencies: 252
 -- Name: fw_lang_fl_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
 --
@@ -317,7 +317,7 @@ CREATE SEQUENCE mympp.fw_menu_m_id_seq
 ALTER SEQUENCE mympp.fw_menu_m_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3599 (class 0 OID 0)
+-- TOC entry 3602 (class 0 OID 0)
 -- Dependencies: 254
 -- Name: fw_menu_m_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
 --
@@ -362,7 +362,7 @@ CREATE SEQUENCE mympp.fw_submenu_sm_id_seq
 ALTER SEQUENCE mympp.fw_submenu_sm_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3600 (class 0 OID 0)
+-- TOC entry 3603 (class 0 OID 0)
 -- Dependencies: 256
 -- Name: fw_submenu_sm_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
 --
@@ -406,7 +406,7 @@ CREATE SEQUENCE mympp.fw_uploads_id_seq
 ALTER SEQUENCE mympp.fw_uploads_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3601 (class 0 OID 0)
+-- TOC entry 3604 (class 0 OID 0)
 -- Dependencies: 250
 -- Name: fw_uploads_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
 --
@@ -429,7 +429,7 @@ CREATE TABLE mympp.ref_activity_type (
 ALTER TABLE mympp.ref_activity_type OWNER TO aiman;
 
 --
--- TOC entry 3602 (class 0 OID 0)
+-- TOC entry 3605 (class 0 OID 0)
 -- Dependencies: 272
 -- Name: COLUMN ref_activity_type.ract_status_ind; Type: COMMENT; Schema: mympp; Owner: aiman
 --
@@ -453,7 +453,7 @@ CREATE SEQUENCE mympp.ref_activity_type_ract_id_seq
 ALTER SEQUENCE mympp.ref_activity_type_ract_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3603 (class 0 OID 0)
+-- TOC entry 3606 (class 0 OID 0)
 -- Dependencies: 274
 -- Name: ref_activity_type_ract_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
 --
@@ -476,7 +476,7 @@ CREATE TABLE mympp.ref_application_type (
 ALTER TABLE mympp.ref_application_type OWNER TO aiman;
 
 --
--- TOC entry 3604 (class 0 OID 0)
+-- TOC entry 3607 (class 0 OID 0)
 -- Dependencies: 266
 -- Name: COLUMN ref_application_type.rat_status_ind; Type: COMMENT; Schema: mympp; Owner: aiman
 --
@@ -500,7 +500,7 @@ CREATE SEQUENCE mympp.ref_application_type_rat_id_seq
 ALTER SEQUENCE mympp.ref_application_type_rat_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3605 (class 0 OID 0)
+-- TOC entry 3608 (class 0 OID 0)
 -- Dependencies: 267
 -- Name: ref_application_type_rat_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
 --
@@ -509,7 +509,7 @@ ALTER SEQUENCE mympp.ref_application_type_rat_id_seq OWNED BY mympp.ref_applicat
 
 
 --
--- TOC entry 284 (class 1259 OID 17475)
+-- TOC entry 283 (class 1259 OID 17475)
 -- Name: ref_department; Type: TABLE; Schema: mympp; Owner: aiman
 --
 
@@ -523,8 +523,8 @@ CREATE TABLE mympp.ref_department (
 ALTER TABLE mympp.ref_department OWNER TO aiman;
 
 --
--- TOC entry 3606 (class 0 OID 0)
--- Dependencies: 284
+-- TOC entry 3609 (class 0 OID 0)
+-- Dependencies: 283
 -- Name: COLUMN ref_department.rd_ind_status; Type: COMMENT; Schema: mympp; Owner: aiman
 --
 
@@ -532,7 +532,7 @@ COMMENT ON COLUMN mympp.ref_department.rd_ind_status IS 'Refer Table Ref_Status'
 
 
 --
--- TOC entry 285 (class 1259 OID 17478)
+-- TOC entry 284 (class 1259 OID 17478)
 -- Name: ref_department_rd_id_seq; Type: SEQUENCE; Schema: mympp; Owner: aiman
 --
 
@@ -547,8 +547,8 @@ CREATE SEQUENCE mympp.ref_department_rd_id_seq
 ALTER SEQUENCE mympp.ref_department_rd_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3607 (class 0 OID 0)
--- Dependencies: 285
+-- TOC entry 3610 (class 0 OID 0)
+-- Dependencies: 284
 -- Name: ref_department_rd_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
 --
 
@@ -585,7 +585,7 @@ CREATE SEQUENCE mympp.ref_process_rp_id_seq
 ALTER SEQUENCE mympp.ref_process_rp_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3608 (class 0 OID 0)
+-- TOC entry 3611 (class 0 OID 0)
 -- Dependencies: 269
 -- Name: ref_process_rp_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
 --
@@ -609,7 +609,7 @@ CREATE TABLE mympp.ref_role (
 ALTER TABLE mympp.ref_role OWNER TO aiman;
 
 --
--- TOC entry 3609 (class 0 OID 0)
+-- TOC entry 3612 (class 0 OID 0)
 -- Dependencies: 259
 -- Name: COLUMN ref_role.rr_status_ind; Type: COMMENT; Schema: mympp; Owner: aiman
 --
@@ -633,7 +633,7 @@ CREATE SEQUENCE mympp.ref_role_rr_id_seq
 ALTER SEQUENCE mympp.ref_role_rr_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3610 (class 0 OID 0)
+-- TOC entry 3613 (class 0 OID 0)
 -- Dependencies: 258
 -- Name: ref_role_rr_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
 --
@@ -656,7 +656,7 @@ CREATE TABLE mympp.ref_sdg_type (
 ALTER TABLE mympp.ref_sdg_type OWNER TO aiman;
 
 --
--- TOC entry 3611 (class 0 OID 0)
+-- TOC entry 3614 (class 0 OID 0)
 -- Dependencies: 273
 -- Name: COLUMN ref_sdg_type.rst_status_ind; Type: COMMENT; Schema: mympp; Owner: aiman
 --
@@ -680,7 +680,7 @@ CREATE SEQUENCE mympp.ref_sdg_type_rst_id_seq
 ALTER SEQUENCE mympp.ref_sdg_type_rst_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3612 (class 0 OID 0)
+-- TOC entry 3615 (class 0 OID 0)
 -- Dependencies: 275
 -- Name: ref_sdg_type_rst_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
 --
@@ -718,7 +718,7 @@ CREATE SEQUENCE mympp.ref_status_rs_id_seq
 ALTER SEQUENCE mympp.ref_status_rs_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3613 (class 0 OID 0)
+-- TOC entry 3616 (class 0 OID 0)
 -- Dependencies: 263
 -- Name: ref_status_rs_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
 --
@@ -741,7 +741,7 @@ CREATE TABLE mympp.ref_zone_list (
 ALTER TABLE mympp.ref_zone_list OWNER TO aiman;
 
 --
--- TOC entry 3614 (class 0 OID 0)
+-- TOC entry 3617 (class 0 OID 0)
 -- Dependencies: 264
 -- Name: COLUMN ref_zone_list.rzl_status_ind; Type: COMMENT; Schema: mympp; Owner: aiman
 --
@@ -765,7 +765,7 @@ CREATE SEQUENCE mympp.ref_zone_list_rzl_id_seq
 ALTER SEQUENCE mympp.ref_zone_list_rzl_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3615 (class 0 OID 0)
+-- TOC entry 3618 (class 0 OID 0)
 -- Dependencies: 265
 -- Name: ref_zone_list_rzl_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
 --
@@ -774,30 +774,43 @@ ALTER SEQUENCE mympp.ref_zone_list_rzl_id_seq OWNED BY mympp.ref_zone_list.rzl_i
 
 
 --
--- TOC entry 283 (class 1259 OID 17468)
+-- TOC entry 291 (class 1259 OID 17594)
 -- Name: user; Type: TABLE; Schema: mympp; Owner: aiman
 --
 
 CREATE TABLE mympp."user" (
-    u_id character varying NOT NULL,
-    u_fullname character varying,
-    u_ic character varying,
-    u_email character varying,
-    u_phone_number character varying,
-    u_dept integer,
-    u_mpp_zone integer,
-    u_ref_role integer,
-    u_ind_status integer,
-    u_password text,
-    u_created_by character varying,
-    u_insert_timestamp timestamp without time zone
+    u_id bigint NOT NULL
 );
 
 
 ALTER TABLE mympp."user" OWNER TO aiman;
 
 --
--- TOC entry 3362 (class 2604 OID 16974)
+-- TOC entry 292 (class 1259 OID 17597)
+-- Name: user_u_id_seq; Type: SEQUENCE; Schema: mympp; Owner: aiman
+--
+
+CREATE SEQUENCE mympp.user_u_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE mympp.user_u_id_seq OWNER TO aiman;
+
+--
+-- TOC entry 3619 (class 0 OID 0)
+-- Dependencies: 292
+-- Name: user_u_id_seq; Type: SEQUENCE OWNED BY; Schema: mympp; Owner: aiman
+--
+
+ALTER SEQUENCE mympp.user_u_id_seq OWNED BY mympp."user".u_id;
+
+
+--
+-- TOC entry 3363 (class 2604 OID 16974)
 -- Name: application_data ad_id; Type: DEFAULT; Schema: mympp; Owner: aiman
 --
 
@@ -805,7 +818,7 @@ ALTER TABLE ONLY mympp.application_data ALTER COLUMN ad_id SET DEFAULT nextval('
 
 
 --
--- TOC entry 3356 (class 2604 OID 16904)
+-- TOC entry 3357 (class 2604 OID 16904)
 -- Name: fw_akses fa_id; Type: DEFAULT; Schema: mympp; Owner: aiman
 --
 
@@ -813,7 +826,7 @@ ALTER TABLE ONLY mympp.fw_akses ALTER COLUMN fa_id SET DEFAULT nextval('mympp.fw
 
 
 --
--- TOC entry 3343 (class 2604 OID 16843)
+-- TOC entry 3344 (class 2604 OID 16843)
 -- Name: fw_audittrail id; Type: DEFAULT; Schema: mympp; Owner: aiman
 --
 
@@ -821,7 +834,7 @@ ALTER TABLE ONLY mympp.fw_audittrail ALTER COLUMN id SET DEFAULT nextval('mympp.
 
 
 --
--- TOC entry 3347 (class 2604 OID 16865)
+-- TOC entry 3348 (class 2604 OID 16865)
 -- Name: fw_lang fl_id; Type: DEFAULT; Schema: mympp; Owner: aiman
 --
 
@@ -829,7 +842,7 @@ ALTER TABLE ONLY mympp.fw_lang ALTER COLUMN fl_id SET DEFAULT nextval('mympp.fw_
 
 
 --
--- TOC entry 3349 (class 2604 OID 16875)
+-- TOC entry 3350 (class 2604 OID 16875)
 -- Name: fw_menu m_id; Type: DEFAULT; Schema: mympp; Owner: aiman
 --
 
@@ -837,7 +850,7 @@ ALTER TABLE ONLY mympp.fw_menu ALTER COLUMN m_id SET DEFAULT nextval('mympp.fw_m
 
 
 --
--- TOC entry 3352 (class 2604 OID 16886)
+-- TOC entry 3353 (class 2604 OID 16886)
 -- Name: fw_submenu sm_id; Type: DEFAULT; Schema: mympp; Owner: aiman
 --
 
@@ -845,7 +858,7 @@ ALTER TABLE ONLY mympp.fw_submenu ALTER COLUMN sm_id SET DEFAULT nextval('mympp.
 
 
 --
--- TOC entry 3345 (class 2604 OID 16853)
+-- TOC entry 3346 (class 2604 OID 16853)
 -- Name: fw_uploads id; Type: DEFAULT; Schema: mympp; Owner: aiman
 --
 
@@ -853,7 +866,7 @@ ALTER TABLE ONLY mympp.fw_uploads ALTER COLUMN id SET DEFAULT nextval('mympp.fw_
 
 
 --
--- TOC entry 3363 (class 2604 OID 16990)
+-- TOC entry 3364 (class 2604 OID 16990)
 -- Name: ref_activity_type ract_id; Type: DEFAULT; Schema: mympp; Owner: aiman
 --
 
@@ -861,7 +874,7 @@ ALTER TABLE ONLY mympp.ref_activity_type ALTER COLUMN ract_id SET DEFAULT nextva
 
 
 --
--- TOC entry 3360 (class 2604 OID 16941)
+-- TOC entry 3361 (class 2604 OID 16941)
 -- Name: ref_application_type rat_id; Type: DEFAULT; Schema: mympp; Owner: aiman
 --
 
@@ -869,7 +882,7 @@ ALTER TABLE ONLY mympp.ref_application_type ALTER COLUMN rat_id SET DEFAULT next
 
 
 --
--- TOC entry 3365 (class 2604 OID 17479)
+-- TOC entry 3366 (class 2604 OID 17479)
 -- Name: ref_department rd_id; Type: DEFAULT; Schema: mympp; Owner: aiman
 --
 
@@ -877,7 +890,7 @@ ALTER TABLE ONLY mympp.ref_department ALTER COLUMN rd_id SET DEFAULT nextval('my
 
 
 --
--- TOC entry 3361 (class 2604 OID 16963)
+-- TOC entry 3362 (class 2604 OID 16963)
 -- Name: ref_process rp_id; Type: DEFAULT; Schema: mympp; Owner: aiman
 --
 
@@ -885,7 +898,7 @@ ALTER TABLE ONLY mympp.ref_process ALTER COLUMN rp_id SET DEFAULT nextval('mympp
 
 
 --
--- TOC entry 3355 (class 2604 OID 16897)
+-- TOC entry 3356 (class 2604 OID 16897)
 -- Name: ref_role rr_id; Type: DEFAULT; Schema: mympp; Owner: aiman
 --
 
@@ -893,7 +906,7 @@ ALTER TABLE ONLY mympp.ref_role ALTER COLUMN rr_id SET DEFAULT nextval('mympp.re
 
 
 --
--- TOC entry 3364 (class 2604 OID 16997)
+-- TOC entry 3365 (class 2604 OID 16997)
 -- Name: ref_sdg_type rst_id; Type: DEFAULT; Schema: mympp; Owner: aiman
 --
 
@@ -901,7 +914,7 @@ ALTER TABLE ONLY mympp.ref_sdg_type ALTER COLUMN rst_id SET DEFAULT nextval('mym
 
 
 --
--- TOC entry 3358 (class 2604 OID 16912)
+-- TOC entry 3359 (class 2604 OID 16912)
 -- Name: ref_status rs_id; Type: DEFAULT; Schema: mympp; Owner: aiman
 --
 
@@ -909,7 +922,7 @@ ALTER TABLE ONLY mympp.ref_status ALTER COLUMN rs_id SET DEFAULT nextval('mympp.
 
 
 --
--- TOC entry 3359 (class 2604 OID 16924)
+-- TOC entry 3360 (class 2604 OID 16924)
 -- Name: ref_zone_list rzl_id; Type: DEFAULT; Schema: mympp; Owner: aiman
 --
 
@@ -917,7 +930,15 @@ ALTER TABLE ONLY mympp.ref_zone_list ALTER COLUMN rzl_id SET DEFAULT nextval('my
 
 
 --
--- TOC entry 3580 (class 0 OID 17270)
+-- TOC entry 3367 (class 2604 OID 17598)
+-- Name: user u_id; Type: DEFAULT; Schema: mympp; Owner: aiman
+--
+
+ALTER TABLE ONLY mympp."user" ALTER COLUMN u_id SET DEFAULT nextval('mympp.user_u_id_seq'::regclass);
+
+
+--
+-- TOC entry 3582 (class 0 OID 17270)
 -- Dependencies: 276
 -- Data for Name: application_attachment; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
@@ -925,7 +946,7 @@ ALTER TABLE ONLY mympp.ref_zone_list ALTER COLUMN rzl_id SET DEFAULT nextval('my
 
 
 --
--- TOC entry 3574 (class 0 OID 16970)
+-- TOC entry 3576 (class 0 OID 16970)
 -- Dependencies: 270
 -- Data for Name: application_data; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
@@ -942,7 +963,7 @@ INSERT INTO mympp.application_data VALUES (17, 'MBSA/MYMPP/2025/00001', 1, 1, '4
 
 
 --
--- TOC entry 3565 (class 0 OID 16901)
+-- TOC entry 3567 (class 0 OID 16901)
 -- Dependencies: 261
 -- Data for Name: fw_akses; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
@@ -971,7 +992,7 @@ INSERT INTO mympp.fw_akses VALUES (37, 2, 0, 1, 'admin', '2025-06-17 14:55:50.14
 
 
 --
--- TOC entry 3553 (class 0 OID 16840)
+-- TOC entry 3555 (class 0 OID 16840)
 -- Dependencies: 249
 -- Data for Name: fw_audittrail; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
@@ -1262,10 +1283,14 @@ INSERT INTO mympp.fw_audittrail VALUES (283, '{"username":"admin","nama":"Admini
 INSERT INTO mympp.fw_audittrail VALUES (284, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Senarai Senarai Jabatan'',''Senarai Senarai Jabatan'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=J3riOXM_7BeAqsg~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=58u1be3mdkam0n8s876gl13f9q","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/home.php","REMOTE_PORT":"49187","REDIRECT_URL":"\/My-MPP\/action.do","REDIRECT_QUERY_STRING":"do=L7rdG3vS2T_iz_dGIg~~&menu=Tetapan+Pengguna&submenu=Senarai+Jabatan","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=L7rdG3vS2T_iz_dGIg~~&menu=Tetapan+Pengguna&submenu=Senarai+Jabatan","REQUEST_URI":"\/My-MPP\/action.do?do=L7rdG3vS2T_iz_dGIg~~&menu=Tetapan+Pengguna&submenu=Senarai+Jabatan","SCRIPT_NAME":"\/My-MPP\/home.php","PHP_SELF":"\/My-MPP\/home.php","REQUEST_TIME_FLOAT":1750219261.906581,"REQUEST_TIME":1750219261}', '2025-06-18 12:01:04.028444');
 INSERT INTO mympp.fw_audittrail VALUES (285, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Ind Status'',''Ind Status'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=J3riOXM_7BeAqsg~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=58u1be3mdkam0n8s876gl13f9q","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/home.php","REMOTE_PORT":"49187","REDIRECT_URL":"\/My-MPP\/action.do","REDIRECT_QUERY_STRING":"do=L7rdG3vS2T_iz_dGIg~~&menu=Tetapan+Pengguna&submenu=Senarai+Jabatan","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=L7rdG3vS2T_iz_dGIg~~&menu=Tetapan+Pengguna&submenu=Senarai+Jabatan","REQUEST_URI":"\/My-MPP\/action.do?do=L7rdG3vS2T_iz_dGIg~~&menu=Tetapan+Pengguna&submenu=Senarai+Jabatan","SCRIPT_NAME":"\/My-MPP\/home.php","PHP_SELF":"\/My-MPP\/home.php","REQUEST_TIME_FLOAT":1750219261.906581,"REQUEST_TIME":1750219261}', '2025-06-18 12:01:04.033415');
 INSERT INTO mympp.fw_audittrail VALUES (286, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Function Framework'',''Function Framework'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=WUivyMyBxel_s_V0tYBZOBPf3YI~&menu=Borang+Permohonan&submenu=Senarai+Permohonan","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=58u1be3mdkam0n8s876gl13f9q","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/home.php","REMOTE_PORT":"49506","REDIRECT_URL":"\/My-MPP\/action.do","REDIRECT_QUERY_STRING":"do=vegWARxLjtONXR8~&menu=Superadmin&submenu=Fw%20Function","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=vegWARxLjtONXR8~&menu=Superadmin&submenu=Fw%20Function","REQUEST_URI":"\/My-MPP\/action.do?do=vegWARxLjtONXR8~&menu=Superadmin&submenu=Fw%20Function","SCRIPT_NAME":"\/My-MPP\/home.php","PHP_SELF":"\/My-MPP\/home.php","REQUEST_TIME_FLOAT":1750222047.095733,"REQUEST_TIME":1750222047}', '2025-06-18 12:47:29.192274');
+INSERT INTO mympp.fw_audittrail VALUES (287, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Tambah Peranan'',''Tambah Peranan'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_CACHE_CONTROL":"max-age=0","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=HkftPL6drTUTK7kA&menu=Tetapan+Pengguna&submenu=Peranan+Pengguna","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=qv42vthe47ieflhv5s1ktaa2or","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/home.php","REMOTE_PORT":"52768","REDIRECT_URL":"\/My-MPP\/action.do","REDIRECT_QUERY_STRING":"do=ZDaYwhGXZf7JyStT&menu=Tetapan+Pengguna&submenu=Peranan+Pengguna","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=ZDaYwhGXZf7JyStT&menu=Tetapan+Pengguna&submenu=Peranan+Pengguna","REQUEST_URI":"\/My-MPP\/action.do?do=ZDaYwhGXZf7JyStT&menu=Tetapan+Pengguna&submenu=Peranan+Pengguna","SCRIPT_NAME":"\/My-MPP\/home.php","PHP_SELF":"\/My-MPP\/home.php","REQUEST_TIME_FLOAT":1750660110.519787,"REQUEST_TIME":1750660110}', '2025-06-23 14:28:32.704282');
+INSERT INTO mympp.fw_audittrail VALUES (288, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Tambah'',''Tambah'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_CACHE_CONTROL":"max-age=0","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=HkftPL6drTUTK7kA&menu=Tetapan+Pengguna&submenu=Peranan+Pengguna","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=qv42vthe47ieflhv5s1ktaa2or","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/home.php","REMOTE_PORT":"52781","REDIRECT_URL":"\/My-MPP\/action.do","REDIRECT_QUERY_STRING":"do=ZDaYwhGXZf7JyStT&menu=Tetapan+Pengguna&submenu=Peranan+Pengguna","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=ZDaYwhGXZf7JyStT&menu=Tetapan+Pengguna&submenu=Peranan+Pengguna","REQUEST_URI":"\/My-MPP\/action.do?do=ZDaYwhGXZf7JyStT&menu=Tetapan+Pengguna&submenu=Peranan+Pengguna","SCRIPT_NAME":"\/My-MPP\/home.php","PHP_SELF":"\/My-MPP\/home.php","REQUEST_TIME_FLOAT":1750660162.357463,"REQUEST_TIME":1750660162}', '2025-06-23 14:29:24.526774');
+INSERT INTO mympp.fw_audittrail VALUES (289, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO ref_role(rr_acronym,rr_description,rr_status_ind) VALUES(:rr_acronym,:rr_description,:rr_status_ind)","data":{"do":"vFF0IB_WNuMB2TYz","func":"process","save":"1","perpage":"10","cari":"","page":"0","rr_acronym":"Test","rr_description":"Test Role","rr_status_ind":"2"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"635","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundarymLppPxgqKGFBTNOL","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=ZDaYwhGXZf7JyStT&menu=Tetapan+Pengguna&submenu=Peranan+Pengguna","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=qv42vthe47ieflhv5s1ktaa2or","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/ajax.php","REMOTE_PORT":"52780","REDIRECT_URL":"\/My-MPP\/action.ajax","REDIRECT_QUERY_STRING":"do=vFF0IB_WNuMB2TYz&func=process&save=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=vFF0IB_WNuMB2TYz&func=process&save=1","REQUEST_URI":"\/My-MPP\/action.ajax?do=vFF0IB_WNuMB2TYz&func=process&save=1","SCRIPT_NAME":"\/My-MPP\/ajax.php","PHP_SELF":"\/My-MPP\/ajax.php","REQUEST_TIME_FLOAT":1750660189.077112,"REQUEST_TIME":1750660189}', '2025-06-23 14:29:51.161772');
+INSERT INTO mympp.fw_audittrail VALUES (290, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO ref_department(rd_desc,rd_ind_status) VALUES(:rd_desc,:rd_ind_status)","data":{"do":"vFF0NhXKJ-wEyzE~","func":"process","save":"1","perpage":"10","cari":"","rd_desc":"PEJABAT DATUK BANDAR","rd_ind_status":"1"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"446","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundarykQqFZsCEjYTLXZw2","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/My-MPP\/action.do?do=fDzrlyNlRrO9tH49Hw~~&menu=Tetapan+Pengguna&submenu=Senarai+Jabatan","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=qv42vthe47ieflhv5s1ktaa2or","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"127.0.0.1","SERVER_PORT":"80","REMOTE_ADDR":"127.0.0.1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/My-MPP\/ajax.php","REMOTE_PORT":"52824","REDIRECT_URL":"\/My-MPP\/action.ajax","REDIRECT_QUERY_STRING":"do=vFF0NhXKJ-wEyzE~&func=process&save=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=vFF0NhXKJ-wEyzE~&func=process&save=1","REQUEST_URI":"\/My-MPP\/action.ajax?do=vFF0NhXKJ-wEyzE~&func=process&save=1","SCRIPT_NAME":"\/My-MPP\/ajax.php","PHP_SELF":"\/My-MPP\/ajax.php","REQUEST_TIME_FLOAT":1750660301.539888,"REQUEST_TIME":1750660301}', '2025-06-23 14:31:43.605107');
 
 
 --
--- TOC entry 3557 (class 0 OID 16862)
+-- TOC entry 3559 (class 0 OID 16862)
 -- Dependencies: 253
 -- Data for Name: fw_lang; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
@@ -1397,10 +1422,12 @@ INSERT INTO mympp.fw_lang VALUES (124, 'Senarai Senarai Zon MPP', 'Senarai Senar
 INSERT INTO mympp.fw_lang VALUES (125, 'Senarai Senarai Jabatan', 'Senarai Senarai Jabatan', NULL, '2025-06-18 12:01:04.010976', NULL);
 INSERT INTO mympp.fw_lang VALUES (126, 'Ind Status', 'Ind Status', NULL, '2025-06-18 12:01:04.033179', NULL);
 INSERT INTO mympp.fw_lang VALUES (127, 'Function Framework', 'Function Framework', NULL, '2025-06-18 12:47:29.1907', NULL);
+INSERT INTO mympp.fw_lang VALUES (128, 'Tambah Peranan', 'Tambah Peranan', NULL, '2025-06-23 14:28:32.701446', NULL);
+INSERT INTO mympp.fw_lang VALUES (129, 'Tambah', 'Tambah', NULL, '2025-06-23 14:29:24.524139', NULL);
 
 
 --
--- TOC entry 3559 (class 0 OID 16872)
+-- TOC entry 3561 (class 0 OID 16872)
 -- Dependencies: 255
 -- Data for Name: fw_menu; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
@@ -1414,7 +1441,7 @@ INSERT INTO mympp.fw_menu VALUES (2, 'Tetapan Sistem', 'Y', '#', 'fa fa-cogs bg-
 
 
 --
--- TOC entry 3561 (class 0 OID 16883)
+-- TOC entry 3563 (class 0 OID 16883)
 -- Dependencies: 257
 -- Data for Name: fw_submenu; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
@@ -1437,7 +1464,7 @@ INSERT INTO mympp.fw_submenu VALUES (12, 6, 'Profil Pengguna', 'm/m.pg_user_prof
 
 
 --
--- TOC entry 3555 (class 0 OID 16850)
+-- TOC entry 3557 (class 0 OID 16850)
 -- Dependencies: 251
 -- Data for Name: fw_uploads; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
@@ -1445,7 +1472,7 @@ INSERT INTO mympp.fw_submenu VALUES (12, 6, 'Profil Pengguna', 'm/m.pg_user_prof
 
 
 --
--- TOC entry 3576 (class 0 OID 16983)
+-- TOC entry 3578 (class 0 OID 16983)
 -- Dependencies: 272
 -- Data for Name: ref_activity_type; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
@@ -1454,7 +1481,7 @@ INSERT INTO mympp.ref_activity_type VALUES (1, 'Program Gotong-Royong', 1);
 
 
 --
--- TOC entry 3570 (class 0 OID 16937)
+-- TOC entry 3572 (class 0 OID 16937)
 -- Dependencies: 266
 -- Data for Name: ref_application_type; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
@@ -1467,15 +1494,16 @@ INSERT INTO mympp.ref_application_type VALUES (5, 'test', 2);
 
 
 --
--- TOC entry 3582 (class 0 OID 17475)
--- Dependencies: 284
+-- TOC entry 3583 (class 0 OID 17475)
+-- Dependencies: 283
 -- Data for Name: ref_department; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
 
+INSERT INTO mympp.ref_department VALUES (1, 'PEJABAT DATUK BANDAR', 1);
 
 
 --
--- TOC entry 3572 (class 0 OID 16959)
+-- TOC entry 3574 (class 0 OID 16959)
 -- Dependencies: 268
 -- Data for Name: ref_process; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
@@ -1488,7 +1516,7 @@ INSERT INTO mympp.ref_process VALUES (2, 'Dalam Proses Semakan', 1);
 
 
 --
--- TOC entry 3563 (class 0 OID 16894)
+-- TOC entry 3565 (class 0 OID 16894)
 -- Dependencies: 259
 -- Data for Name: ref_role; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
@@ -1500,10 +1528,11 @@ INSERT INTO mympp.ref_role VALUES (5, 'secretary', 'Setiausaha', 1);
 INSERT INTO mympp.ref_role VALUES (6, 'director', 'Pengarah', 1);
 INSERT INTO mympp.ref_role VALUES (1, 'admin', 'Administrator', 1);
 INSERT INTO mympp.ref_role VALUES (7, 'system admin', 'Pentadbir Sistem', 1);
+INSERT INTO mympp.ref_role VALUES (8, 'Test', 'Test Role', 2);
 
 
 --
--- TOC entry 3577 (class 0 OID 16986)
+-- TOC entry 3579 (class 0 OID 16986)
 -- Dependencies: 273
 -- Data for Name: ref_sdg_type; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
@@ -1512,7 +1541,7 @@ INSERT INTO mympp.ref_sdg_type VALUES (1, 'Tiada Kemiskininan', 1);
 
 
 --
--- TOC entry 3566 (class 0 OID 16908)
+-- TOC entry 3568 (class 0 OID 16908)
 -- Dependencies: 262
 -- Data for Name: ref_status; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
@@ -1522,7 +1551,7 @@ INSERT INTO mympp.ref_status VALUES (2, 2, 'Tidak Aktif');
 
 
 --
--- TOC entry 3568 (class 0 OID 16920)
+-- TOC entry 3570 (class 0 OID 16920)
 -- Dependencies: 264
 -- Data for Name: ref_zone_list; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
@@ -1554,15 +1583,15 @@ INSERT INTO mympp.ref_zone_list VALUES (10, 'MPP Zon 10', 1);
 
 
 --
--- TOC entry 3581 (class 0 OID 17468)
--- Dependencies: 283
+-- TOC entry 3585 (class 0 OID 17594)
+-- Dependencies: 291
 -- Data for Name: user; Type: TABLE DATA; Schema: mympp; Owner: aiman
 --
 
 
 
 --
--- TOC entry 3616 (class 0 OID 0)
+-- TOC entry 3620 (class 0 OID 0)
 -- Dependencies: 271
 -- Name: application_data_ad_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
 --
@@ -1571,7 +1600,7 @@ SELECT pg_catalog.setval('mympp.application_data_ad_id_seq', 17, true);
 
 
 --
--- TOC entry 3617 (class 0 OID 0)
+-- TOC entry 3621 (class 0 OID 0)
 -- Dependencies: 260
 -- Name: fw_akses_fa_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
 --
@@ -1580,25 +1609,25 @@ SELECT pg_catalog.setval('mympp.fw_akses_fa_id_seq', 37, true);
 
 
 --
--- TOC entry 3618 (class 0 OID 0)
+-- TOC entry 3622 (class 0 OID 0)
 -- Dependencies: 248
 -- Name: fw_audittrail_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
 --
 
-SELECT pg_catalog.setval('mympp.fw_audittrail_id_seq', 286, true);
+SELECT pg_catalog.setval('mympp.fw_audittrail_id_seq', 290, true);
 
 
 --
--- TOC entry 3619 (class 0 OID 0)
+-- TOC entry 3623 (class 0 OID 0)
 -- Dependencies: 252
 -- Name: fw_lang_fl_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
 --
 
-SELECT pg_catalog.setval('mympp.fw_lang_fl_id_seq', 127, true);
+SELECT pg_catalog.setval('mympp.fw_lang_fl_id_seq', 129, true);
 
 
 --
--- TOC entry 3620 (class 0 OID 0)
+-- TOC entry 3624 (class 0 OID 0)
 -- Dependencies: 254
 -- Name: fw_menu_m_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
 --
@@ -1607,7 +1636,7 @@ SELECT pg_catalog.setval('mympp.fw_menu_m_id_seq', 7, true);
 
 
 --
--- TOC entry 3621 (class 0 OID 0)
+-- TOC entry 3625 (class 0 OID 0)
 -- Dependencies: 256
 -- Name: fw_submenu_sm_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
 --
@@ -1616,7 +1645,7 @@ SELECT pg_catalog.setval('mympp.fw_submenu_sm_id_seq', 17, true);
 
 
 --
--- TOC entry 3622 (class 0 OID 0)
+-- TOC entry 3626 (class 0 OID 0)
 -- Dependencies: 250
 -- Name: fw_uploads_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
 --
@@ -1625,7 +1654,7 @@ SELECT pg_catalog.setval('mympp.fw_uploads_id_seq', 1, false);
 
 
 --
--- TOC entry 3623 (class 0 OID 0)
+-- TOC entry 3627 (class 0 OID 0)
 -- Dependencies: 274
 -- Name: ref_activity_type_ract_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
 --
@@ -1634,7 +1663,7 @@ SELECT pg_catalog.setval('mympp.ref_activity_type_ract_id_seq', 1, true);
 
 
 --
--- TOC entry 3624 (class 0 OID 0)
+-- TOC entry 3628 (class 0 OID 0)
 -- Dependencies: 267
 -- Name: ref_application_type_rat_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
 --
@@ -1643,16 +1672,16 @@ SELECT pg_catalog.setval('mympp.ref_application_type_rat_id_seq', 5, true);
 
 
 --
--- TOC entry 3625 (class 0 OID 0)
--- Dependencies: 285
+-- TOC entry 3629 (class 0 OID 0)
+-- Dependencies: 284
 -- Name: ref_department_rd_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
 --
 
-SELECT pg_catalog.setval('mympp.ref_department_rd_id_seq', 1, false);
+SELECT pg_catalog.setval('mympp.ref_department_rd_id_seq', 1, true);
 
 
 --
--- TOC entry 3626 (class 0 OID 0)
+-- TOC entry 3630 (class 0 OID 0)
 -- Dependencies: 269
 -- Name: ref_process_rp_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
 --
@@ -1661,16 +1690,16 @@ SELECT pg_catalog.setval('mympp.ref_process_rp_id_seq', 5, true);
 
 
 --
--- TOC entry 3627 (class 0 OID 0)
+-- TOC entry 3631 (class 0 OID 0)
 -- Dependencies: 258
 -- Name: ref_role_rr_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
 --
 
-SELECT pg_catalog.setval('mympp.ref_role_rr_id_seq', 7, true);
+SELECT pg_catalog.setval('mympp.ref_role_rr_id_seq', 8, true);
 
 
 --
--- TOC entry 3628 (class 0 OID 0)
+-- TOC entry 3632 (class 0 OID 0)
 -- Dependencies: 275
 -- Name: ref_sdg_type_rst_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
 --
@@ -1679,7 +1708,7 @@ SELECT pg_catalog.setval('mympp.ref_sdg_type_rst_id_seq', 1, true);
 
 
 --
--- TOC entry 3629 (class 0 OID 0)
+-- TOC entry 3633 (class 0 OID 0)
 -- Dependencies: 263
 -- Name: ref_status_rs_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
 --
@@ -1688,7 +1717,7 @@ SELECT pg_catalog.setval('mympp.ref_status_rs_id_seq', 2, true);
 
 
 --
--- TOC entry 3630 (class 0 OID 0)
+-- TOC entry 3634 (class 0 OID 0)
 -- Dependencies: 265
 -- Name: ref_zone_list_rzl_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
 --
@@ -1697,7 +1726,16 @@ SELECT pg_catalog.setval('mympp.ref_zone_list_rzl_id_seq', 24, true);
 
 
 --
--- TOC entry 3397 (class 2606 OID 17461)
+-- TOC entry 3635 (class 0 OID 0)
+-- Dependencies: 292
+-- Name: user_u_id_seq; Type: SEQUENCE SET; Schema: mympp; Owner: aiman
+--
+
+SELECT pg_catalog.setval('mympp.user_u_id_seq', 1, false);
+
+
+--
+-- TOC entry 3399 (class 2606 OID 17461)
 -- Name: application_attachment application_attachment_pk; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1706,7 +1744,7 @@ ALTER TABLE ONLY mympp.application_attachment
 
 
 --
--- TOC entry 3391 (class 2606 OID 16979)
+-- TOC entry 3393 (class 2606 OID 16979)
 -- Name: application_data application_data_pk; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1715,7 +1753,7 @@ ALTER TABLE ONLY mympp.application_data
 
 
 --
--- TOC entry 3381 (class 2606 OID 16907)
+-- TOC entry 3383 (class 2606 OID 16907)
 -- Name: fw_akses fw_akses_pkey; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1724,7 +1762,7 @@ ALTER TABLE ONLY mympp.fw_akses
 
 
 --
--- TOC entry 3367 (class 2606 OID 16848)
+-- TOC entry 3369 (class 2606 OID 16848)
 -- Name: fw_audittrail fw_audittrail_pkey; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1733,7 +1771,7 @@ ALTER TABLE ONLY mympp.fw_audittrail
 
 
 --
--- TOC entry 3373 (class 2606 OID 16870)
+-- TOC entry 3375 (class 2606 OID 16870)
 -- Name: fw_lang fw_lang_pkey; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1742,7 +1780,7 @@ ALTER TABLE ONLY mympp.fw_lang
 
 
 --
--- TOC entry 3375 (class 2606 OID 16881)
+-- TOC entry 3377 (class 2606 OID 16881)
 -- Name: fw_menu fw_menu_pkey; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1751,7 +1789,7 @@ ALTER TABLE ONLY mympp.fw_menu
 
 
 --
--- TOC entry 3377 (class 2606 OID 16892)
+-- TOC entry 3379 (class 2606 OID 16892)
 -- Name: fw_submenu fw_submenu_pkey; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1760,7 +1798,7 @@ ALTER TABLE ONLY mympp.fw_submenu
 
 
 --
--- TOC entry 3369 (class 2606 OID 16860)
+-- TOC entry 3371 (class 2606 OID 16860)
 -- Name: fw_uploads fw_uploads_link_key; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1769,7 +1807,7 @@ ALTER TABLE ONLY mympp.fw_uploads
 
 
 --
--- TOC entry 3371 (class 2606 OID 16858)
+-- TOC entry 3373 (class 2606 OID 16858)
 -- Name: fw_uploads fw_uploads_pkey; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1778,7 +1816,7 @@ ALTER TABLE ONLY mympp.fw_uploads
 
 
 --
--- TOC entry 3393 (class 2606 OID 16995)
+-- TOC entry 3395 (class 2606 OID 16995)
 -- Name: ref_activity_type ref_activity_type_pk; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1787,7 +1825,7 @@ ALTER TABLE ONLY mympp.ref_activity_type
 
 
 --
--- TOC entry 3387 (class 2606 OID 16948)
+-- TOC entry 3389 (class 2606 OID 16948)
 -- Name: ref_application_type ref_application_type_pk; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1805,7 +1843,7 @@ ALTER TABLE ONLY mympp.ref_department
 
 
 --
--- TOC entry 3389 (class 2606 OID 16968)
+-- TOC entry 3391 (class 2606 OID 16968)
 -- Name: ref_process ref_process_pk; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1814,7 +1852,7 @@ ALTER TABLE ONLY mympp.ref_process
 
 
 --
--- TOC entry 3379 (class 2606 OID 16899)
+-- TOC entry 3381 (class 2606 OID 16899)
 -- Name: ref_role ref_role_pkey; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1823,7 +1861,7 @@ ALTER TABLE ONLY mympp.ref_role
 
 
 --
--- TOC entry 3395 (class 2606 OID 17002)
+-- TOC entry 3397 (class 2606 OID 17002)
 -- Name: ref_sdg_type ref_sdg_type_pk; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1832,7 +1870,7 @@ ALTER TABLE ONLY mympp.ref_sdg_type
 
 
 --
--- TOC entry 3383 (class 2606 OID 16919)
+-- TOC entry 3385 (class 2606 OID 16919)
 -- Name: ref_status ref_status_pk; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1841,7 +1879,7 @@ ALTER TABLE ONLY mympp.ref_status
 
 
 --
--- TOC entry 3385 (class 2606 OID 16929)
+-- TOC entry 3387 (class 2606 OID 16929)
 -- Name: ref_zone_list ref_zone_list_pk; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1850,7 +1888,7 @@ ALTER TABLE ONLY mympp.ref_zone_list
 
 
 --
--- TOC entry 3399 (class 2606 OID 17474)
+-- TOC entry 3403 (class 2606 OID 17603)
 -- Name: user user_pk; Type: CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1859,7 +1897,7 @@ ALTER TABLE ONLY mympp."user"
 
 
 --
--- TOC entry 3405 (class 2606 OID 17184)
+-- TOC entry 3407 (class 2606 OID 17184)
 -- Name: application_data application_data_ref_activity_type_fk; Type: FK CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1868,7 +1906,7 @@ ALTER TABLE ONLY mympp.application_data
 
 
 --
--- TOC entry 3406 (class 2606 OID 17125)
+-- TOC entry 3408 (class 2606 OID 17125)
 -- Name: application_data application_data_ref_application_type_fk; Type: FK CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1877,7 +1915,7 @@ ALTER TABLE ONLY mympp.application_data
 
 
 --
--- TOC entry 3407 (class 2606 OID 17191)
+-- TOC entry 3409 (class 2606 OID 17191)
 -- Name: application_data application_data_ref_process_fk; Type: FK CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1886,7 +1924,7 @@ ALTER TABLE ONLY mympp.application_data
 
 
 --
--- TOC entry 3408 (class 2606 OID 17179)
+-- TOC entry 3410 (class 2606 OID 17179)
 -- Name: application_data application_data_ref_sdg_type_fk; Type: FK CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1895,7 +1933,7 @@ ALTER TABLE ONLY mympp.application_data
 
 
 --
--- TOC entry 3409 (class 2606 OID 17107)
+-- TOC entry 3411 (class 2606 OID 17107)
 -- Name: application_data application_data_ref_zone_list_fk; Type: FK CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1904,7 +1942,7 @@ ALTER TABLE ONLY mympp.application_data
 
 
 --
--- TOC entry 3410 (class 2606 OID 17095)
+-- TOC entry 3412 (class 2606 OID 17095)
 -- Name: ref_activity_type ref_activity_type_ref_status_fk; Type: FK CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1913,7 +1951,7 @@ ALTER TABLE ONLY mympp.ref_activity_type
 
 
 --
--- TOC entry 3404 (class 2606 OID 16949)
+-- TOC entry 3406 (class 2606 OID 16949)
 -- Name: ref_application_type ref_application_type_ref_status_fk; Type: FK CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1922,7 +1960,7 @@ ALTER TABLE ONLY mympp.ref_application_type
 
 
 --
--- TOC entry 3412 (class 2606 OID 17487)
+-- TOC entry 3414 (class 2606 OID 17487)
 -- Name: ref_department ref_department_ref_status_fk; Type: FK CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1931,7 +1969,7 @@ ALTER TABLE ONLY mympp.ref_department
 
 
 --
--- TOC entry 3402 (class 2606 OID 16954)
+-- TOC entry 3404 (class 2606 OID 16954)
 -- Name: ref_role ref_role_ref_status_fk; Type: FK CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1940,7 +1978,7 @@ ALTER TABLE ONLY mympp.ref_role
 
 
 --
--- TOC entry 3411 (class 2606 OID 17102)
+-- TOC entry 3413 (class 2606 OID 17102)
 -- Name: ref_sdg_type ref_sdg_type_ref_status_fk; Type: FK CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1949,7 +1987,7 @@ ALTER TABLE ONLY mympp.ref_sdg_type
 
 
 --
--- TOC entry 3403 (class 2606 OID 16932)
+-- TOC entry 3405 (class 2606 OID 16932)
 -- Name: ref_zone_list ref_zone_list_ref_status_fk; Type: FK CONSTRAINT; Schema: mympp; Owner: aiman
 --
 
@@ -1957,7 +1995,7 @@ ALTER TABLE ONLY mympp.ref_zone_list
     ADD CONSTRAINT ref_zone_list_ref_status_fk FOREIGN KEY (rzl_status_ind) REFERENCES mympp.ref_status(rs_id);
 
 
--- Completed on 2025-06-20 17:32:52
+-- Completed on 2025-06-23 17:18:21
 
 --
 -- PostgreSQL database dump complete
