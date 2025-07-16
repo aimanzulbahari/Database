@@ -5,7 +5,7 @@
 -- Dumped from database version 14.2
 -- Dumped by pg_dump version 17.0
 
--- Started on 2025-07-08 17:14:17
+-- Started on 2025-07-16 16:40:15
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -20,7 +20,7 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- TOC entry 7 (class 2615 OID 18061)
+-- TOC entry 6 (class 2615 OID 18061)
 -- Name: gp_db; Type: SCHEMA; Schema: -; Owner: aiman
 --
 
@@ -34,7 +34,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- TOC entry 258 (class 1259 OID 18062)
+-- TOC entry 225 (class 1259 OID 18062)
 -- Name: ref_status; Type: TABLE; Schema: gp_db; Owner: aiman
 --
 
@@ -48,7 +48,7 @@ CREATE TABLE gp_db.ref_status (
 ALTER TABLE gp_db.ref_status OWNER TO aiman;
 
 --
--- TOC entry 259 (class 1259 OID 18067)
+-- TOC entry 226 (class 1259 OID 18067)
 -- Name: applcation_ref_status_ars_id_seq; Type: SEQUENCE; Schema: gp_db; Owner: aiman
 --
 
@@ -63,8 +63,8 @@ CREATE SEQUENCE gp_db.applcation_ref_status_ars_id_seq
 ALTER SEQUENCE gp_db.applcation_ref_status_ars_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3671 (class 0 OID 0)
--- Dependencies: 259
+-- TOC entry 3699 (class 0 OID 0)
+-- Dependencies: 226
 -- Name: applcation_ref_status_ars_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
 
@@ -72,7 +72,7 @@ ALTER SEQUENCE gp_db.applcation_ref_status_ars_id_seq OWNED BY gp_db.ref_status.
 
 
 --
--- TOC entry 260 (class 1259 OID 18068)
+-- TOC entry 227 (class 1259 OID 18068)
 -- Name: application_announcement; Type: TABLE; Schema: gp_db; Owner: aiman
 --
 
@@ -91,8 +91,8 @@ CREATE TABLE gp_db.application_announcement (
 ALTER TABLE gp_db.application_announcement OWNER TO aiman;
 
 --
--- TOC entry 3672 (class 0 OID 0)
--- Dependencies: 260
+-- TOC entry 3700 (class 0 OID 0)
+-- Dependencies: 227
 -- Name: COLUMN application_announcement.announce_status; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
 
@@ -100,7 +100,7 @@ COMMENT ON COLUMN gp_db.application_announcement.announce_status IS 'Refer Table
 
 
 --
--- TOC entry 261 (class 1259 OID 18073)
+-- TOC entry 228 (class 1259 OID 18073)
 -- Name: application_announcement_announce_id_seq; Type: SEQUENCE; Schema: gp_db; Owner: aiman
 --
 
@@ -115,8 +115,8 @@ CREATE SEQUENCE gp_db.application_announcement_announce_id_seq
 ALTER SEQUENCE gp_db.application_announcement_announce_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3673 (class 0 OID 0)
--- Dependencies: 261
+-- TOC entry 3701 (class 0 OID 0)
+-- Dependencies: 228
 -- Name: application_announcement_announce_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
 
@@ -124,7 +124,7 @@ ALTER SEQUENCE gp_db.application_announcement_announce_id_seq OWNED BY gp_db.app
 
 
 --
--- TOC entry 262 (class 1259 OID 18074)
+-- TOC entry 229 (class 1259 OID 18074)
 -- Name: application_approval_info; Type: TABLE; Schema: gp_db; Owner: aiman
 --
 
@@ -138,7 +138,7 @@ CREATE TABLE gp_db.application_approval_info (
 ALTER TABLE gp_db.application_approval_info OWNER TO aiman;
 
 --
--- TOC entry 263 (class 1259 OID 18079)
+-- TOC entry 230 (class 1259 OID 18079)
 -- Name: application_approval_info_applicationapprove_id_seq; Type: SEQUENCE; Schema: gp_db; Owner: aiman
 --
 
@@ -153,8 +153,8 @@ CREATE SEQUENCE gp_db.application_approval_info_applicationapprove_id_seq
 ALTER SEQUENCE gp_db.application_approval_info_applicationapprove_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3674 (class 0 OID 0)
--- Dependencies: 263
+-- TOC entry 3702 (class 0 OID 0)
+-- Dependencies: 230
 -- Name: application_approval_info_applicationapprove_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
 
@@ -162,7 +162,7 @@ ALTER SEQUENCE gp_db.application_approval_info_applicationapprove_id_seq OWNED B
 
 
 --
--- TOC entry 264 (class 1259 OID 18080)
+-- TOC entry 231 (class 1259 OID 18080)
 -- Name: application_attachment; Type: TABLE; Schema: gp_db; Owner: aiman
 --
 
@@ -180,7 +180,7 @@ CREATE TABLE gp_db.application_attachment (
 ALTER TABLE gp_db.application_attachment OWNER TO aiman;
 
 --
--- TOC entry 265 (class 1259 OID 18085)
+-- TOC entry 232 (class 1259 OID 18085)
 -- Name: application_attachment_attachment_id_seq; Type: SEQUENCE; Schema: gp_db; Owner: aiman
 --
 
@@ -195,8 +195,8 @@ CREATE SEQUENCE gp_db.application_attachment_attachment_id_seq
 ALTER SEQUENCE gp_db.application_attachment_attachment_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3675 (class 0 OID 0)
--- Dependencies: 265
+-- TOC entry 3703 (class 0 OID 0)
+-- Dependencies: 232
 -- Name: application_attachment_attachment_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
 
@@ -204,7 +204,7 @@ ALTER SEQUENCE gp_db.application_attachment_attachment_id_seq OWNED BY gp_db.app
 
 
 --
--- TOC entry 266 (class 1259 OID 18086)
+-- TOC entry 233 (class 1259 OID 18086)
 -- Name: application_faq; Type: TABLE; Schema: gp_db; Owner: aiman
 --
 
@@ -224,8 +224,8 @@ CREATE TABLE gp_db.application_faq (
 ALTER TABLE gp_db.application_faq OWNER TO aiman;
 
 --
--- TOC entry 3676 (class 0 OID 0)
--- Dependencies: 266
+-- TOC entry 3704 (class 0 OID 0)
+-- Dependencies: 233
 -- Name: COLUMN application_faq.applicationfaq_status_ind; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
 
@@ -233,7 +233,7 @@ COMMENT ON COLUMN gp_db.application_faq.applicationfaq_status_ind IS 'Refer Tabl
 
 
 --
--- TOC entry 267 (class 1259 OID 18091)
+-- TOC entry 234 (class 1259 OID 18091)
 -- Name: application_faq_applicationfaq_id_seq; Type: SEQUENCE; Schema: gp_db; Owner: aiman
 --
 
@@ -248,8 +248,8 @@ CREATE SEQUENCE gp_db.application_faq_applicationfaq_id_seq
 ALTER SEQUENCE gp_db.application_faq_applicationfaq_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3677 (class 0 OID 0)
--- Dependencies: 267
+-- TOC entry 3705 (class 0 OID 0)
+-- Dependencies: 234
 -- Name: application_faq_applicationfaq_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
 
@@ -257,7 +257,7 @@ ALTER SEQUENCE gp_db.application_faq_applicationfaq_id_seq OWNED BY gp_db.applic
 
 
 --
--- TOC entry 268 (class 1259 OID 18092)
+-- TOC entry 235 (class 1259 OID 18092)
 -- Name: application_info; Type: TABLE; Schema: gp_db; Owner: aiman
 --
 
@@ -289,8 +289,8 @@ CREATE TABLE gp_db.application_info (
 ALTER TABLE gp_db.application_info OWNER TO aiman;
 
 --
--- TOC entry 3678 (class 0 OID 0)
--- Dependencies: 268
+-- TOC entry 3706 (class 0 OID 0)
+-- Dependencies: 235
 -- Name: COLUMN application_info.appinfo_jenis_permohonan; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
 
@@ -298,8 +298,8 @@ COMMENT ON COLUMN gp_db.application_info.appinfo_jenis_permohonan IS 'Refer tabl
 
 
 --
--- TOC entry 3679 (class 0 OID 0)
--- Dependencies: 268
+-- TOC entry 3707 (class 0 OID 0)
+-- Dependencies: 235
 -- Name: COLUMN application_info.appinfo_status_permohonan; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
 
@@ -307,7 +307,7 @@ COMMENT ON COLUMN gp_db.application_info.appinfo_status_permohonan IS 'Refer tab
 
 
 --
--- TOC entry 269 (class 1259 OID 18097)
+-- TOC entry 236 (class 1259 OID 18097)
 -- Name: application_info_appinfo_id_seq; Type: SEQUENCE; Schema: gp_db; Owner: aiman
 --
 
@@ -322,8 +322,8 @@ CREATE SEQUENCE gp_db.application_info_appinfo_id_seq
 ALTER SEQUENCE gp_db.application_info_appinfo_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3680 (class 0 OID 0)
--- Dependencies: 269
+-- TOC entry 3708 (class 0 OID 0)
+-- Dependencies: 236
 -- Name: application_info_appinfo_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
 
@@ -331,7 +331,7 @@ ALTER SEQUENCE gp_db.application_info_appinfo_id_seq OWNED BY gp_db.application_
 
 
 --
--- TOC entry 270 (class 1259 OID 18098)
+-- TOC entry 237 (class 1259 OID 18098)
 -- Name: ref_application_type; Type: TABLE; Schema: gp_db; Owner: aiman
 --
 
@@ -345,7 +345,7 @@ CREATE TABLE gp_db.ref_application_type (
 ALTER TABLE gp_db.ref_application_type OWNER TO aiman;
 
 --
--- TOC entry 271 (class 1259 OID 18103)
+-- TOC entry 238 (class 1259 OID 18103)
 -- Name: application_ref_type_art_id_seq; Type: SEQUENCE; Schema: gp_db; Owner: aiman
 --
 
@@ -360,8 +360,8 @@ CREATE SEQUENCE gp_db.application_ref_type_art_id_seq
 ALTER SEQUENCE gp_db.application_ref_type_art_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3681 (class 0 OID 0)
--- Dependencies: 271
+-- TOC entry 3709 (class 0 OID 0)
+-- Dependencies: 238
 -- Name: application_ref_type_art_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
 
@@ -369,7 +369,7 @@ ALTER SEQUENCE gp_db.application_ref_type_art_id_seq OWNED BY gp_db.ref_applicat
 
 
 --
--- TOC entry 300 (class 1259 OID 18451)
+-- TOC entry 267 (class 1259 OID 18451)
 -- Name: application_term; Type: TABLE; Schema: gp_db; Owner: aiman
 --
 
@@ -388,7 +388,7 @@ CREATE TABLE gp_db.application_term (
 ALTER TABLE gp_db.application_term OWNER TO aiman;
 
 --
--- TOC entry 304 (class 1259 OID 18487)
+-- TOC entry 271 (class 1259 OID 18487)
 -- Name: application_term_applicationterm_id_seq; Type: SEQUENCE; Schema: gp_db; Owner: aiman
 --
 
@@ -403,8 +403,8 @@ CREATE SEQUENCE gp_db.application_term_applicationterm_id_seq
 ALTER SEQUENCE gp_db.application_term_applicationterm_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3682 (class 0 OID 0)
--- Dependencies: 304
+-- TOC entry 3710 (class 0 OID 0)
+-- Dependencies: 271
 -- Name: application_term_applicationterm_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
 
@@ -412,7 +412,7 @@ ALTER SEQUENCE gp_db.application_term_applicationterm_id_seq OWNED BY gp_db.appl
 
 
 --
--- TOC entry 303 (class 1259 OID 18484)
+-- TOC entry 270 (class 1259 OID 18484)
 -- Name: application_term_subitem; Type: TABLE; Schema: gp_db; Owner: aiman
 --
 
@@ -427,8 +427,8 @@ CREATE TABLE gp_db.application_term_subitem (
 ALTER TABLE gp_db.application_term_subitem OWNER TO aiman;
 
 --
--- TOC entry 3683 (class 0 OID 0)
--- Dependencies: 303
+-- TOC entry 3711 (class 0 OID 0)
+-- Dependencies: 270
 -- Name: COLUMN application_term_subitem.applicationterm_id; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
 
@@ -436,7 +436,7 @@ COMMENT ON COLUMN gp_db.application_term_subitem.applicationterm_id IS 'Refer ta
 
 
 --
--- TOC entry 305 (class 1259 OID 18501)
+-- TOC entry 272 (class 1259 OID 18501)
 -- Name: application_term_subitem_applicationterm_subitem_id_seq; Type: SEQUENCE; Schema: gp_db; Owner: aiman
 --
 
@@ -451,8 +451,8 @@ CREATE SEQUENCE gp_db.application_term_subitem_applicationterm_subitem_id_seq
 ALTER SEQUENCE gp_db.application_term_subitem_applicationterm_subitem_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3684 (class 0 OID 0)
--- Dependencies: 305
+-- TOC entry 3712 (class 0 OID 0)
+-- Dependencies: 272
 -- Name: application_term_subitem_applicationterm_subitem_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
 
@@ -460,7 +460,7 @@ ALTER SEQUENCE gp_db.application_term_subitem_applicationterm_subitem_id_seq OWN
 
 
 --
--- TOC entry 272 (class 1259 OID 18104)
+-- TOC entry 239 (class 1259 OID 18104)
 -- Name: fw_akses; Type: TABLE; Schema: gp_db; Owner: aiman
 --
 
@@ -477,7 +477,7 @@ CREATE TABLE gp_db.fw_akses (
 ALTER TABLE gp_db.fw_akses OWNER TO aiman;
 
 --
--- TOC entry 273 (class 1259 OID 18108)
+-- TOC entry 240 (class 1259 OID 18108)
 -- Name: fw_akses_fa_id_seq; Type: SEQUENCE; Schema: gp_db; Owner: aiman
 --
 
@@ -492,8 +492,8 @@ CREATE SEQUENCE gp_db.fw_akses_fa_id_seq
 ALTER SEQUENCE gp_db.fw_akses_fa_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3685 (class 0 OID 0)
--- Dependencies: 273
+-- TOC entry 3713 (class 0 OID 0)
+-- Dependencies: 240
 -- Name: fw_akses_fa_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
 
@@ -501,7 +501,7 @@ ALTER SEQUENCE gp_db.fw_akses_fa_id_seq OWNED BY gp_db.fw_akses.fa_id;
 
 
 --
--- TOC entry 274 (class 1259 OID 18109)
+-- TOC entry 241 (class 1259 OID 18109)
 -- Name: fw_audittrail; Type: TABLE; Schema: gp_db; Owner: aiman
 --
 
@@ -517,7 +517,7 @@ CREATE TABLE gp_db.fw_audittrail (
 ALTER TABLE gp_db.fw_audittrail OWNER TO aiman;
 
 --
--- TOC entry 275 (class 1259 OID 18115)
+-- TOC entry 242 (class 1259 OID 18115)
 -- Name: fw_audittrail_id_seq; Type: SEQUENCE; Schema: gp_db; Owner: aiman
 --
 
@@ -532,8 +532,8 @@ CREATE SEQUENCE gp_db.fw_audittrail_id_seq
 ALTER SEQUENCE gp_db.fw_audittrail_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3686 (class 0 OID 0)
--- Dependencies: 275
+-- TOC entry 3714 (class 0 OID 0)
+-- Dependencies: 242
 -- Name: fw_audittrail_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
 
@@ -541,7 +541,7 @@ ALTER SEQUENCE gp_db.fw_audittrail_id_seq OWNED BY gp_db.fw_audittrail.id;
 
 
 --
--- TOC entry 276 (class 1259 OID 18116)
+-- TOC entry 243 (class 1259 OID 18116)
 -- Name: fw_lang; Type: TABLE; Schema: gp_db; Owner: aiman
 --
 
@@ -558,7 +558,7 @@ CREATE TABLE gp_db.fw_lang (
 ALTER TABLE gp_db.fw_lang OWNER TO aiman;
 
 --
--- TOC entry 277 (class 1259 OID 18122)
+-- TOC entry 244 (class 1259 OID 18122)
 -- Name: fw_lang_fl_id_seq; Type: SEQUENCE; Schema: gp_db; Owner: aiman
 --
 
@@ -573,8 +573,8 @@ CREATE SEQUENCE gp_db.fw_lang_fl_id_seq
 ALTER SEQUENCE gp_db.fw_lang_fl_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3687 (class 0 OID 0)
--- Dependencies: 277
+-- TOC entry 3715 (class 0 OID 0)
+-- Dependencies: 244
 -- Name: fw_lang_fl_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
 
@@ -582,7 +582,7 @@ ALTER SEQUENCE gp_db.fw_lang_fl_id_seq OWNED BY gp_db.fw_lang.fl_id;
 
 
 --
--- TOC entry 278 (class 1259 OID 18123)
+-- TOC entry 245 (class 1259 OID 18123)
 -- Name: fw_menu; Type: TABLE; Schema: gp_db; Owner: aiman
 --
 
@@ -603,7 +603,7 @@ CREATE TABLE gp_db.fw_menu (
 ALTER TABLE gp_db.fw_menu OWNER TO aiman;
 
 --
--- TOC entry 279 (class 1259 OID 18130)
+-- TOC entry 246 (class 1259 OID 18130)
 -- Name: fw_menu_m_id_seq; Type: SEQUENCE; Schema: gp_db; Owner: aiman
 --
 
@@ -618,8 +618,8 @@ CREATE SEQUENCE gp_db.fw_menu_m_id_seq
 ALTER SEQUENCE gp_db.fw_menu_m_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3688 (class 0 OID 0)
--- Dependencies: 279
+-- TOC entry 3716 (class 0 OID 0)
+-- Dependencies: 246
 -- Name: fw_menu_m_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
 
@@ -627,7 +627,7 @@ ALTER SEQUENCE gp_db.fw_menu_m_id_seq OWNED BY gp_db.fw_menu.m_id;
 
 
 --
--- TOC entry 280 (class 1259 OID 18131)
+-- TOC entry 247 (class 1259 OID 18131)
 -- Name: fw_submenu; Type: TABLE; Schema: gp_db; Owner: aiman
 --
 
@@ -648,7 +648,7 @@ CREATE TABLE gp_db.fw_submenu (
 ALTER TABLE gp_db.fw_submenu OWNER TO aiman;
 
 --
--- TOC entry 281 (class 1259 OID 18138)
+-- TOC entry 248 (class 1259 OID 18138)
 -- Name: fw_submenu_sm_id_seq; Type: SEQUENCE; Schema: gp_db; Owner: aiman
 --
 
@@ -663,8 +663,8 @@ CREATE SEQUENCE gp_db.fw_submenu_sm_id_seq
 ALTER SEQUENCE gp_db.fw_submenu_sm_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3689 (class 0 OID 0)
--- Dependencies: 281
+-- TOC entry 3717 (class 0 OID 0)
+-- Dependencies: 248
 -- Name: fw_submenu_sm_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
 
@@ -672,7 +672,7 @@ ALTER SEQUENCE gp_db.fw_submenu_sm_id_seq OWNED BY gp_db.fw_submenu.sm_id;
 
 
 --
--- TOC entry 282 (class 1259 OID 18139)
+-- TOC entry 249 (class 1259 OID 18139)
 -- Name: fw_uploads; Type: TABLE; Schema: gp_db; Owner: aiman
 --
 
@@ -692,7 +692,7 @@ CREATE TABLE gp_db.fw_uploads (
 ALTER TABLE gp_db.fw_uploads OWNER TO aiman;
 
 --
--- TOC entry 283 (class 1259 OID 18145)
+-- TOC entry 250 (class 1259 OID 18145)
 -- Name: fw_uploads_id_seq; Type: SEQUENCE; Schema: gp_db; Owner: aiman
 --
 
@@ -707,8 +707,8 @@ CREATE SEQUENCE gp_db.fw_uploads_id_seq
 ALTER SEQUENCE gp_db.fw_uploads_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3690 (class 0 OID 0)
--- Dependencies: 283
+-- TOC entry 3718 (class 0 OID 0)
+-- Dependencies: 250
 -- Name: fw_uploads_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
 
@@ -716,7 +716,7 @@ ALTER SEQUENCE gp_db.fw_uploads_id_seq OWNED BY gp_db.fw_uploads.id;
 
 
 --
--- TOC entry 284 (class 1259 OID 18146)
+-- TOC entry 251 (class 1259 OID 18146)
 -- Name: ref_applicaton_status; Type: TABLE; Schema: gp_db; Owner: aiman
 --
 
@@ -732,7 +732,7 @@ CREATE TABLE gp_db.ref_applicaton_status (
 ALTER TABLE gp_db.ref_applicaton_status OWNER TO aiman;
 
 --
--- TOC entry 285 (class 1259 OID 18151)
+-- TOC entry 252 (class 1259 OID 18151)
 -- Name: ref_applicaton_status_ras_id_seq; Type: SEQUENCE; Schema: gp_db; Owner: aiman
 --
 
@@ -747,8 +747,8 @@ CREATE SEQUENCE gp_db.ref_applicaton_status_ras_id_seq
 ALTER SEQUENCE gp_db.ref_applicaton_status_ras_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3691 (class 0 OID 0)
--- Dependencies: 285
+-- TOC entry 3719 (class 0 OID 0)
+-- Dependencies: 252
 -- Name: ref_applicaton_status_ras_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
 
@@ -756,7 +756,7 @@ ALTER SEQUENCE gp_db.ref_applicaton_status_ras_id_seq OWNED BY gp_db.ref_applica
 
 
 --
--- TOC entry 286 (class 1259 OID 18152)
+-- TOC entry 253 (class 1259 OID 18152)
 -- Name: ref_branch; Type: TABLE; Schema: gp_db; Owner: aiman
 --
 
@@ -772,7 +772,7 @@ CREATE TABLE gp_db.ref_branch (
 ALTER TABLE gp_db.ref_branch OWNER TO aiman;
 
 --
--- TOC entry 287 (class 1259 OID 18157)
+-- TOC entry 254 (class 1259 OID 18157)
 -- Name: ref_branch_rb_id_seq; Type: SEQUENCE; Schema: gp_db; Owner: aiman
 --
 
@@ -787,8 +787,8 @@ CREATE SEQUENCE gp_db.ref_branch_rb_id_seq
 ALTER SEQUENCE gp_db.ref_branch_rb_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3692 (class 0 OID 0)
--- Dependencies: 287
+-- TOC entry 3720 (class 0 OID 0)
+-- Dependencies: 254
 -- Name: ref_branch_rb_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
 
@@ -796,7 +796,7 @@ ALTER SEQUENCE gp_db.ref_branch_rb_id_seq OWNED BY gp_db.ref_branch.rb_id;
 
 
 --
--- TOC entry 288 (class 1259 OID 18158)
+-- TOC entry 255 (class 1259 OID 18158)
 -- Name: ref_dept; Type: TABLE; Schema: gp_db; Owner: aiman
 --
 
@@ -812,8 +812,8 @@ CREATE TABLE gp_db.ref_dept (
 ALTER TABLE gp_db.ref_dept OWNER TO aiman;
 
 --
--- TOC entry 3693 (class 0 OID 0)
--- Dependencies: 288
+-- TOC entry 3721 (class 0 OID 0)
+-- Dependencies: 255
 -- Name: COLUMN ref_dept.rd_status_ind; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
 
@@ -821,7 +821,7 @@ COMMENT ON COLUMN gp_db.ref_dept.rd_status_ind IS 'Refer Table Ref_status';
 
 
 --
--- TOC entry 289 (class 1259 OID 18163)
+-- TOC entry 256 (class 1259 OID 18163)
 -- Name: ref_dept_rd_id_seq; Type: SEQUENCE; Schema: gp_db; Owner: aiman
 --
 
@@ -836,8 +836,8 @@ CREATE SEQUENCE gp_db.ref_dept_rd_id_seq
 ALTER SEQUENCE gp_db.ref_dept_rd_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3694 (class 0 OID 0)
--- Dependencies: 289
+-- TOC entry 3722 (class 0 OID 0)
+-- Dependencies: 256
 -- Name: ref_dept_rd_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
 
@@ -845,7 +845,7 @@ ALTER SEQUENCE gp_db.ref_dept_rd_id_seq OWNED BY gp_db.ref_dept.rd_id;
 
 
 --
--- TOC entry 290 (class 1259 OID 18164)
+-- TOC entry 257 (class 1259 OID 18164)
 -- Name: ref_gender; Type: TABLE; Schema: gp_db; Owner: aiman
 --
 
@@ -859,7 +859,7 @@ CREATE TABLE gp_db.ref_gender (
 ALTER TABLE gp_db.ref_gender OWNER TO aiman;
 
 --
--- TOC entry 291 (class 1259 OID 18169)
+-- TOC entry 258 (class 1259 OID 18169)
 -- Name: ref_gender_rgend_id_seq; Type: SEQUENCE; Schema: gp_db; Owner: aiman
 --
 
@@ -874,8 +874,8 @@ CREATE SEQUENCE gp_db.ref_gender_rgend_id_seq
 ALTER SEQUENCE gp_db.ref_gender_rgend_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3695 (class 0 OID 0)
--- Dependencies: 291
+-- TOC entry 3723 (class 0 OID 0)
+-- Dependencies: 258
 -- Name: ref_gender_rgend_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
 
@@ -883,7 +883,7 @@ ALTER SEQUENCE gp_db.ref_gender_rgend_id_seq OWNED BY gp_db.ref_gender.rgend_id;
 
 
 --
--- TOC entry 292 (class 1259 OID 18170)
+-- TOC entry 259 (class 1259 OID 18170)
 -- Name: ref_role; Type: TABLE; Schema: gp_db; Owner: aiman
 --
 
@@ -900,7 +900,7 @@ CREATE TABLE gp_db.ref_role (
 ALTER TABLE gp_db.ref_role OWNER TO aiman;
 
 --
--- TOC entry 293 (class 1259 OID 18175)
+-- TOC entry 260 (class 1259 OID 18175)
 -- Name: ref_role_rr_id_seq; Type: SEQUENCE; Schema: gp_db; Owner: aiman
 --
 
@@ -915,8 +915,8 @@ CREATE SEQUENCE gp_db.ref_role_rr_id_seq
 ALTER SEQUENCE gp_db.ref_role_rr_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3696 (class 0 OID 0)
--- Dependencies: 293
+-- TOC entry 3724 (class 0 OID 0)
+-- Dependencies: 260
 -- Name: ref_role_rr_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
 
@@ -924,7 +924,7 @@ ALTER SEQUENCE gp_db.ref_role_rr_id_seq OWNED BY gp_db.ref_role.rr_id;
 
 
 --
--- TOC entry 294 (class 1259 OID 18176)
+-- TOC entry 261 (class 1259 OID 18176)
 -- Name: ref_states; Type: TABLE; Schema: gp_db; Owner: aiman
 --
 
@@ -940,7 +940,7 @@ CREATE TABLE gp_db.ref_states (
 ALTER TABLE gp_db.ref_states OWNER TO aiman;
 
 --
--- TOC entry 295 (class 1259 OID 18181)
+-- TOC entry 262 (class 1259 OID 18181)
 -- Name: ref_states_rstates_id_seq; Type: SEQUENCE; Schema: gp_db; Owner: aiman
 --
 
@@ -955,8 +955,8 @@ CREATE SEQUENCE gp_db.ref_states_rstates_id_seq
 ALTER SEQUENCE gp_db.ref_states_rstates_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3697 (class 0 OID 0)
--- Dependencies: 295
+-- TOC entry 3725 (class 0 OID 0)
+-- Dependencies: 262
 -- Name: ref_states_rstates_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
 
@@ -964,7 +964,7 @@ ALTER SEQUENCE gp_db.ref_states_rstates_id_seq OWNED BY gp_db.ref_states.rstates
 
 
 --
--- TOC entry 296 (class 1259 OID 18182)
+-- TOC entry 263 (class 1259 OID 18182)
 -- Name: ref_user_type; Type: TABLE; Schema: gp_db; Owner: aiman
 --
 
@@ -980,7 +980,7 @@ CREATE TABLE gp_db.ref_user_type (
 ALTER TABLE gp_db.ref_user_type OWNER TO aiman;
 
 --
--- TOC entry 297 (class 1259 OID 18187)
+-- TOC entry 264 (class 1259 OID 18187)
 -- Name: ref_user_type_rut_id_seq; Type: SEQUENCE; Schema: gp_db; Owner: aiman
 --
 
@@ -995,8 +995,8 @@ CREATE SEQUENCE gp_db.ref_user_type_rut_id_seq
 ALTER SEQUENCE gp_db.ref_user_type_rut_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3698 (class 0 OID 0)
--- Dependencies: 297
+-- TOC entry 3726 (class 0 OID 0)
+-- Dependencies: 264
 -- Name: ref_user_type_rut_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
 
@@ -1004,7 +1004,7 @@ ALTER SEQUENCE gp_db.ref_user_type_rut_id_seq OWNED BY gp_db.ref_user_type.rut_i
 
 
 --
--- TOC entry 301 (class 1259 OID 18454)
+-- TOC entry 268 (class 1259 OID 18454)
 -- Name: user_demographic; Type: TABLE; Schema: gp_db; Owner: aiman
 --
 
@@ -1026,8 +1026,8 @@ CREATE TABLE gp_db.user_demographic (
 ALTER TABLE gp_db.user_demographic OWNER TO aiman;
 
 --
--- TOC entry 3699 (class 0 OID 0)
--- Dependencies: 301
+-- TOC entry 3727 (class 0 OID 0)
+-- Dependencies: 268
 -- Name: COLUMN user_demographic.u_id; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
 
@@ -1035,8 +1035,8 @@ COMMENT ON COLUMN gp_db.user_demographic.u_id IS 'Refer Table users';
 
 
 --
--- TOC entry 3700 (class 0 OID 0)
--- Dependencies: 301
+-- TOC entry 3728 (class 0 OID 0)
+-- Dependencies: 268
 -- Name: COLUMN user_demographic.ud_state; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
 
@@ -1044,7 +1044,7 @@ COMMENT ON COLUMN gp_db.user_demographic.ud_state IS 'Refer Table ref_states';
 
 
 --
--- TOC entry 302 (class 1259 OID 18457)
+-- TOC entry 269 (class 1259 OID 18457)
 -- Name: user_demographic_ud_id_seq; Type: SEQUENCE; Schema: gp_db; Owner: aiman
 --
 
@@ -1059,8 +1059,8 @@ CREATE SEQUENCE gp_db.user_demographic_ud_id_seq
 ALTER SEQUENCE gp_db.user_demographic_ud_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3701 (class 0 OID 0)
--- Dependencies: 302
+-- TOC entry 3729 (class 0 OID 0)
+-- Dependencies: 269
 -- Name: user_demographic_ud_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
 
@@ -1068,7 +1068,7 @@ ALTER SEQUENCE gp_db.user_demographic_ud_id_seq OWNED BY gp_db.user_demographic.
 
 
 --
--- TOC entry 298 (class 1259 OID 18188)
+-- TOC entry 265 (class 1259 OID 18188)
 -- Name: users; Type: TABLE; Schema: gp_db; Owner: aiman
 --
 
@@ -1101,8 +1101,8 @@ CREATE TABLE gp_db.users (
 ALTER TABLE gp_db.users OWNER TO aiman;
 
 --
--- TOC entry 3702 (class 0 OID 0)
--- Dependencies: 298
+-- TOC entry 3730 (class 0 OID 0)
+-- Dependencies: 265
 -- Name: COLUMN users.u_dept; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
 
@@ -1110,8 +1110,8 @@ COMMENT ON COLUMN gp_db.users.u_dept IS 'Refer Table ref_dept';
 
 
 --
--- TOC entry 3703 (class 0 OID 0)
--- Dependencies: 298
+-- TOC entry 3731 (class 0 OID 0)
+-- Dependencies: 265
 -- Name: COLUMN users.u_ref_role; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
 
@@ -1119,8 +1119,8 @@ COMMENT ON COLUMN gp_db.users.u_ref_role IS 'Refer Table ref_role';
 
 
 --
--- TOC entry 3704 (class 0 OID 0)
--- Dependencies: 298
+-- TOC entry 3732 (class 0 OID 0)
+-- Dependencies: 265
 -- Name: COLUMN users.u_user_type; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
 
@@ -1128,8 +1128,8 @@ COMMENT ON COLUMN gp_db.users.u_user_type IS 'Refer Table ref_user_type';
 
 
 --
--- TOC entry 3705 (class 0 OID 0)
--- Dependencies: 298
+-- TOC entry 3733 (class 0 OID 0)
+-- Dependencies: 265
 -- Name: COLUMN users.u_office_branch; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
 
@@ -1137,8 +1137,8 @@ COMMENT ON COLUMN gp_db.users.u_office_branch IS 'Refer Table ref_branch';
 
 
 --
--- TOC entry 3706 (class 0 OID 0)
--- Dependencies: 298
+-- TOC entry 3734 (class 0 OID 0)
+-- Dependencies: 265
 -- Name: COLUMN users.u_status_ind; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
 
@@ -1146,7 +1146,7 @@ COMMENT ON COLUMN gp_db.users.u_status_ind IS 'Refer Table ref_status';
 
 
 --
--- TOC entry 299 (class 1259 OID 18193)
+-- TOC entry 266 (class 1259 OID 18193)
 -- Name: users_u_id_seq; Type: SEQUENCE; Schema: gp_db; Owner: aiman
 --
 
@@ -1161,8 +1161,8 @@ CREATE SEQUENCE gp_db.users_u_id_seq
 ALTER SEQUENCE gp_db.users_u_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3707 (class 0 OID 0)
--- Dependencies: 299
+-- TOC entry 3735 (class 0 OID 0)
+-- Dependencies: 266
 -- Name: users_u_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
 
@@ -1170,7 +1170,7 @@ ALTER SEQUENCE gp_db.users_u_id_seq OWNED BY gp_db.users.u_id;
 
 
 --
--- TOC entry 3377 (class 2604 OID 18194)
+-- TOC entry 3405 (class 2604 OID 18194)
 -- Name: application_announcement announce_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1178,7 +1178,7 @@ ALTER TABLE ONLY gp_db.application_announcement ALTER COLUMN announce_id SET DEF
 
 
 --
--- TOC entry 3378 (class 2604 OID 18195)
+-- TOC entry 3406 (class 2604 OID 18195)
 -- Name: application_approval_info applicationapprove_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1186,7 +1186,7 @@ ALTER TABLE ONLY gp_db.application_approval_info ALTER COLUMN applicationapprove
 
 
 --
--- TOC entry 3379 (class 2604 OID 18196)
+-- TOC entry 3407 (class 2604 OID 18196)
 -- Name: application_attachment attachment_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1194,7 +1194,7 @@ ALTER TABLE ONLY gp_db.application_attachment ALTER COLUMN attachment_id SET DEF
 
 
 --
--- TOC entry 3380 (class 2604 OID 18197)
+-- TOC entry 3408 (class 2604 OID 18197)
 -- Name: application_faq applicationfaq_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1202,7 +1202,7 @@ ALTER TABLE ONLY gp_db.application_faq ALTER COLUMN applicationfaq_id SET DEFAUL
 
 
 --
--- TOC entry 3381 (class 2604 OID 18198)
+-- TOC entry 3409 (class 2604 OID 18198)
 -- Name: application_info appinfo_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1210,7 +1210,7 @@ ALTER TABLE ONLY gp_db.application_info ALTER COLUMN appinfo_id SET DEFAULT next
 
 
 --
--- TOC entry 3405 (class 2604 OID 18488)
+-- TOC entry 3433 (class 2604 OID 18488)
 -- Name: application_term applicationterm_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1218,7 +1218,7 @@ ALTER TABLE ONLY gp_db.application_term ALTER COLUMN applicationterm_id SET DEFA
 
 
 --
--- TOC entry 3407 (class 2604 OID 18502)
+-- TOC entry 3435 (class 2604 OID 18502)
 -- Name: application_term_subitem applicationterm_subitem_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1226,7 +1226,7 @@ ALTER TABLE ONLY gp_db.application_term_subitem ALTER COLUMN applicationterm_sub
 
 
 --
--- TOC entry 3383 (class 2604 OID 18199)
+-- TOC entry 3411 (class 2604 OID 18199)
 -- Name: fw_akses fa_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1234,7 +1234,7 @@ ALTER TABLE ONLY gp_db.fw_akses ALTER COLUMN fa_id SET DEFAULT nextval('gp_db.fw
 
 
 --
--- TOC entry 3385 (class 2604 OID 18200)
+-- TOC entry 3413 (class 2604 OID 18200)
 -- Name: fw_audittrail id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1242,7 +1242,7 @@ ALTER TABLE ONLY gp_db.fw_audittrail ALTER COLUMN id SET DEFAULT nextval('gp_db.
 
 
 --
--- TOC entry 3387 (class 2604 OID 18201)
+-- TOC entry 3415 (class 2604 OID 18201)
 -- Name: fw_lang fl_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1250,7 +1250,7 @@ ALTER TABLE ONLY gp_db.fw_lang ALTER COLUMN fl_id SET DEFAULT nextval('gp_db.fw_
 
 
 --
--- TOC entry 3389 (class 2604 OID 18202)
+-- TOC entry 3417 (class 2604 OID 18202)
 -- Name: fw_menu m_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1258,7 +1258,7 @@ ALTER TABLE ONLY gp_db.fw_menu ALTER COLUMN m_id SET DEFAULT nextval('gp_db.fw_m
 
 
 --
--- TOC entry 3392 (class 2604 OID 18203)
+-- TOC entry 3420 (class 2604 OID 18203)
 -- Name: fw_submenu sm_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1266,7 +1266,7 @@ ALTER TABLE ONLY gp_db.fw_submenu ALTER COLUMN sm_id SET DEFAULT nextval('gp_db.
 
 
 --
--- TOC entry 3395 (class 2604 OID 18204)
+-- TOC entry 3423 (class 2604 OID 18204)
 -- Name: fw_uploads id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1274,7 +1274,7 @@ ALTER TABLE ONLY gp_db.fw_uploads ALTER COLUMN id SET DEFAULT nextval('gp_db.fw_
 
 
 --
--- TOC entry 3382 (class 2604 OID 18205)
+-- TOC entry 3410 (class 2604 OID 18205)
 -- Name: ref_application_type rat_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1282,7 +1282,7 @@ ALTER TABLE ONLY gp_db.ref_application_type ALTER COLUMN rat_id SET DEFAULT next
 
 
 --
--- TOC entry 3397 (class 2604 OID 18206)
+-- TOC entry 3425 (class 2604 OID 18206)
 -- Name: ref_applicaton_status ras_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1290,7 +1290,7 @@ ALTER TABLE ONLY gp_db.ref_applicaton_status ALTER COLUMN ras_id SET DEFAULT nex
 
 
 --
--- TOC entry 3398 (class 2604 OID 18207)
+-- TOC entry 3426 (class 2604 OID 18207)
 -- Name: ref_branch rb_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1298,7 +1298,7 @@ ALTER TABLE ONLY gp_db.ref_branch ALTER COLUMN rb_id SET DEFAULT nextval('gp_db.
 
 
 --
--- TOC entry 3399 (class 2604 OID 18208)
+-- TOC entry 3427 (class 2604 OID 18208)
 -- Name: ref_dept rd_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1306,7 +1306,7 @@ ALTER TABLE ONLY gp_db.ref_dept ALTER COLUMN rd_id SET DEFAULT nextval('gp_db.re
 
 
 --
--- TOC entry 3400 (class 2604 OID 18209)
+-- TOC entry 3428 (class 2604 OID 18209)
 -- Name: ref_gender rgend_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1314,7 +1314,7 @@ ALTER TABLE ONLY gp_db.ref_gender ALTER COLUMN rgend_id SET DEFAULT nextval('gp_
 
 
 --
--- TOC entry 3401 (class 2604 OID 18210)
+-- TOC entry 3429 (class 2604 OID 18210)
 -- Name: ref_role rr_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1322,7 +1322,7 @@ ALTER TABLE ONLY gp_db.ref_role ALTER COLUMN rr_id SET DEFAULT nextval('gp_db.re
 
 
 --
--- TOC entry 3402 (class 2604 OID 18211)
+-- TOC entry 3430 (class 2604 OID 18211)
 -- Name: ref_states rstates_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1330,7 +1330,7 @@ ALTER TABLE ONLY gp_db.ref_states ALTER COLUMN rstates_id SET DEFAULT nextval('g
 
 
 --
--- TOC entry 3376 (class 2604 OID 18212)
+-- TOC entry 3404 (class 2604 OID 18212)
 -- Name: ref_status rs_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1338,7 +1338,7 @@ ALTER TABLE ONLY gp_db.ref_status ALTER COLUMN rs_id SET DEFAULT nextval('gp_db.
 
 
 --
--- TOC entry 3403 (class 2604 OID 18213)
+-- TOC entry 3431 (class 2604 OID 18213)
 -- Name: ref_user_type rut_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1346,7 +1346,7 @@ ALTER TABLE ONLY gp_db.ref_user_type ALTER COLUMN rut_id SET DEFAULT nextval('gp
 
 
 --
--- TOC entry 3406 (class 2604 OID 18458)
+-- TOC entry 3434 (class 2604 OID 18458)
 -- Name: user_demographic ud_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1354,7 +1354,7 @@ ALTER TABLE ONLY gp_db.user_demographic ALTER COLUMN ud_id SET DEFAULT nextval('
 
 
 --
--- TOC entry 3404 (class 2604 OID 18214)
+-- TOC entry 3432 (class 2604 OID 18214)
 -- Name: users u_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1362,8 +1362,8 @@ ALTER TABLE ONLY gp_db.users ALTER COLUMN u_id SET DEFAULT nextval('gp_db.users_
 
 
 --
--- TOC entry 3620 (class 0 OID 18068)
--- Dependencies: 260
+-- TOC entry 3648 (class 0 OID 18068)
+-- Dependencies: 227
 -- Data for Name: application_announcement; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
@@ -1375,24 +1375,24 @@ INSERT INTO gp_db.application_announcement VALUES (2, 'Permohonan bagi golden pa
 
 
 --
--- TOC entry 3622 (class 0 OID 18074)
--- Dependencies: 262
+-- TOC entry 3650 (class 0 OID 18074)
+-- Dependencies: 229
 -- Data for Name: application_approval_info; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
 
 
 --
--- TOC entry 3624 (class 0 OID 18080)
--- Dependencies: 264
+-- TOC entry 3652 (class 0 OID 18080)
+-- Dependencies: 231
 -- Data for Name: application_attachment; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
 
 
 --
--- TOC entry 3626 (class 0 OID 18086)
--- Dependencies: 266
+-- TOC entry 3654 (class 0 OID 18086)
+-- Dependencies: 233
 -- Data for Name: application_faq; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
@@ -1401,8 +1401,8 @@ INSERT INTO gp_db.application_faq VALUES (2, 'Siapa Yang Boleh Memohon Golden Pa
 
 
 --
--- TOC entry 3628 (class 0 OID 18092)
--- Dependencies: 268
+-- TOC entry 3656 (class 0 OID 18092)
+-- Dependencies: 235
 -- Data for Name: application_info; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
@@ -1424,24 +1424,24 @@ INSERT INTO gp_db.application_info VALUES (12, 'MBSA/GP/2025/00001', 1, 'AHMAD A
 
 
 --
--- TOC entry 3660 (class 0 OID 18451)
--- Dependencies: 300
+-- TOC entry 3688 (class 0 OID 18451)
+-- Dependencies: 267
 -- Data for Name: application_term; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
 
 
 --
--- TOC entry 3663 (class 0 OID 18484)
--- Dependencies: 303
+-- TOC entry 3691 (class 0 OID 18484)
+-- Dependencies: 270
 -- Data for Name: application_term_subitem; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
 
 
 --
--- TOC entry 3632 (class 0 OID 18104)
--- Dependencies: 272
+-- TOC entry 3660 (class 0 OID 18104)
+-- Dependencies: 239
 -- Data for Name: fw_akses; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
@@ -1522,8 +1522,8 @@ INSERT INTO gp_db.fw_akses VALUES (127, 9, 16, 5, 'admin', '2025-07-07 10:16:54.
 
 
 --
--- TOC entry 3634 (class 0 OID 18109)
--- Dependencies: 274
+-- TOC entry 3662 (class 0 OID 18109)
+-- Dependencies: 241
 -- Data for Name: fw_audittrail; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
@@ -2488,8 +2488,8 @@ INSERT INTO gp_db.fw_audittrail VALUES (958, '{"username":"admin","nama":"Admini
 
 
 --
--- TOC entry 3636 (class 0 OID 18116)
--- Dependencies: 276
+-- TOC entry 3664 (class 0 OID 18116)
+-- Dependencies: 243
 -- Data for Name: fw_lang; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
@@ -2971,8 +2971,8 @@ INSERT INTO gp_db.fw_lang VALUES (475, 'Bahagian Pelulus', 'Bahagian Pelulus', N
 
 
 --
--- TOC entry 3638 (class 0 OID 18123)
--- Dependencies: 278
+-- TOC entry 3666 (class 0 OID 18123)
+-- Dependencies: 245
 -- Data for Name: fw_menu; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
@@ -2987,8 +2987,8 @@ INSERT INTO gp_db.fw_menu VALUES (11, 'Tetapan Hebahan', 'Y', '#', 'fa fa-bullho
 
 
 --
--- TOC entry 3640 (class 0 OID 18131)
--- Dependencies: 280
+-- TOC entry 3668 (class 0 OID 18131)
+-- Dependencies: 247
 -- Data for Name: fw_submenu; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
@@ -3014,16 +3014,16 @@ INSERT INTO gp_db.fw_submenu VALUES (16, 9, 'Bahagian Pelulus', 'm/m.approvalApp
 
 
 --
--- TOC entry 3642 (class 0 OID 18139)
--- Dependencies: 282
+-- TOC entry 3670 (class 0 OID 18139)
+-- Dependencies: 249
 -- Data for Name: fw_uploads; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
 
 
 --
--- TOC entry 3630 (class 0 OID 18098)
--- Dependencies: 270
+-- TOC entry 3658 (class 0 OID 18098)
+-- Dependencies: 237
 -- Data for Name: ref_application_type; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
@@ -3032,8 +3032,8 @@ INSERT INTO gp_db.ref_application_type VALUES (2, 'Pembaharuan Permohonan', 1);
 
 
 --
--- TOC entry 3644 (class 0 OID 18146)
--- Dependencies: 284
+-- TOC entry 3672 (class 0 OID 18146)
+-- Dependencies: 251
 -- Data for Name: ref_applicaton_status; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
@@ -3048,8 +3048,8 @@ INSERT INTO gp_db.ref_applicaton_status VALUES (8, 'Proses Selesai', 1, 'admin',
 
 
 --
--- TOC entry 3646 (class 0 OID 18152)
--- Dependencies: 286
+-- TOC entry 3674 (class 0 OID 18152)
+-- Dependencies: 253
 -- Data for Name: ref_branch; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
@@ -3060,8 +3060,8 @@ INSERT INTO gp_db.ref_branch VALUES (4, 'WISMA MBSA', 1, 'admin', '2025-06-20 17
 
 
 --
--- TOC entry 3648 (class 0 OID 18158)
--- Dependencies: 288
+-- TOC entry 3676 (class 0 OID 18158)
+-- Dependencies: 255
 -- Data for Name: ref_dept; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
@@ -3087,8 +3087,8 @@ INSERT INTO gp_db.ref_dept VALUES (19, 'JABATAN PENGANGKUTAN BANDAR', 1, 'admin'
 
 
 --
--- TOC entry 3650 (class 0 OID 18164)
--- Dependencies: 290
+-- TOC entry 3678 (class 0 OID 18164)
+-- Dependencies: 257
 -- Data for Name: ref_gender; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
@@ -3097,8 +3097,8 @@ INSERT INTO gp_db.ref_gender VALUES (2, 'Perempuan', 1);
 
 
 --
--- TOC entry 3652 (class 0 OID 18170)
--- Dependencies: 292
+-- TOC entry 3680 (class 0 OID 18170)
+-- Dependencies: 259
 -- Data for Name: ref_role; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
@@ -3110,8 +3110,8 @@ INSERT INTO gp_db.ref_role VALUES (6, 'approval', 'Pelulus', 1, 'admin', NULL);
 
 
 --
--- TOC entry 3654 (class 0 OID 18176)
--- Dependencies: 294
+-- TOC entry 3682 (class 0 OID 18176)
+-- Dependencies: 261
 -- Data for Name: ref_states; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
@@ -3132,8 +3132,8 @@ INSERT INTO gp_db.ref_states VALUES (14, 'W.P PUTRAJAYA', 1, 'admin', '2025-06-2
 
 
 --
--- TOC entry 3618 (class 0 OID 18062)
--- Dependencies: 258
+-- TOC entry 3646 (class 0 OID 18062)
+-- Dependencies: 225
 -- Data for Name: ref_status; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
@@ -3142,8 +3142,8 @@ INSERT INTO gp_db.ref_status VALUES (2, 2, 'Tidak Aktif');
 
 
 --
--- TOC entry 3656 (class 0 OID 18182)
--- Dependencies: 296
+-- TOC entry 3684 (class 0 OID 18182)
+-- Dependencies: 263
 -- Data for Name: ref_user_type; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
@@ -3153,24 +3153,24 @@ INSERT INTO gp_db.ref_user_type VALUES (3, 'Syarikat Luar', 2, NULL, NULL);
 
 
 --
--- TOC entry 3661 (class 0 OID 18454)
--- Dependencies: 301
+-- TOC entry 3689 (class 0 OID 18454)
+-- Dependencies: 268
 -- Data for Name: user_demographic; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
 
 
 --
--- TOC entry 3658 (class 0 OID 18188)
--- Dependencies: 298
+-- TOC entry 3686 (class 0 OID 18188)
+-- Dependencies: 265
 -- Data for Name: users; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
 
 
 --
--- TOC entry 3708 (class 0 OID 0)
--- Dependencies: 259
+-- TOC entry 3736 (class 0 OID 0)
+-- Dependencies: 226
 -- Name: applcation_ref_status_ars_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
 
@@ -3178,8 +3178,8 @@ SELECT pg_catalog.setval('gp_db.applcation_ref_status_ars_id_seq', 5, true);
 
 
 --
--- TOC entry 3709 (class 0 OID 0)
--- Dependencies: 261
+-- TOC entry 3737 (class 0 OID 0)
+-- Dependencies: 228
 -- Name: application_announcement_announce_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
 
@@ -3187,8 +3187,8 @@ SELECT pg_catalog.setval('gp_db.application_announcement_announce_id_seq', 5, tr
 
 
 --
--- TOC entry 3710 (class 0 OID 0)
--- Dependencies: 263
+-- TOC entry 3738 (class 0 OID 0)
+-- Dependencies: 230
 -- Name: application_approval_info_applicationapprove_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
 
@@ -3196,8 +3196,8 @@ SELECT pg_catalog.setval('gp_db.application_approval_info_applicationapprove_id_
 
 
 --
--- TOC entry 3711 (class 0 OID 0)
--- Dependencies: 265
+-- TOC entry 3739 (class 0 OID 0)
+-- Dependencies: 232
 -- Name: application_attachment_attachment_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
 
@@ -3205,8 +3205,8 @@ SELECT pg_catalog.setval('gp_db.application_attachment_attachment_id_seq', 1, fa
 
 
 --
--- TOC entry 3712 (class 0 OID 0)
--- Dependencies: 267
+-- TOC entry 3740 (class 0 OID 0)
+-- Dependencies: 234
 -- Name: application_faq_applicationfaq_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
 
@@ -3214,8 +3214,8 @@ SELECT pg_catalog.setval('gp_db.application_faq_applicationfaq_id_seq', 2, true)
 
 
 --
--- TOC entry 3713 (class 0 OID 0)
--- Dependencies: 269
+-- TOC entry 3741 (class 0 OID 0)
+-- Dependencies: 236
 -- Name: application_info_appinfo_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
 
@@ -3223,8 +3223,8 @@ SELECT pg_catalog.setval('gp_db.application_info_appinfo_id_seq', 95, true);
 
 
 --
--- TOC entry 3714 (class 0 OID 0)
--- Dependencies: 271
+-- TOC entry 3742 (class 0 OID 0)
+-- Dependencies: 238
 -- Name: application_ref_type_art_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
 
@@ -3232,8 +3232,8 @@ SELECT pg_catalog.setval('gp_db.application_ref_type_art_id_seq', 6, true);
 
 
 --
--- TOC entry 3715 (class 0 OID 0)
--- Dependencies: 304
+-- TOC entry 3743 (class 0 OID 0)
+-- Dependencies: 271
 -- Name: application_term_applicationterm_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
 
@@ -3241,8 +3241,8 @@ SELECT pg_catalog.setval('gp_db.application_term_applicationterm_id_seq', 1, fal
 
 
 --
--- TOC entry 3716 (class 0 OID 0)
--- Dependencies: 305
+-- TOC entry 3744 (class 0 OID 0)
+-- Dependencies: 272
 -- Name: application_term_subitem_applicationterm_subitem_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
 
@@ -3250,8 +3250,8 @@ SELECT pg_catalog.setval('gp_db.application_term_subitem_applicationterm_subitem
 
 
 --
--- TOC entry 3717 (class 0 OID 0)
--- Dependencies: 273
+-- TOC entry 3745 (class 0 OID 0)
+-- Dependencies: 240
 -- Name: fw_akses_fa_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
 
@@ -3259,8 +3259,8 @@ SELECT pg_catalog.setval('gp_db.fw_akses_fa_id_seq', 127, true);
 
 
 --
--- TOC entry 3718 (class 0 OID 0)
--- Dependencies: 275
+-- TOC entry 3746 (class 0 OID 0)
+-- Dependencies: 242
 -- Name: fw_audittrail_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
 
@@ -3268,8 +3268,8 @@ SELECT pg_catalog.setval('gp_db.fw_audittrail_id_seq', 958, true);
 
 
 --
--- TOC entry 3719 (class 0 OID 0)
--- Dependencies: 277
+-- TOC entry 3747 (class 0 OID 0)
+-- Dependencies: 244
 -- Name: fw_lang_fl_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
 
@@ -3277,8 +3277,8 @@ SELECT pg_catalog.setval('gp_db.fw_lang_fl_id_seq', 475, true);
 
 
 --
--- TOC entry 3720 (class 0 OID 0)
--- Dependencies: 279
+-- TOC entry 3748 (class 0 OID 0)
+-- Dependencies: 246
 -- Name: fw_menu_m_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
 
@@ -3286,8 +3286,8 @@ SELECT pg_catalog.setval('gp_db.fw_menu_m_id_seq', 11, true);
 
 
 --
--- TOC entry 3721 (class 0 OID 0)
--- Dependencies: 281
+-- TOC entry 3749 (class 0 OID 0)
+-- Dependencies: 248
 -- Name: fw_submenu_sm_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
 
@@ -3295,8 +3295,8 @@ SELECT pg_catalog.setval('gp_db.fw_submenu_sm_id_seq', 26, true);
 
 
 --
--- TOC entry 3722 (class 0 OID 0)
--- Dependencies: 283
+-- TOC entry 3750 (class 0 OID 0)
+-- Dependencies: 250
 -- Name: fw_uploads_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
 
@@ -3304,8 +3304,8 @@ SELECT pg_catalog.setval('gp_db.fw_uploads_id_seq', 1, false);
 
 
 --
--- TOC entry 3723 (class 0 OID 0)
--- Dependencies: 285
+-- TOC entry 3751 (class 0 OID 0)
+-- Dependencies: 252
 -- Name: ref_applicaton_status_ras_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
 
@@ -3313,8 +3313,8 @@ SELECT pg_catalog.setval('gp_db.ref_applicaton_status_ras_id_seq', 15, true);
 
 
 --
--- TOC entry 3724 (class 0 OID 0)
--- Dependencies: 287
+-- TOC entry 3752 (class 0 OID 0)
+-- Dependencies: 254
 -- Name: ref_branch_rb_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
 
@@ -3322,8 +3322,8 @@ SELECT pg_catalog.setval('gp_db.ref_branch_rb_id_seq', 4, true);
 
 
 --
--- TOC entry 3725 (class 0 OID 0)
--- Dependencies: 289
+-- TOC entry 3753 (class 0 OID 0)
+-- Dependencies: 256
 -- Name: ref_dept_rd_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
 
@@ -3331,8 +3331,8 @@ SELECT pg_catalog.setval('gp_db.ref_dept_rd_id_seq', 20, true);
 
 
 --
--- TOC entry 3726 (class 0 OID 0)
--- Dependencies: 291
+-- TOC entry 3754 (class 0 OID 0)
+-- Dependencies: 258
 -- Name: ref_gender_rgend_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
 
@@ -3340,8 +3340,8 @@ SELECT pg_catalog.setval('gp_db.ref_gender_rgend_id_seq', 2, true);
 
 
 --
--- TOC entry 3727 (class 0 OID 0)
--- Dependencies: 293
+-- TOC entry 3755 (class 0 OID 0)
+-- Dependencies: 260
 -- Name: ref_role_rr_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
 
@@ -3349,8 +3349,8 @@ SELECT pg_catalog.setval('gp_db.ref_role_rr_id_seq', 6, true);
 
 
 --
--- TOC entry 3728 (class 0 OID 0)
--- Dependencies: 295
+-- TOC entry 3756 (class 0 OID 0)
+-- Dependencies: 262
 -- Name: ref_states_rstates_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
 
@@ -3358,8 +3358,8 @@ SELECT pg_catalog.setval('gp_db.ref_states_rstates_id_seq', 14, true);
 
 
 --
--- TOC entry 3729 (class 0 OID 0)
--- Dependencies: 297
+-- TOC entry 3757 (class 0 OID 0)
+-- Dependencies: 264
 -- Name: ref_user_type_rut_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
 
@@ -3367,8 +3367,8 @@ SELECT pg_catalog.setval('gp_db.ref_user_type_rut_id_seq', 3, true);
 
 
 --
--- TOC entry 3730 (class 0 OID 0)
--- Dependencies: 302
+-- TOC entry 3758 (class 0 OID 0)
+-- Dependencies: 269
 -- Name: user_demographic_ud_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
 
@@ -3376,8 +3376,8 @@ SELECT pg_catalog.setval('gp_db.user_demographic_ud_id_seq', 1, false);
 
 
 --
--- TOC entry 3731 (class 0 OID 0)
--- Dependencies: 299
+-- TOC entry 3759 (class 0 OID 0)
+-- Dependencies: 266
 -- Name: users_u_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
 
@@ -3385,7 +3385,7 @@ SELECT pg_catalog.setval('gp_db.users_u_id_seq', 7, true);
 
 
 --
--- TOC entry 3409 (class 2606 OID 18310)
+-- TOC entry 3437 (class 2606 OID 18310)
 -- Name: ref_status applcation_ref_status_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3394,7 +3394,7 @@ ALTER TABLE ONLY gp_db.ref_status
 
 
 --
--- TOC entry 3411 (class 2606 OID 18312)
+-- TOC entry 3439 (class 2606 OID 18312)
 -- Name: application_announcement application_announcement_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3403,7 +3403,7 @@ ALTER TABLE ONLY gp_db.application_announcement
 
 
 --
--- TOC entry 3413 (class 2606 OID 18314)
+-- TOC entry 3441 (class 2606 OID 18314)
 -- Name: application_approval_info application_approval_info_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3412,7 +3412,7 @@ ALTER TABLE ONLY gp_db.application_approval_info
 
 
 --
--- TOC entry 3415 (class 2606 OID 18316)
+-- TOC entry 3443 (class 2606 OID 18316)
 -- Name: application_attachment application_attachment_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3421,7 +3421,7 @@ ALTER TABLE ONLY gp_db.application_attachment
 
 
 --
--- TOC entry 3417 (class 2606 OID 18318)
+-- TOC entry 3445 (class 2606 OID 18318)
 -- Name: application_faq application_faq_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3430,7 +3430,7 @@ ALTER TABLE ONLY gp_db.application_faq
 
 
 --
--- TOC entry 3419 (class 2606 OID 18320)
+-- TOC entry 3447 (class 2606 OID 18320)
 -- Name: application_info application_info_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3439,7 +3439,7 @@ ALTER TABLE ONLY gp_db.application_info
 
 
 --
--- TOC entry 3421 (class 2606 OID 18322)
+-- TOC entry 3449 (class 2606 OID 18322)
 -- Name: ref_application_type application_ref_type_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3448,7 +3448,7 @@ ALTER TABLE ONLY gp_db.ref_application_type
 
 
 --
--- TOC entry 3453 (class 2606 OID 18495)
+-- TOC entry 3481 (class 2606 OID 18495)
 -- Name: application_term application_term_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3457,7 +3457,7 @@ ALTER TABLE ONLY gp_db.application_term
 
 
 --
--- TOC entry 3457 (class 2606 OID 18507)
+-- TOC entry 3485 (class 2606 OID 18507)
 -- Name: application_term_subitem application_term_subitem_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3466,7 +3466,7 @@ ALTER TABLE ONLY gp_db.application_term_subitem
 
 
 --
--- TOC entry 3423 (class 2606 OID 18324)
+-- TOC entry 3451 (class 2606 OID 18324)
 -- Name: fw_akses fw_akses_pkey; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3475,7 +3475,7 @@ ALTER TABLE ONLY gp_db.fw_akses
 
 
 --
--- TOC entry 3425 (class 2606 OID 18326)
+-- TOC entry 3453 (class 2606 OID 18326)
 -- Name: fw_audittrail fw_audittrail_pkey; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3484,7 +3484,7 @@ ALTER TABLE ONLY gp_db.fw_audittrail
 
 
 --
--- TOC entry 3427 (class 2606 OID 18328)
+-- TOC entry 3455 (class 2606 OID 18328)
 -- Name: fw_lang fw_lang_pkey; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3493,7 +3493,7 @@ ALTER TABLE ONLY gp_db.fw_lang
 
 
 --
--- TOC entry 3429 (class 2606 OID 18330)
+-- TOC entry 3457 (class 2606 OID 18330)
 -- Name: fw_menu fw_menu_pkey; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3502,7 +3502,7 @@ ALTER TABLE ONLY gp_db.fw_menu
 
 
 --
--- TOC entry 3431 (class 2606 OID 18332)
+-- TOC entry 3459 (class 2606 OID 18332)
 -- Name: fw_submenu fw_submenu_pkey; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3511,7 +3511,7 @@ ALTER TABLE ONLY gp_db.fw_submenu
 
 
 --
--- TOC entry 3433 (class 2606 OID 18334)
+-- TOC entry 3461 (class 2606 OID 18334)
 -- Name: fw_uploads fw_uploads_link_key; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3520,7 +3520,7 @@ ALTER TABLE ONLY gp_db.fw_uploads
 
 
 --
--- TOC entry 3435 (class 2606 OID 18336)
+-- TOC entry 3463 (class 2606 OID 18336)
 -- Name: fw_uploads fw_uploads_pkey; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3529,7 +3529,7 @@ ALTER TABLE ONLY gp_db.fw_uploads
 
 
 --
--- TOC entry 3437 (class 2606 OID 18338)
+-- TOC entry 3465 (class 2606 OID 18338)
 -- Name: ref_applicaton_status ref_applicaton_status_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3538,7 +3538,7 @@ ALTER TABLE ONLY gp_db.ref_applicaton_status
 
 
 --
--- TOC entry 3439 (class 2606 OID 18340)
+-- TOC entry 3467 (class 2606 OID 18340)
 -- Name: ref_branch ref_branch_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3547,7 +3547,7 @@ ALTER TABLE ONLY gp_db.ref_branch
 
 
 --
--- TOC entry 3441 (class 2606 OID 18342)
+-- TOC entry 3469 (class 2606 OID 18342)
 -- Name: ref_dept ref_dept_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3556,7 +3556,7 @@ ALTER TABLE ONLY gp_db.ref_dept
 
 
 --
--- TOC entry 3443 (class 2606 OID 18344)
+-- TOC entry 3471 (class 2606 OID 18344)
 -- Name: ref_gender ref_gender_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3565,7 +3565,7 @@ ALTER TABLE ONLY gp_db.ref_gender
 
 
 --
--- TOC entry 3445 (class 2606 OID 18346)
+-- TOC entry 3473 (class 2606 OID 18346)
 -- Name: ref_role ref_role_pkey; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3574,7 +3574,7 @@ ALTER TABLE ONLY gp_db.ref_role
 
 
 --
--- TOC entry 3447 (class 2606 OID 18348)
+-- TOC entry 3475 (class 2606 OID 18348)
 -- Name: ref_states ref_states_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3583,7 +3583,7 @@ ALTER TABLE ONLY gp_db.ref_states
 
 
 --
--- TOC entry 3449 (class 2606 OID 18350)
+-- TOC entry 3477 (class 2606 OID 18350)
 -- Name: ref_user_type ref_user_type_unique; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3592,7 +3592,7 @@ ALTER TABLE ONLY gp_db.ref_user_type
 
 
 --
--- TOC entry 3455 (class 2606 OID 18463)
+-- TOC entry 3483 (class 2606 OID 18463)
 -- Name: user_demographic user_demographic_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3601,7 +3601,7 @@ ALTER TABLE ONLY gp_db.user_demographic
 
 
 --
--- TOC entry 3451 (class 2606 OID 18352)
+-- TOC entry 3479 (class 2606 OID 18352)
 -- Name: users users_unique; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3610,7 +3610,7 @@ ALTER TABLE ONLY gp_db.users
 
 
 --
--- TOC entry 3458 (class 2606 OID 18353)
+-- TOC entry 3486 (class 2606 OID 18353)
 -- Name: application_announcement application_announcement_ref_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3619,7 +3619,7 @@ ALTER TABLE ONLY gp_db.application_announcement
 
 
 --
--- TOC entry 3459 (class 2606 OID 18358)
+-- TOC entry 3487 (class 2606 OID 18358)
 -- Name: application_approval_info application_approval_info_application_info_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3628,7 +3628,7 @@ ALTER TABLE ONLY gp_db.application_approval_info
 
 
 --
--- TOC entry 3460 (class 2606 OID 18363)
+-- TOC entry 3488 (class 2606 OID 18363)
 -- Name: application_attachment application_attachment_application_info_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3637,7 +3637,7 @@ ALTER TABLE ONLY gp_db.application_attachment
 
 
 --
--- TOC entry 3461 (class 2606 OID 18446)
+-- TOC entry 3489 (class 2606 OID 18446)
 -- Name: application_faq application_faq_ref_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3646,7 +3646,7 @@ ALTER TABLE ONLY gp_db.application_faq
 
 
 --
--- TOC entry 3462 (class 2606 OID 18368)
+-- TOC entry 3490 (class 2606 OID 18368)
 -- Name: application_info application_info_ref_application_type_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3655,7 +3655,7 @@ ALTER TABLE ONLY gp_db.application_info
 
 
 --
--- TOC entry 3463 (class 2606 OID 18373)
+-- TOC entry 3491 (class 2606 OID 18373)
 -- Name: application_info application_info_ref_applicaton_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3664,7 +3664,7 @@ ALTER TABLE ONLY gp_db.application_info
 
 
 --
--- TOC entry 3464 (class 2606 OID 18378)
+-- TOC entry 3492 (class 2606 OID 18378)
 -- Name: application_info application_info_ref_states_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3673,7 +3673,7 @@ ALTER TABLE ONLY gp_db.application_info
 
 
 --
--- TOC entry 3465 (class 2606 OID 18383)
+-- TOC entry 3493 (class 2606 OID 18383)
 -- Name: ref_application_type application_ref_type_ref_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3682,7 +3682,7 @@ ALTER TABLE ONLY gp_db.ref_application_type
 
 
 --
--- TOC entry 3477 (class 2606 OID 18496)
+-- TOC entry 3505 (class 2606 OID 18496)
 -- Name: application_term application_term_ref_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3691,7 +3691,7 @@ ALTER TABLE ONLY gp_db.application_term
 
 
 --
--- TOC entry 3466 (class 2606 OID 18388)
+-- TOC entry 3494 (class 2606 OID 18388)
 -- Name: ref_applicaton_status ref_applicaton_status_ref_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3700,7 +3700,7 @@ ALTER TABLE ONLY gp_db.ref_applicaton_status
 
 
 --
--- TOC entry 3467 (class 2606 OID 18393)
+-- TOC entry 3495 (class 2606 OID 18393)
 -- Name: ref_branch ref_branch_ref_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3709,7 +3709,7 @@ ALTER TABLE ONLY gp_db.ref_branch
 
 
 --
--- TOC entry 3468 (class 2606 OID 18398)
+-- TOC entry 3496 (class 2606 OID 18398)
 -- Name: ref_dept ref_dept_ref_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3718,7 +3718,7 @@ ALTER TABLE ONLY gp_db.ref_dept
 
 
 --
--- TOC entry 3469 (class 2606 OID 18403)
+-- TOC entry 3497 (class 2606 OID 18403)
 -- Name: ref_gender ref_gender_ref_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3727,7 +3727,7 @@ ALTER TABLE ONLY gp_db.ref_gender
 
 
 --
--- TOC entry 3470 (class 2606 OID 18408)
+-- TOC entry 3498 (class 2606 OID 18408)
 -- Name: ref_role ref_role_applcation_ref_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3736,7 +3736,7 @@ ALTER TABLE ONLY gp_db.ref_role
 
 
 --
--- TOC entry 3471 (class 2606 OID 18413)
+-- TOC entry 3499 (class 2606 OID 18413)
 -- Name: ref_user_type ref_user_type_ref_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3745,7 +3745,7 @@ ALTER TABLE ONLY gp_db.ref_user_type
 
 
 --
--- TOC entry 3478 (class 2606 OID 18466)
+-- TOC entry 3506 (class 2606 OID 18466)
 -- Name: user_demographic user_demographic_users_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3754,7 +3754,7 @@ ALTER TABLE ONLY gp_db.user_demographic
 
 
 --
--- TOC entry 3472 (class 2606 OID 18418)
+-- TOC entry 3500 (class 2606 OID 18418)
 -- Name: users users_ref_branch_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3763,7 +3763,7 @@ ALTER TABLE ONLY gp_db.users
 
 
 --
--- TOC entry 3473 (class 2606 OID 18423)
+-- TOC entry 3501 (class 2606 OID 18423)
 -- Name: users users_ref_dept_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3772,7 +3772,7 @@ ALTER TABLE ONLY gp_db.users
 
 
 --
--- TOC entry 3474 (class 2606 OID 18428)
+-- TOC entry 3502 (class 2606 OID 18428)
 -- Name: users users_ref_role_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3781,7 +3781,7 @@ ALTER TABLE ONLY gp_db.users
 
 
 --
--- TOC entry 3475 (class 2606 OID 18433)
+-- TOC entry 3503 (class 2606 OID 18433)
 -- Name: users users_ref_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3790,7 +3790,7 @@ ALTER TABLE ONLY gp_db.users
 
 
 --
--- TOC entry 3476 (class 2606 OID 18438)
+-- TOC entry 3504 (class 2606 OID 18438)
 -- Name: users users_ref_user_type_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3798,7 +3798,7 @@ ALTER TABLE ONLY gp_db.users
     ADD CONSTRAINT users_ref_user_type_fk FOREIGN KEY (u_user_type) REFERENCES gp_db.ref_user_type(rut_id);
 
 
--- Completed on 2025-07-08 17:14:20
+-- Completed on 2025-07-16 16:40:17
 
 --
 -- PostgreSQL database dump complete
