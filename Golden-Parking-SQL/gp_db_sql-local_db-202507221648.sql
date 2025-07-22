@@ -5,7 +5,7 @@
 -- Dumped from database version 14.2
 -- Dumped by pg_dump version 17.0
 
--- Started on 2025-07-17 19:38:26
+-- Started on 2025-07-22 16:48:01
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -63,7 +63,7 @@ CREATE SEQUENCE gp_db.applcation_ref_status_ars_id_seq
 ALTER SEQUENCE gp_db.applcation_ref_status_ars_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3699 (class 0 OID 0)
+-- TOC entry 3703 (class 0 OID 0)
 -- Dependencies: 226
 -- Name: applcation_ref_status_ars_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -91,7 +91,7 @@ CREATE TABLE gp_db.application_announcement (
 ALTER TABLE gp_db.application_announcement OWNER TO aiman;
 
 --
--- TOC entry 3700 (class 0 OID 0)
+-- TOC entry 3704 (class 0 OID 0)
 -- Dependencies: 227
 -- Name: COLUMN application_announcement.announce_status; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
@@ -115,7 +115,7 @@ CREATE SEQUENCE gp_db.application_announcement_announce_id_seq
 ALTER SEQUENCE gp_db.application_announcement_announce_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3701 (class 0 OID 0)
+-- TOC entry 3705 (class 0 OID 0)
 -- Dependencies: 228
 -- Name: application_announcement_announce_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -153,7 +153,7 @@ CREATE SEQUENCE gp_db.application_approval_info_applicationapprove_id_seq
 ALTER SEQUENCE gp_db.application_approval_info_applicationapprove_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3702 (class 0 OID 0)
+-- TOC entry 3706 (class 0 OID 0)
 -- Dependencies: 230
 -- Name: application_approval_info_applicationapprove_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -195,7 +195,7 @@ CREATE SEQUENCE gp_db.application_attachment_attachment_id_seq
 ALTER SEQUENCE gp_db.application_attachment_attachment_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3703 (class 0 OID 0)
+-- TOC entry 3707 (class 0 OID 0)
 -- Dependencies: 232
 -- Name: application_attachment_attachment_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -224,7 +224,7 @@ CREATE TABLE gp_db.application_faq (
 ALTER TABLE gp_db.application_faq OWNER TO aiman;
 
 --
--- TOC entry 3704 (class 0 OID 0)
+-- TOC entry 3708 (class 0 OID 0)
 -- Dependencies: 233
 -- Name: COLUMN application_faq.applicationfaq_status_ind; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
@@ -248,7 +248,7 @@ CREATE SEQUENCE gp_db.application_faq_applicationfaq_id_seq
 ALTER SEQUENCE gp_db.application_faq_applicationfaq_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3705 (class 0 OID 0)
+-- TOC entry 3709 (class 0 OID 0)
 -- Dependencies: 234
 -- Name: application_faq_applicationfaq_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -289,7 +289,7 @@ CREATE TABLE gp_db.application_info (
 ALTER TABLE gp_db.application_info OWNER TO aiman;
 
 --
--- TOC entry 3706 (class 0 OID 0)
+-- TOC entry 3710 (class 0 OID 0)
 -- Dependencies: 235
 -- Name: COLUMN application_info.appinfo_jenis_permohonan; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
@@ -298,7 +298,7 @@ COMMENT ON COLUMN gp_db.application_info.appinfo_jenis_permohonan IS 'Refer tabl
 
 
 --
--- TOC entry 3707 (class 0 OID 0)
+-- TOC entry 3711 (class 0 OID 0)
 -- Dependencies: 235
 -- Name: COLUMN application_info.appinfo_status_permohonan; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
@@ -322,7 +322,7 @@ CREATE SEQUENCE gp_db.application_info_appinfo_id_seq
 ALTER SEQUENCE gp_db.application_info_appinfo_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3708 (class 0 OID 0)
+-- TOC entry 3712 (class 0 OID 0)
 -- Dependencies: 236
 -- Name: application_info_appinfo_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -360,7 +360,7 @@ CREATE SEQUENCE gp_db.application_ref_type_art_id_seq
 ALTER SEQUENCE gp_db.application_ref_type_art_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3709 (class 0 OID 0)
+-- TOC entry 3713 (class 0 OID 0)
 -- Dependencies: 238
 -- Name: application_ref_type_art_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -403,7 +403,7 @@ CREATE SEQUENCE gp_db.application_term_applicationterm_id_seq
 ALTER SEQUENCE gp_db.application_term_applicationterm_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3710 (class 0 OID 0)
+-- TOC entry 3714 (class 0 OID 0)
 -- Dependencies: 271
 -- Name: application_term_applicationterm_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -427,7 +427,7 @@ CREATE TABLE gp_db.application_term_subitem (
 ALTER TABLE gp_db.application_term_subitem OWNER TO aiman;
 
 --
--- TOC entry 3711 (class 0 OID 0)
+-- TOC entry 3715 (class 0 OID 0)
 -- Dependencies: 270
 -- Name: COLUMN application_term_subitem.applicationterm_id; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
@@ -451,7 +451,7 @@ CREATE SEQUENCE gp_db.application_term_subitem_applicationterm_subitem_id_seq
 ALTER SEQUENCE gp_db.application_term_subitem_applicationterm_subitem_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3712 (class 0 OID 0)
+-- TOC entry 3716 (class 0 OID 0)
 -- Dependencies: 272
 -- Name: application_term_subitem_applicationterm_subitem_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -492,7 +492,7 @@ CREATE SEQUENCE gp_db.fw_akses_fa_id_seq
 ALTER SEQUENCE gp_db.fw_akses_fa_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3713 (class 0 OID 0)
+-- TOC entry 3717 (class 0 OID 0)
 -- Dependencies: 240
 -- Name: fw_akses_fa_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -532,7 +532,7 @@ CREATE SEQUENCE gp_db.fw_audittrail_id_seq
 ALTER SEQUENCE gp_db.fw_audittrail_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3714 (class 0 OID 0)
+-- TOC entry 3718 (class 0 OID 0)
 -- Dependencies: 242
 -- Name: fw_audittrail_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -573,7 +573,7 @@ CREATE SEQUENCE gp_db.fw_lang_fl_id_seq
 ALTER SEQUENCE gp_db.fw_lang_fl_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3715 (class 0 OID 0)
+-- TOC entry 3719 (class 0 OID 0)
 -- Dependencies: 244
 -- Name: fw_lang_fl_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -618,7 +618,7 @@ CREATE SEQUENCE gp_db.fw_menu_m_id_seq
 ALTER SEQUENCE gp_db.fw_menu_m_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3716 (class 0 OID 0)
+-- TOC entry 3720 (class 0 OID 0)
 -- Dependencies: 246
 -- Name: fw_menu_m_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -663,7 +663,7 @@ CREATE SEQUENCE gp_db.fw_submenu_sm_id_seq
 ALTER SEQUENCE gp_db.fw_submenu_sm_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3717 (class 0 OID 0)
+-- TOC entry 3721 (class 0 OID 0)
 -- Dependencies: 248
 -- Name: fw_submenu_sm_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -707,7 +707,7 @@ CREATE SEQUENCE gp_db.fw_uploads_id_seq
 ALTER SEQUENCE gp_db.fw_uploads_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3718 (class 0 OID 0)
+-- TOC entry 3722 (class 0 OID 0)
 -- Dependencies: 250
 -- Name: fw_uploads_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -747,7 +747,7 @@ CREATE SEQUENCE gp_db.ref_applicaton_status_ras_id_seq
 ALTER SEQUENCE gp_db.ref_applicaton_status_ras_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3719 (class 0 OID 0)
+-- TOC entry 3723 (class 0 OID 0)
 -- Dependencies: 252
 -- Name: ref_applicaton_status_ras_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -787,7 +787,7 @@ CREATE SEQUENCE gp_db.ref_branch_rb_id_seq
 ALTER SEQUENCE gp_db.ref_branch_rb_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3720 (class 0 OID 0)
+-- TOC entry 3724 (class 0 OID 0)
 -- Dependencies: 254
 -- Name: ref_branch_rb_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -812,7 +812,7 @@ CREATE TABLE gp_db.ref_dept (
 ALTER TABLE gp_db.ref_dept OWNER TO aiman;
 
 --
--- TOC entry 3721 (class 0 OID 0)
+-- TOC entry 3725 (class 0 OID 0)
 -- Dependencies: 255
 -- Name: COLUMN ref_dept.rd_status_ind; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
@@ -836,7 +836,7 @@ CREATE SEQUENCE gp_db.ref_dept_rd_id_seq
 ALTER SEQUENCE gp_db.ref_dept_rd_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3722 (class 0 OID 0)
+-- TOC entry 3726 (class 0 OID 0)
 -- Dependencies: 256
 -- Name: ref_dept_rd_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -874,7 +874,7 @@ CREATE SEQUENCE gp_db.ref_gender_rgend_id_seq
 ALTER SEQUENCE gp_db.ref_gender_rgend_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3723 (class 0 OID 0)
+-- TOC entry 3727 (class 0 OID 0)
 -- Dependencies: 258
 -- Name: ref_gender_rgend_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -915,7 +915,7 @@ CREATE SEQUENCE gp_db.ref_role_rr_id_seq
 ALTER SEQUENCE gp_db.ref_role_rr_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3724 (class 0 OID 0)
+-- TOC entry 3728 (class 0 OID 0)
 -- Dependencies: 260
 -- Name: ref_role_rr_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -955,7 +955,7 @@ CREATE SEQUENCE gp_db.ref_states_rstates_id_seq
 ALTER SEQUENCE gp_db.ref_states_rstates_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3725 (class 0 OID 0)
+-- TOC entry 3729 (class 0 OID 0)
 -- Dependencies: 262
 -- Name: ref_states_rstates_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -995,7 +995,7 @@ CREATE SEQUENCE gp_db.ref_user_type_rut_id_seq
 ALTER SEQUENCE gp_db.ref_user_type_rut_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3726 (class 0 OID 0)
+-- TOC entry 3730 (class 0 OID 0)
 -- Dependencies: 264
 -- Name: ref_user_type_rut_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -1026,7 +1026,7 @@ CREATE TABLE gp_db.user_demographic (
 ALTER TABLE gp_db.user_demographic OWNER TO aiman;
 
 --
--- TOC entry 3727 (class 0 OID 0)
+-- TOC entry 3731 (class 0 OID 0)
 -- Dependencies: 268
 -- Name: COLUMN user_demographic.u_id; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
@@ -1035,7 +1035,7 @@ COMMENT ON COLUMN gp_db.user_demographic.u_id IS 'Refer Table users';
 
 
 --
--- TOC entry 3728 (class 0 OID 0)
+-- TOC entry 3732 (class 0 OID 0)
 -- Dependencies: 268
 -- Name: COLUMN user_demographic.ud_state; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
@@ -1059,7 +1059,7 @@ CREATE SEQUENCE gp_db.user_demographic_ud_id_seq
 ALTER SEQUENCE gp_db.user_demographic_ud_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3729 (class 0 OID 0)
+-- TOC entry 3733 (class 0 OID 0)
 -- Dependencies: 269
 -- Name: user_demographic_ud_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -1101,7 +1101,7 @@ CREATE TABLE gp_db.users (
 ALTER TABLE gp_db.users OWNER TO aiman;
 
 --
--- TOC entry 3730 (class 0 OID 0)
+-- TOC entry 3734 (class 0 OID 0)
 -- Dependencies: 265
 -- Name: COLUMN users.u_dept; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
@@ -1110,7 +1110,7 @@ COMMENT ON COLUMN gp_db.users.u_dept IS 'Refer Table ref_dept';
 
 
 --
--- TOC entry 3731 (class 0 OID 0)
+-- TOC entry 3735 (class 0 OID 0)
 -- Dependencies: 265
 -- Name: COLUMN users.u_ref_role; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
@@ -1119,7 +1119,7 @@ COMMENT ON COLUMN gp_db.users.u_ref_role IS 'Refer Table ref_role';
 
 
 --
--- TOC entry 3732 (class 0 OID 0)
+-- TOC entry 3736 (class 0 OID 0)
 -- Dependencies: 265
 -- Name: COLUMN users.u_user_type; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
@@ -1128,7 +1128,7 @@ COMMENT ON COLUMN gp_db.users.u_user_type IS 'Refer Table ref_user_type';
 
 
 --
--- TOC entry 3733 (class 0 OID 0)
+-- TOC entry 3737 (class 0 OID 0)
 -- Dependencies: 265
 -- Name: COLUMN users.u_office_branch; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
@@ -1137,7 +1137,7 @@ COMMENT ON COLUMN gp_db.users.u_office_branch IS 'Refer Table ref_branch';
 
 
 --
--- TOC entry 3734 (class 0 OID 0)
+-- TOC entry 3738 (class 0 OID 0)
 -- Dependencies: 265
 -- Name: COLUMN users.u_status_ind; Type: COMMENT; Schema: gp_db; Owner: aiman
 --
@@ -1161,7 +1161,7 @@ CREATE SEQUENCE gp_db.users_u_id_seq
 ALTER SEQUENCE gp_db.users_u_id_seq OWNER TO aiman;
 
 --
--- TOC entry 3735 (class 0 OID 0)
+-- TOC entry 3739 (class 0 OID 0)
 -- Dependencies: 266
 -- Name: users_u_id_seq; Type: SEQUENCE OWNED BY; Schema: gp_db; Owner: aiman
 --
@@ -1170,7 +1170,7 @@ ALTER SEQUENCE gp_db.users_u_id_seq OWNED BY gp_db.users.u_id;
 
 
 --
--- TOC entry 3405 (class 2604 OID 18194)
+-- TOC entry 3409 (class 2604 OID 18194)
 -- Name: application_announcement announce_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1178,7 +1178,7 @@ ALTER TABLE ONLY gp_db.application_announcement ALTER COLUMN announce_id SET DEF
 
 
 --
--- TOC entry 3406 (class 2604 OID 18195)
+-- TOC entry 3410 (class 2604 OID 18195)
 -- Name: application_approval_info applicationapprove_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1186,7 +1186,7 @@ ALTER TABLE ONLY gp_db.application_approval_info ALTER COLUMN applicationapprove
 
 
 --
--- TOC entry 3407 (class 2604 OID 18196)
+-- TOC entry 3411 (class 2604 OID 18196)
 -- Name: application_attachment attachment_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1194,7 +1194,7 @@ ALTER TABLE ONLY gp_db.application_attachment ALTER COLUMN attachment_id SET DEF
 
 
 --
--- TOC entry 3408 (class 2604 OID 18197)
+-- TOC entry 3412 (class 2604 OID 18197)
 -- Name: application_faq applicationfaq_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1202,7 +1202,7 @@ ALTER TABLE ONLY gp_db.application_faq ALTER COLUMN applicationfaq_id SET DEFAUL
 
 
 --
--- TOC entry 3409 (class 2604 OID 18198)
+-- TOC entry 3413 (class 2604 OID 18198)
 -- Name: application_info appinfo_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1210,7 +1210,7 @@ ALTER TABLE ONLY gp_db.application_info ALTER COLUMN appinfo_id SET DEFAULT next
 
 
 --
--- TOC entry 3433 (class 2604 OID 18488)
+-- TOC entry 3437 (class 2604 OID 18488)
 -- Name: application_term applicationterm_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1218,7 +1218,7 @@ ALTER TABLE ONLY gp_db.application_term ALTER COLUMN applicationterm_id SET DEFA
 
 
 --
--- TOC entry 3435 (class 2604 OID 18502)
+-- TOC entry 3439 (class 2604 OID 18502)
 -- Name: application_term_subitem applicationterm_subitem_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1226,7 +1226,7 @@ ALTER TABLE ONLY gp_db.application_term_subitem ALTER COLUMN applicationterm_sub
 
 
 --
--- TOC entry 3411 (class 2604 OID 18199)
+-- TOC entry 3415 (class 2604 OID 18199)
 -- Name: fw_akses fa_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1234,7 +1234,7 @@ ALTER TABLE ONLY gp_db.fw_akses ALTER COLUMN fa_id SET DEFAULT nextval('gp_db.fw
 
 
 --
--- TOC entry 3413 (class 2604 OID 18200)
+-- TOC entry 3417 (class 2604 OID 18200)
 -- Name: fw_audittrail id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1242,7 +1242,7 @@ ALTER TABLE ONLY gp_db.fw_audittrail ALTER COLUMN id SET DEFAULT nextval('gp_db.
 
 
 --
--- TOC entry 3415 (class 2604 OID 18201)
+-- TOC entry 3419 (class 2604 OID 18201)
 -- Name: fw_lang fl_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1250,7 +1250,7 @@ ALTER TABLE ONLY gp_db.fw_lang ALTER COLUMN fl_id SET DEFAULT nextval('gp_db.fw_
 
 
 --
--- TOC entry 3417 (class 2604 OID 18202)
+-- TOC entry 3421 (class 2604 OID 18202)
 -- Name: fw_menu m_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1258,7 +1258,7 @@ ALTER TABLE ONLY gp_db.fw_menu ALTER COLUMN m_id SET DEFAULT nextval('gp_db.fw_m
 
 
 --
--- TOC entry 3420 (class 2604 OID 18203)
+-- TOC entry 3424 (class 2604 OID 18203)
 -- Name: fw_submenu sm_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1266,7 +1266,7 @@ ALTER TABLE ONLY gp_db.fw_submenu ALTER COLUMN sm_id SET DEFAULT nextval('gp_db.
 
 
 --
--- TOC entry 3423 (class 2604 OID 18204)
+-- TOC entry 3427 (class 2604 OID 18204)
 -- Name: fw_uploads id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1274,7 +1274,7 @@ ALTER TABLE ONLY gp_db.fw_uploads ALTER COLUMN id SET DEFAULT nextval('gp_db.fw_
 
 
 --
--- TOC entry 3410 (class 2604 OID 18205)
+-- TOC entry 3414 (class 2604 OID 18205)
 -- Name: ref_application_type rat_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1282,7 +1282,7 @@ ALTER TABLE ONLY gp_db.ref_application_type ALTER COLUMN rat_id SET DEFAULT next
 
 
 --
--- TOC entry 3425 (class 2604 OID 18206)
+-- TOC entry 3429 (class 2604 OID 18206)
 -- Name: ref_applicaton_status ras_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1290,7 +1290,7 @@ ALTER TABLE ONLY gp_db.ref_applicaton_status ALTER COLUMN ras_id SET DEFAULT nex
 
 
 --
--- TOC entry 3426 (class 2604 OID 18207)
+-- TOC entry 3430 (class 2604 OID 18207)
 -- Name: ref_branch rb_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1298,7 +1298,7 @@ ALTER TABLE ONLY gp_db.ref_branch ALTER COLUMN rb_id SET DEFAULT nextval('gp_db.
 
 
 --
--- TOC entry 3427 (class 2604 OID 18208)
+-- TOC entry 3431 (class 2604 OID 18208)
 -- Name: ref_dept rd_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1306,7 +1306,7 @@ ALTER TABLE ONLY gp_db.ref_dept ALTER COLUMN rd_id SET DEFAULT nextval('gp_db.re
 
 
 --
--- TOC entry 3428 (class 2604 OID 18209)
+-- TOC entry 3432 (class 2604 OID 18209)
 -- Name: ref_gender rgend_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1314,7 +1314,7 @@ ALTER TABLE ONLY gp_db.ref_gender ALTER COLUMN rgend_id SET DEFAULT nextval('gp_
 
 
 --
--- TOC entry 3429 (class 2604 OID 18210)
+-- TOC entry 3433 (class 2604 OID 18210)
 -- Name: ref_role rr_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1322,7 +1322,7 @@ ALTER TABLE ONLY gp_db.ref_role ALTER COLUMN rr_id SET DEFAULT nextval('gp_db.re
 
 
 --
--- TOC entry 3430 (class 2604 OID 18211)
+-- TOC entry 3434 (class 2604 OID 18211)
 -- Name: ref_states rstates_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1330,7 +1330,7 @@ ALTER TABLE ONLY gp_db.ref_states ALTER COLUMN rstates_id SET DEFAULT nextval('g
 
 
 --
--- TOC entry 3404 (class 2604 OID 18212)
+-- TOC entry 3408 (class 2604 OID 18212)
 -- Name: ref_status rs_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1338,7 +1338,7 @@ ALTER TABLE ONLY gp_db.ref_status ALTER COLUMN rs_id SET DEFAULT nextval('gp_db.
 
 
 --
--- TOC entry 3431 (class 2604 OID 18213)
+-- TOC entry 3435 (class 2604 OID 18213)
 -- Name: ref_user_type rut_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1346,7 +1346,7 @@ ALTER TABLE ONLY gp_db.ref_user_type ALTER COLUMN rut_id SET DEFAULT nextval('gp
 
 
 --
--- TOC entry 3434 (class 2604 OID 18458)
+-- TOC entry 3438 (class 2604 OID 18458)
 -- Name: user_demographic ud_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1354,7 +1354,7 @@ ALTER TABLE ONLY gp_db.user_demographic ALTER COLUMN ud_id SET DEFAULT nextval('
 
 
 --
--- TOC entry 3432 (class 2604 OID 18214)
+-- TOC entry 3436 (class 2604 OID 18214)
 -- Name: users u_id; Type: DEFAULT; Schema: gp_db; Owner: aiman
 --
 
@@ -1362,7 +1362,7 @@ ALTER TABLE ONLY gp_db.users ALTER COLUMN u_id SET DEFAULT nextval('gp_db.users_
 
 
 --
--- TOC entry 3648 (class 0 OID 18068)
+-- TOC entry 3652 (class 0 OID 18068)
 -- Dependencies: 227
 -- Data for Name: application_announcement; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -1375,7 +1375,7 @@ INSERT INTO gp_db.application_announcement VALUES (2, 'Permohonan bagi golden pa
 
 
 --
--- TOC entry 3650 (class 0 OID 18074)
+-- TOC entry 3654 (class 0 OID 18074)
 -- Dependencies: 229
 -- Data for Name: application_approval_info; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -1383,7 +1383,7 @@ INSERT INTO gp_db.application_announcement VALUES (2, 'Permohonan bagi golden pa
 
 
 --
--- TOC entry 3652 (class 0 OID 18080)
+-- TOC entry 3656 (class 0 OID 18080)
 -- Dependencies: 231
 -- Data for Name: application_attachment; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -1391,7 +1391,7 @@ INSERT INTO gp_db.application_announcement VALUES (2, 'Permohonan bagi golden pa
 
 
 --
--- TOC entry 3654 (class 0 OID 18086)
+-- TOC entry 3658 (class 0 OID 18086)
 -- Dependencies: 233
 -- Data for Name: application_faq; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -1401,7 +1401,7 @@ INSERT INTO gp_db.application_faq VALUES (2, 'Siapa Yang Boleh Memohon Golden Pa
 
 
 --
--- TOC entry 3656 (class 0 OID 18092)
+-- TOC entry 3660 (class 0 OID 18092)
 -- Dependencies: 235
 -- Data for Name: application_info; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -1424,7 +1424,7 @@ INSERT INTO gp_db.application_info VALUES (12, 'MBSA/GP/2025/00001', 1, 'AHMAD A
 
 
 --
--- TOC entry 3688 (class 0 OID 18451)
+-- TOC entry 3692 (class 0 OID 18451)
 -- Dependencies: 267
 -- Data for Name: application_term; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -1432,7 +1432,7 @@ INSERT INTO gp_db.application_info VALUES (12, 'MBSA/GP/2025/00001', 1, 'AHMAD A
 
 
 --
--- TOC entry 3691 (class 0 OID 18484)
+-- TOC entry 3695 (class 0 OID 18484)
 -- Dependencies: 270
 -- Data for Name: application_term_subitem; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -1440,7 +1440,7 @@ INSERT INTO gp_db.application_info VALUES (12, 'MBSA/GP/2025/00001', 1, 'AHMAD A
 
 
 --
--- TOC entry 3660 (class 0 OID 18104)
+-- TOC entry 3664 (class 0 OID 18104)
 -- Dependencies: 239
 -- Data for Name: fw_akses; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -1451,8 +1451,6 @@ INSERT INTO gp_db.fw_akses VALUES (9, 5, 4, 1, 'admin', '2025-05-20 09:18:45.307
 INSERT INTO gp_db.fw_akses VALUES (15, 2, 0, 1, 'admin', '2025-05-20 09:33:29.903976');
 INSERT INTO gp_db.fw_akses VALUES (18, 5, 0, 1, 'admin', '2025-05-20 09:35:09.644573');
 INSERT INTO gp_db.fw_akses VALUES (21, 6, 5, 1, 'admin', '2025-05-22 16:02:38.15386');
-INSERT INTO gp_db.fw_akses VALUES (22, 7, 0, 1, 'admin', '2025-05-22 16:59:44.819365');
-INSERT INTO gp_db.fw_akses VALUES (23, 7, 6, 1, 'admin', '2025-05-22 16:59:47.603666');
 INSERT INTO gp_db.fw_akses VALUES (35, 4, 12, 1, 'admin', '2025-05-26 16:28:01.810067');
 INSERT INTO gp_db.fw_akses VALUES (39, 6, 0, 1, 'admin', '2025-06-04 17:11:28.643042');
 INSERT INTO gp_db.fw_akses VALUES (43, 10, 0, 1, 'admin', '2025-06-11 11:30:49.162474');
@@ -1490,14 +1488,6 @@ INSERT INTO gp_db.fw_akses VALUES (95, 4, 19, 5, 'admin', '2025-06-27 22:29:42.8
 INSERT INTO gp_db.fw_akses VALUES (96, 4, 18, 5, 'admin', '2025-06-27 22:29:45.381128');
 INSERT INTO gp_db.fw_akses VALUES (97, 4, 12, 5, 'admin', '2025-06-27 22:29:47.863623');
 INSERT INTO gp_db.fw_akses VALUES (98, 4, 0, 5, 'admin', '2025-06-27 22:29:51.680056');
-INSERT INTO gp_db.fw_akses VALUES (99, 7, 0, 3, 'admin', '2025-06-27 22:29:54.621779');
-INSERT INTO gp_db.fw_akses VALUES (100, 7, 0, 4, 'admin', '2025-06-27 22:29:57.093325');
-INSERT INTO gp_db.fw_akses VALUES (101, 7, 0, 6, 'admin', '2025-06-27 22:29:59.695257');
-INSERT INTO gp_db.fw_akses VALUES (102, 7, 0, 5, 'admin', '2025-06-27 22:30:02.177077');
-INSERT INTO gp_db.fw_akses VALUES (103, 7, 6, 3, 'admin', '2025-06-27 22:30:04.81167');
-INSERT INTO gp_db.fw_akses VALUES (104, 7, 6, 6, 'admin', '2025-06-27 22:30:07.274193');
-INSERT INTO gp_db.fw_akses VALUES (105, 7, 6, 5, 'admin', '2025-06-27 22:30:09.822068');
-INSERT INTO gp_db.fw_akses VALUES (106, 7, 6, 4, 'admin', '2025-06-27 22:30:12.487995');
 INSERT INTO gp_db.fw_akses VALUES (107, 11, 24, 1, 'admin', '2025-06-28 20:44:54.34684');
 INSERT INTO gp_db.fw_akses VALUES (108, 11, 24, 5, 'admin', '2025-06-28 20:44:59.263707');
 INSERT INTO gp_db.fw_akses VALUES (109, 5, 26, 1, 'admin', '2025-06-28 21:19:26.076099');
@@ -1511,10 +1501,15 @@ INSERT INTO gp_db.fw_akses VALUES (116, 5, 0, 6, 'admin', '2025-06-30 12:40:23.1
 INSERT INTO gp_db.fw_akses VALUES (117, 5, 0, 5, 'admin', '2025-06-30 12:40:25.567015');
 INSERT INTO gp_db.fw_akses VALUES (118, 5, 25, 5, 'admin', '2025-06-30 12:40:28.173244');
 INSERT INTO gp_db.fw_akses VALUES (119, 5, 26, 5, 'admin', '2025-06-30 12:40:32.240342');
+INSERT INTO gp_db.fw_akses VALUES (128, 12, 0, 1, 'admin', '2025-07-22 16:24:58.445291');
+INSERT INTO gp_db.fw_akses VALUES (129, 12, 27, 1, 'admin', '2025-07-22 16:26:13.137702');
+INSERT INTO gp_db.fw_akses VALUES (130, 12, 28, 1, 'admin', '2025-07-22 16:26:16.167292');
+INSERT INTO gp_db.fw_akses VALUES (131, 12, 28, 1, 'admin', '2025-07-22 16:26:18.278923');
+INSERT INTO gp_db.fw_akses VALUES (133, 12, 29, 1, 'admin', '2025-07-22 16:26:25.912084');
 
 
 --
--- TOC entry 3662 (class 0 OID 18109)
+-- TOC entry 3666 (class 0 OID 18109)
 -- Dependencies: 241
 -- Data for Name: fw_audittrail; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -2471,6 +2466,7 @@ INSERT INTO gp_db.fw_audittrail VALUES (949, '{"username":"admin","nama":"Admini
 INSERT INTO gp_db.fw_audittrail VALUES (950, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Memuatkan...'',''Memuatkan...'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=ibmvba3hSpgqk43ZC-VnymQ5MgBn2Yg~&menu=Kelulusan&submenu=Pelulus","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=emuf2id1qlu3p6ao6k42hnq40r","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/home.php","REMOTE_PORT":"52941","REDIRECT_URL":"\/Golden-Parking\/action.do","REDIRECT_QUERY_STRING":"do=okFSRXiSTQHkVGRzzo_koOYvt8GTrGM~&menu=Kelulusan&submenu=Pelulus","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=okFSRXiSTQHkVGRzzo_koOYvt8GTrGM~&menu=Kelulusan&submenu=Pelulus","REQUEST_URI":"\/Golden-Parking\/action.do?do=okFSRXiSTQHkVGRzzo_koOYvt8GTrGM~&menu=Kelulusan&submenu=Pelulus","SCRIPT_NAME":"\/Golden-Parking\/home.php","PHP_SELF":"\/Golden-Parking\/home.php","REQUEST_TIME_FLOAT":1751853018.484634,"REQUEST_TIME":1751853018}', '2025-07-07 09:50:20.674169');
 INSERT INTO gp_db.fw_audittrail VALUES (951, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Bulan Ini: -'',''Bulan Ini: -'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=ibmvba3hSpgqk43ZC-VnymQ5MgBn2Yg~&menu=Kelulusan&submenu=Pelulus","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=emuf2id1qlu3p6ao6k42hnq40r","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/home.php","REMOTE_PORT":"52941","REDIRECT_URL":"\/Golden-Parking\/action.do","REDIRECT_QUERY_STRING":"do=okFSRXiSTQHkVGRzzo_koOYvt8GTrGM~&menu=Kelulusan&submenu=Pelulus","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=okFSRXiSTQHkVGRzzo_koOYvt8GTrGM~&menu=Kelulusan&submenu=Pelulus","REQUEST_URI":"\/Golden-Parking\/action.do?do=okFSRXiSTQHkVGRzzo_koOYvt8GTrGM~&menu=Kelulusan&submenu=Pelulus","SCRIPT_NAME":"\/Golden-Parking\/home.php","PHP_SELF":"\/Golden-Parking\/home.php","REQUEST_TIME_FLOAT":1751853018.484634,"REQUEST_TIME":1751853018}', '2025-07-07 09:50:20.676405');
 INSERT INTO gp_db.fw_audittrail VALUES (952, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"DELETE FROM fw_akses WHERE fa_sm_id=''16''"}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"372","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryNYHkDlqlbgyjBk7v","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=ER_oA2ZBHk3Y5YU~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=emuf2id1qlu3p6ao6k42hnq40r","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"53925","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&updatesub=16&m_id=9","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&updatesub=16&m_id=9","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=qENfFx7P&func=process&updatesub=16&m_id=9","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1751854601.935908,"REQUEST_TIME":1751854601}', '2025-07-07 10:16:44.029109');
+INSERT INTO gp_db.fw_audittrail VALUES (973, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Cawangan'',''Cawangan'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_CACHE_CONTROL":"max-age=0","HTTP_SEC_CH_UA":"\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=-N6BydKXWQKAf0U~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=vrpfrgaodhh8qqo2fdgbr3dhnr","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/home.php","REMOTE_PORT":"53460","REDIRECT_URL":"\/Golden-Parking\/action.do","REDIRECT_QUERY_STRING":"do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","REQUEST_URI":"\/Golden-Parking\/action.do?do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","SCRIPT_NAME":"\/Golden-Parking\/home.php","PHP_SELF":"\/Golden-Parking\/home.php","REQUEST_TIME_FLOAT":1753172787.144073,"REQUEST_TIME":1753172787}', '2025-07-22 16:26:29.229889');
 INSERT INTO gp_db.fw_audittrail VALUES (953, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"UPDATE fw_submenu SET sm_keterangan=:sm_keterangan,sm_href=:sm_href,sm_class=:sm_class WHERE sm_id=''16''","data":{"sm_keterangan":"Bahagian Pelulus","sm_href":"m\/m.approvalApplication","sm_class":""}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"372","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryNYHkDlqlbgyjBk7v","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=ER_oA2ZBHk3Y5YU~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=emuf2id1qlu3p6ao6k42hnq40r","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"53925","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&updatesub=16&m_id=9","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&updatesub=16&m_id=9","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=qENfFx7P&func=process&updatesub=16&m_id=9","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1751854601.935908,"REQUEST_TIME":1751854601}', '2025-07-07 10:16:44.031273');
 INSERT INTO gp_db.fw_audittrail VALUES (954, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO fw_akses(fa_m_id,fa_sm_id,fa_rr_id,fa_insertby) VALUES(:fa_m_id,:fa_sm_id,:fa_rr_id,:fa_insertby)","data":{"fa_m_id":"9","fa_sm_id":"16","fa_rr_id":"1","fa_insertby":"admin"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryTqxZr8pGqAHCfs93","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=ER_oA2ZBHk3Y5YU~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=emuf2id1qlu3p6ao6k42hnq40r","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"53925","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=9&fa_sm_id=16&fa_rr_id=1&valakses=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=9&fa_sm_id=16&fa_rr_id=1&valakses=1","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=qENfFx7P&func=process&fa_m_id=9&fa_sm_id=16&fa_rr_id=1&valakses=1","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1751854606.150732,"REQUEST_TIME":1751854606}', '2025-07-07 10:16:48.206762');
 INSERT INTO gp_db.fw_audittrail VALUES (955, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO fw_akses(fa_m_id,fa_sm_id,fa_rr_id,fa_insertby) VALUES(:fa_m_id,:fa_sm_id,:fa_rr_id,:fa_insertby)","data":{"fa_m_id":"9","fa_sm_id":"16","fa_rr_id":"4","fa_insertby":"admin"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryuLUvly9dPcqBQjyg","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=ER_oA2ZBHk3Y5YU~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=emuf2id1qlu3p6ao6k42hnq40r","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"53925","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=9&fa_sm_id=16&fa_rr_id=4&valakses=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=9&fa_sm_id=16&fa_rr_id=4&valakses=1","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=qENfFx7P&func=process&fa_m_id=9&fa_sm_id=16&fa_rr_id=4&valakses=1","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1751854608.613962,"REQUEST_TIME":1751854608}', '2025-07-07 10:16:50.682863');
@@ -2479,10 +2475,35 @@ INSERT INTO gp_db.fw_audittrail VALUES (957, '{"username":"admin","nama":"Admini
 INSERT INTO gp_db.fw_audittrail VALUES (958, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Bahagian Pelulus'',''Bahagian Pelulus'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_SEC_CH_UA":"\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not\/A)Brand\";v=\"24\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=ER_oA2ZBHk3Y5YU~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=emuf2id1qlu3p6ao6k42hnq40r","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/home.php","REMOTE_PORT":"53925","REDIRECT_URL":"\/Golden-Parking\/action.do","REDIRECT_QUERY_STRING":"do=-Gd_yhwt_AehPMOWMfSGanTeLbLAKlM~&menu=Kelulusan&submenu=Pelulus","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=-Gd_yhwt_AehPMOWMfSGanTeLbLAKlM~&menu=Kelulusan&submenu=Pelulus","REQUEST_URI":"\/Golden-Parking\/action.do?do=-Gd_yhwt_AehPMOWMfSGanTeLbLAKlM~&menu=Kelulusan&submenu=Pelulus","SCRIPT_NAME":"\/Golden-Parking\/home.php","PHP_SELF":"\/Golden-Parking\/home.php","REQUEST_TIME_FLOAT":1751854617.766747,"REQUEST_TIME":1751854617}', '2025-07-07 10:16:59.833831');
 INSERT INTO gp_db.fw_audittrail VALUES (959, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"DELETE FROM fw_akses WHERE fa_m_id=''9''"}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryuxOYE9lWXOBcsPfL","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=kc5KUJuKoUCO8Qc~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=pqegba9ubsjki1ffql95a4on33","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"53788","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&del=9","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&del=9","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=qENfFx7P&func=process&del=9","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1752721264.076911,"REQUEST_TIME":1752721264}', '2025-07-17 11:01:06.118518');
 INSERT INTO gp_db.fw_audittrail VALUES (960, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"DELETE FROM fw_menu WHERE m_id=''9''"}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryuxOYE9lWXOBcsPfL","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=kc5KUJuKoUCO8Qc~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=pqegba9ubsjki1ffql95a4on33","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"53788","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&del=9","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&del=9","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=qENfFx7P&func=process&del=9","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1752721264.076911,"REQUEST_TIME":1752721264}', '2025-07-17 11:01:06.121148');
+INSERT INTO gp_db.fw_audittrail VALUES (979, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"UPDATE fw_menu SET m_susunan=''10'' WHERE m_id=''10''"}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryAhSq74X4wcBT8sm7","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=vrpfrgaodhh8qqo2fdgbr3dhnr","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"53530","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&btnup=1&m_id=12","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&btnup=1&m_id=12","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=qENfFx7P&func=process&btnup=1&m_id=12","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1753172956.377259,"REQUEST_TIME":1753172956}', '2025-07-22 16:29:18.454777');
+INSERT INTO gp_db.fw_audittrail VALUES (961, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO fw_menu(m_keterangan,m_submenu,m_href,m_class,m_susunan) VALUES(:m_keterangan,:m_submenu,:m_href,:m_class,:m_susunan)","data":{"do":"qENfFx7P","func":"process","save":"1","m_keterangan":"Tetapan Agensi","m_submenu":"Y","m_href":"#","m_class":"fa fa-building bg-black","m_susunan":"11"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"465","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundary01IQusacE6fBeAgI","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=vrpfrgaodhh8qqo2fdgbr3dhnr","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"53434","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&save=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&save=1","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=qENfFx7P&func=process&save=1","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1753172689.809908,"REQUEST_TIME":1753172689}', '2025-07-22 16:24:51.894221');
+INSERT INTO gp_db.fw_audittrail VALUES (962, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO fw_akses(fa_m_id,fa_sm_id,fa_rr_id,fa_insertby) VALUES(:fa_m_id,:fa_sm_id,:fa_rr_id,:fa_insertby)","data":{"fa_m_id":"12","fa_sm_id":"0","fa_rr_id":"1","fa_insertby":"admin"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryqAXGfotk636mFhMT","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=vrpfrgaodhh8qqo2fdgbr3dhnr","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"53434","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=12&fa_rr_id=1&valakses=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=12&fa_rr_id=1&valakses=1","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=qENfFx7P&func=process&fa_m_id=12&fa_rr_id=1&valakses=1","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1753172696.384106,"REQUEST_TIME":1753172696}', '2025-07-22 16:24:58.448776');
+INSERT INTO gp_db.fw_audittrail VALUES (963, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Tetapan Agensi'',''Tetapan Agensi'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_CACHE_CONTROL":"max-age=0","HTTP_SEC_CH_UA":"\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=-N6BydKXWQKAf0U~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=vrpfrgaodhh8qqo2fdgbr3dhnr","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/home.php","REMOTE_PORT":"53434","REDIRECT_URL":"\/Golden-Parking\/action.do","REDIRECT_QUERY_STRING":"do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","REQUEST_URI":"\/Golden-Parking\/action.do?do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","SCRIPT_NAME":"\/Golden-Parking\/home.php","PHP_SELF":"\/Golden-Parking\/home.php","REQUEST_TIME_FLOAT":1753172699.4559,"REQUEST_TIME":1753172699}', '2025-07-22 16:25:01.53507');
+INSERT INTO gp_db.fw_audittrail VALUES (964, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO fw_submenu(sm_m_id,sm_keterangan,sm_href,sm_class,sm_susunan) VALUES(:sm_m_id,:sm_keterangan,:sm_href,:sm_class,:sm_susunan)","data":{"do":"qENfFx7P","func":"process","savesub":"1","sm_m_id":"12","sm_keterangan":"Jabatan","sm_href":"m\/m.ref_dept","sm_class":"","sm_susunan":"25"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"352","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryKeQlS11Q1t4xNBnF","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=vrpfrgaodhh8qqo2fdgbr3dhnr","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"53439","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&savesub=1&sm_m_id=12","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&savesub=1&sm_m_id=12","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=qENfFx7P&func=process&savesub=1&sm_m_id=12","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1753172718.300473,"REQUEST_TIME":1753172718}', '2025-07-22 16:25:20.401499');
+INSERT INTO gp_db.fw_audittrail VALUES (965, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO fw_submenu(sm_m_id,sm_keterangan,sm_href,sm_class,sm_susunan) VALUES(:sm_m_id,:sm_keterangan,:sm_href,:sm_class,:sm_susunan)","data":{"do":"qENfFx7P","func":"process","savesub":"1","sm_m_id":"12","sm_keterangan":"Cawangan","sm_href":"m\/m.ref_branch","sm_class":"","sm_susunan":"26"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"355","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryHga19DCXecV0VBBD","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=vrpfrgaodhh8qqo2fdgbr3dhnr","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"53451","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&savesub=1&sm_m_id=12","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&savesub=1&sm_m_id=12","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=qENfFx7P&func=process&savesub=1&sm_m_id=12","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1753172731.752252,"REQUEST_TIME":1753172731}', '2025-07-22 16:25:33.84071');
+INSERT INTO gp_db.fw_audittrail VALUES (966, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO fw_submenu(sm_m_id,sm_keterangan,sm_href,sm_class,sm_susunan) VALUES(:sm_m_id,:sm_keterangan,:sm_href,:sm_class,:sm_susunan)","data":{"do":"qENfFx7P","func":"process","savesub":"1","sm_m_id":"12","sm_keterangan":"Bahagian","sm_href":"m\/m.ref_division","sm_class":"","sm_susunan":"27"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"357","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryqtsPlCCpUyADubKV","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=vrpfrgaodhh8qqo2fdgbr3dhnr","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"53460","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&savesub=1&sm_m_id=12","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&savesub=1&sm_m_id=12","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=qENfFx7P&func=process&savesub=1&sm_m_id=12","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1753172765.99334,"REQUEST_TIME":1753172765}', '2025-07-22 16:26:08.052739');
+INSERT INTO gp_db.fw_audittrail VALUES (967, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO fw_akses(fa_m_id,fa_sm_id,fa_rr_id,fa_insertby) VALUES(:fa_m_id,:fa_sm_id,:fa_rr_id,:fa_insertby)","data":{"fa_m_id":"12","fa_sm_id":"27","fa_rr_id":"1","fa_insertby":"admin"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundarykVKL4l1SpOVp8Bhc","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=vrpfrgaodhh8qqo2fdgbr3dhnr","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"53460","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=12&fa_sm_id=27&fa_rr_id=1&valakses=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=12&fa_sm_id=27&fa_rr_id=1&valakses=1","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=qENfFx7P&func=process&fa_m_id=12&fa_sm_id=27&fa_rr_id=1&valakses=1","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1753172771.063464,"REQUEST_TIME":1753172771}', '2025-07-22 16:26:13.139872');
+INSERT INTO gp_db.fw_audittrail VALUES (968, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO fw_akses(fa_m_id,fa_sm_id,fa_rr_id,fa_insertby) VALUES(:fa_m_id,:fa_sm_id,:fa_rr_id,:fa_insertby)","data":{"fa_m_id":"12","fa_sm_id":"28","fa_rr_id":"1","fa_insertby":"admin"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryanwpJqNqQoN5xxgT","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=vrpfrgaodhh8qqo2fdgbr3dhnr","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"53460","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=12&fa_sm_id=28&fa_rr_id=1&valakses=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=12&fa_sm_id=28&fa_rr_id=1&valakses=1","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=qENfFx7P&func=process&fa_m_id=12&fa_sm_id=28&fa_rr_id=1&valakses=1","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1753172774.079607,"REQUEST_TIME":1753172774}', '2025-07-22 16:26:16.169764');
+INSERT INTO gp_db.fw_audittrail VALUES (969, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO fw_akses(fa_m_id,fa_sm_id,fa_rr_id,fa_insertby) VALUES(:fa_m_id,:fa_sm_id,:fa_rr_id,:fa_insertby)","data":{"fa_m_id":"12","fa_sm_id":"28","fa_rr_id":"1","fa_insertby":"admin"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryO99FlodYC6N9I9Uj","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=vrpfrgaodhh8qqo2fdgbr3dhnr","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"53482","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=12&fa_sm_id=28&fa_rr_id=1&valakses=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=12&fa_sm_id=28&fa_rr_id=1&valakses=1","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=qENfFx7P&func=process&fa_m_id=12&fa_sm_id=28&fa_rr_id=1&valakses=1","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1753172774.384783,"REQUEST_TIME":1753172774}', '2025-07-22 16:26:18.281078');
+INSERT INTO gp_db.fw_audittrail VALUES (970, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO fw_akses(fa_m_id,fa_sm_id,fa_rr_id,fa_insertby) VALUES(:fa_m_id,:fa_sm_id,:fa_rr_id,:fa_insertby)","data":{"fa_m_id":"12","fa_sm_id":"29","fa_rr_id":"1","fa_insertby":"admin"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundarywUsUDFK87tKIB0pC","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=vrpfrgaodhh8qqo2fdgbr3dhnr","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"53460","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=12&fa_sm_id=29&fa_rr_id=1&valakses=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=12&fa_sm_id=29&fa_rr_id=1&valakses=1","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=qENfFx7P&func=process&fa_m_id=12&fa_sm_id=29&fa_rr_id=1&valakses=1","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1753172777.037756,"REQUEST_TIME":1753172777}', '2025-07-22 16:26:20.354168');
+INSERT INTO gp_db.fw_audittrail VALUES (971, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"DELETE FROM fw_akses WHERE fa_m_id=''12'' AND fa_sm_id=''29'' AND fa_rr_id=''1''"}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryrlWUGsAd2q468zbN","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=vrpfrgaodhh8qqo2fdgbr3dhnr","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"53460","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=12&fa_sm_id=29&fa_rr_id=1&valakses=0","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=12&fa_sm_id=29&fa_rr_id=1&valakses=0","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=qENfFx7P&func=process&fa_m_id=12&fa_sm_id=29&fa_rr_id=1&valakses=0","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1753172780.671503,"REQUEST_TIME":1753172780}', '2025-07-22 16:26:22.73283');
+INSERT INTO gp_db.fw_audittrail VALUES (972, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"INSERT INTO fw_akses(fa_m_id,fa_sm_id,fa_rr_id,fa_insertby) VALUES(:fa_m_id,:fa_sm_id,:fa_rr_id,:fa_insertby)","data":{"fa_m_id":"12","fa_sm_id":"29","fa_rr_id":"1","fa_insertby":"admin"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundarybpMwjR4kBoLjcZLZ","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=vrpfrgaodhh8qqo2fdgbr3dhnr","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"53460","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=12&fa_sm_id=29&fa_rr_id=1&valakses=1","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&fa_m_id=12&fa_sm_id=29&fa_rr_id=1&valakses=1","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=qENfFx7P&func=process&fa_m_id=12&fa_sm_id=29&fa_rr_id=1&valakses=1","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1753172783.839517,"REQUEST_TIME":1753172783}', '2025-07-22 16:26:25.912872');
+INSERT INTO gp_db.fw_audittrail VALUES (974, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '"INSERT INTO fw_lang(label,bm)VALUES(''Bahagian'',''Bahagian'')"', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_CACHE_CONTROL":"max-age=0","HTTP_SEC_CH_UA":"\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=-N6BydKXWQKAf0U~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=vrpfrgaodhh8qqo2fdgbr3dhnr","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/home.php","REMOTE_PORT":"53460","REDIRECT_URL":"\/Golden-Parking\/action.do","REDIRECT_QUERY_STRING":"do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"GET","QUERY_STRING":"do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","REQUEST_URI":"\/Golden-Parking\/action.do?do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","SCRIPT_NAME":"\/Golden-Parking\/home.php","PHP_SELF":"\/Golden-Parking\/home.php","REQUEST_TIME_FLOAT":1753172787.144073,"REQUEST_TIME":1753172787}', '2025-07-22 16:26:29.231097');
+INSERT INTO gp_db.fw_audittrail VALUES (975, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"UPDATE fw_submenu SET sm_susunan=''26'' WHERE sm_id=''29''"}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundary1EaGpfuJGA1b23mM","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=vrpfrgaodhh8qqo2fdgbr3dhnr","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"53494","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&btndown=1&m_id=12&sm_id=28","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&btndown=1&m_id=12&sm_id=28","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=qENfFx7P&func=process&btndown=1&m_id=12&sm_id=28","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1753172799.367787,"REQUEST_TIME":1753172799}', '2025-07-22 16:26:41.432684');
+INSERT INTO gp_db.fw_audittrail VALUES (976, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"UPDATE fw_submenu SET sm_susunan=''27'' WHERE sm_id=''28''"}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundary1EaGpfuJGA1b23mM","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=vrpfrgaodhh8qqo2fdgbr3dhnr","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"53494","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&btndown=1&m_id=12&sm_id=28","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&btndown=1&m_id=12&sm_id=28","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=qENfFx7P&func=process&btndown=1&m_id=12&sm_id=28","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1753172799.367787,"REQUEST_TIME":1753172799}', '2025-07-22 16:26:41.433363');
+INSERT INTO gp_db.fw_audittrail VALUES (977, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"UPDATE fw_menu SET m_susunan=''11'' WHERE m_id=''11''"}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryorMCJGVNvnJNHA4O","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=vrpfrgaodhh8qqo2fdgbr3dhnr","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"53525","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&btnup=1&m_id=12","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&btnup=1&m_id=12","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=qENfFx7P&func=process&btnup=1&m_id=12","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1753172933.856988,"REQUEST_TIME":1753172933}', '2025-07-22 16:28:55.940287');
+INSERT INTO gp_db.fw_audittrail VALUES (978, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"UPDATE fw_menu SET m_susunan=''10'' WHERE m_id=''12''"}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryorMCJGVNvnJNHA4O","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=vrpfrgaodhh8qqo2fdgbr3dhnr","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"53525","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&btnup=1&m_id=12","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&btnup=1&m_id=12","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=qENfFx7P&func=process&btnup=1&m_id=12","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1753172933.856988,"REQUEST_TIME":1753172933}', '2025-07-22 16:28:55.941845');
+INSERT INTO gp_db.fw_audittrail VALUES (980, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"UPDATE fw_menu SET m_susunan=''9'' WHERE m_id=''12''"}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryAhSq74X4wcBT8sm7","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=vrpfrgaodhh8qqo2fdgbr3dhnr","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"53530","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&btnup=1&m_id=12","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&btnup=1&m_id=12","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=qENfFx7P&func=process&btnup=1&m_id=12","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1753172956.377259,"REQUEST_TIME":1753172956}', '2025-07-22 16:29:18.455497');
+INSERT INTO gp_db.fw_audittrail VALUES (981, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"UPDATE fw_submenu SET sm_susunan=''21'' WHERE sm_id=''21''"}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryKhW0hfqdAAIe2Tuc","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=vrpfrgaodhh8qqo2fdgbr3dhnr","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"53605","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&btnup=1&m_id=11&sm_id=23","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&btnup=1&m_id=11&sm_id=23","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=qENfFx7P&func=process&btnup=1&m_id=11&sm_id=23","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1753173202.786331,"REQUEST_TIME":1753173202}', '2025-07-22 16:33:24.858952');
+INSERT INTO gp_db.fw_audittrail VALUES (982, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"UPDATE fw_submenu SET sm_susunan=''20'' WHERE sm_id=''23''"}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"44","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryKhW0hfqdAAIe2Tuc","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=vrpfrgaodhh8qqo2fdgbr3dhnr","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"53605","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&btnup=1&m_id=11&sm_id=23","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&btnup=1&m_id=11&sm_id=23","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=qENfFx7P&func=process&btnup=1&m_id=11&sm_id=23","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1753173202.786331,"REQUEST_TIME":1753173202}', '2025-07-22 16:33:24.85962');
+INSERT INTO gp_db.fw_audittrail VALUES (983, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"DELETE FROM fw_akses WHERE fa_sm_id=''6''"}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"364","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryo3AUAvBvBKHHV0yh","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=vrpfrgaodhh8qqo2fdgbr3dhnr","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"53613","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&updatesub=6&m_id=7","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&updatesub=6&m_id=7","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=qENfFx7P&func=process&updatesub=6&m_id=7","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1753173227.56013,"REQUEST_TIME":1753173227}', '2025-07-22 16:33:49.646657');
+INSERT INTO gp_db.fw_audittrail VALUES (984, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"UPDATE fw_submenu SET sm_keterangan=:sm_keterangan,sm_href=:sm_href,sm_class=:sm_class WHERE sm_id=''6''","data":{"sm_keterangan":"Profil Pengguna","sm_href":"m\/m.user_profile","sm_class":""}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"364","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryo3AUAvBvBKHHV0yh","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=vrpfrgaodhh8qqo2fdgbr3dhnr","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"53613","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&updatesub=6&m_id=7","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&updatesub=6&m_id=7","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=qENfFx7P&func=process&updatesub=6&m_id=7","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1753173227.56013,"REQUEST_TIME":1753173227}', '2025-07-22 16:33:49.648983');
+INSERT INTO gp_db.fw_audittrail VALUES (985, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"DELETE FROM fw_akses WHERE fa_m_id=''7'' AND fa_sm_id=0 "}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"357","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryfFkQZBlb7XBvOzgv","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=vrpfrgaodhh8qqo2fdgbr3dhnr","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"53613","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&update=7","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&update=7","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=qENfFx7P&func=process&update=7","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1753173238.217469,"REQUEST_TIME":1753173238}', '2025-07-22 16:34:00.400948');
+INSERT INTO gp_db.fw_audittrail VALUES (986, '{"username":"admin","nama":"Administrator","peranan":"1","superadmin":"admin"}', '{"sql":"UPDATE fw_menu SET m_keterangan=:m_keterangan,m_href=:m_href,m_class=:m_class WHERE m_id=''7''","data":{"m_keterangan":"Pengguna","m_href":"#","m_class":"fa fa-user bg-grey"}}', '{"REDIRECT_OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","REDIRECT_PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","REDIRECT_HTACCESS":"on","REDIRECT_STATUS":"200","OPENSSL_CONF":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/conf\/openssl.cnf","PATH":"C:\\Bitnami\\wappstack-8.1.4-0\/apache2\/bin;%PATH%","HTACCESS":"on","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","CONTENT_LENGTH":"357","HTTP_SEC_CH_UA_PLATFORM":"\"Windows\"","HTTP_X_REQUESTED_WITH":"XMLHttpRequest","HTTP_USER_AGENT":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36","HTTP_ACCEPT":"*\/*","HTTP_SEC_CH_UA":"\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"","CONTENT_TYPE":"multipart\/form-data; boundary=----WebKitFormBoundaryfFkQZBlb7XBvOzgv","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_ORIGIN":"http:\/\/localhost","HTTP_SEC_FETCH_SITE":"same-origin","HTTP_SEC_FETCH_MODE":"cors","HTTP_SEC_FETCH_DEST":"empty","HTTP_REFERER":"http:\/\/localhost\/Golden-Parking\/action.do?do=1oFroDIKnWombWg~&menu=Superadmin&submenu=Menu","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","HTTP_ACCEPT_LANGUAGE":"en-US,en;q=0.9","HTTP_COOKIE":"PHPSESSID=vrpfrgaodhh8qqo2fdgbr3dhnr","SystemRoot":"C:\\WINDOWS","COMSPEC":"C:\\WINDOWS\\system32\\cmd.exe","PATHEXT":".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC","WINDIR":"C:\\WINDOWS","SERVER_SIGNATURE":"","SERVER_SOFTWARE":"Apache","SERVER_NAME":"localhost","SERVER_ADDR":"::1","SERVER_PORT":"80","REMOTE_ADDR":"::1","DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/","REQUEST_SCHEME":"http","CONTEXT_PREFIX":"","CONTEXT_DOCUMENT_ROOT":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs","SERVER_ADMIN":"admin@example.com","SCRIPT_FILENAME":"C:\/Bitnami\/wappstack-8.1.4-0\/apache2\/htdocs\/Golden-Parking\/ajax.php","REMOTE_PORT":"53613","REDIRECT_URL":"\/Golden-Parking\/action.ajax","REDIRECT_QUERY_STRING":"do=qENfFx7P&func=process&update=7","GATEWAY_INTERFACE":"CGI\/1.1","SERVER_PROTOCOL":"HTTP\/1.1","REQUEST_METHOD":"POST","QUERY_STRING":"do=qENfFx7P&func=process&update=7","REQUEST_URI":"\/Golden-Parking\/action.ajax?do=qENfFx7P&func=process&update=7","SCRIPT_NAME":"\/Golden-Parking\/ajax.php","PHP_SELF":"\/Golden-Parking\/ajax.php","REQUEST_TIME_FLOAT":1753173238.217469,"REQUEST_TIME":1753173238}', '2025-07-22 16:34:00.402832');
 
 
 --
--- TOC entry 3664 (class 0 OID 18116)
+-- TOC entry 3668 (class 0 OID 18116)
 -- Dependencies: 243
 -- Data for Name: fw_lang; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -2962,32 +2983,35 @@ INSERT INTO gp_db.fw_lang VALUES (472, 'Label', 'Label', NULL, '2025-07-04 16:54
 INSERT INTO gp_db.fw_lang VALUES (473, 'Memuatkan...', 'Memuatkan...', NULL, '2025-07-07 09:50:20.668178', NULL);
 INSERT INTO gp_db.fw_lang VALUES (474, 'Bulan Ini: -', 'Bulan Ini: -', NULL, '2025-07-07 09:50:20.67614', NULL);
 INSERT INTO gp_db.fw_lang VALUES (475, 'Bahagian Pelulus', 'Bahagian Pelulus', NULL, '2025-07-07 10:16:59.831215', NULL);
+INSERT INTO gp_db.fw_lang VALUES (476, 'Tetapan Agensi', 'Tetapan Agensi', NULL, '2025-07-22 16:25:01.531459', NULL);
+INSERT INTO gp_db.fw_lang VALUES (477, 'Cawangan', 'Cawangan', NULL, '2025-07-22 16:26:29.227697', NULL);
+INSERT INTO gp_db.fw_lang VALUES (478, 'Bahagian', 'Bahagian', NULL, '2025-07-22 16:26:29.230772', NULL);
 
 
 --
--- TOC entry 3666 (class 0 OID 18123)
+-- TOC entry 3670 (class 0 OID 18123)
 -- Dependencies: 245
 -- Data for Name: fw_menu; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
 INSERT INTO gp_db.fw_menu VALUES (2, 'Borang permohonan', 'Y', '#', 'fa fa-file-text bg-blue', 3, 'A', NULL, NULL, '2025-05-19 12:23:45.93075');
 INSERT INTO gp_db.fw_menu VALUES (5, 'Semakan', 'Y', '#', 'fa fa-list-alt bg-purple', 4, 'A', NULL, NULL, '2025-05-20 09:18:19.698233');
-INSERT INTO gp_db.fw_menu VALUES (7, 'Profil Pengguna', 'Y', '#', 'fa fa-user bg-grey', 7, 'A', NULL, NULL, '2025-05-22 16:59:18.702785');
 INSERT INTO gp_db.fw_menu VALUES (6, 'Laporan', 'Y', '#', 'fa fa-file-pdf-o bg-red', 6, 'A', NULL, NULL, '2025-05-20 09:19:58.229962');
-INSERT INTO gp_db.fw_menu VALUES (10, 'Tetapan Pengguna', 'Y', '#', 'fa fa-users bg-orange', 9, 'A', NULL, NULL, '2025-06-11 11:30:44.124937');
 INSERT INTO gp_db.fw_menu VALUES (4, 'Tetapan Sistem', 'Y', '#', 'fa fa-cogs bg-yellow', 8, 'A', NULL, NULL, '2025-05-19 14:03:51.69313');
-INSERT INTO gp_db.fw_menu VALUES (11, 'Tetapan Hebahan', 'Y', '#', 'fa fa-bullhorn bg-white', 10, 'A', NULL, NULL, '2025-06-26 16:25:23.57575');
+INSERT INTO gp_db.fw_menu VALUES (11, 'Tetapan Hebahan', 'Y', '#', 'fa fa-bullhorn bg-white', 11, 'A', NULL, NULL, '2025-06-26 16:25:23.57575');
+INSERT INTO gp_db.fw_menu VALUES (10, 'Tetapan Pengguna', 'Y', '#', 'fa fa-users bg-orange', 10, 'A', NULL, NULL, '2025-06-11 11:30:44.124937');
+INSERT INTO gp_db.fw_menu VALUES (12, 'Tetapan Agensi', 'Y', '#', 'fa fa-building bg-black', 9, 'A', NULL, NULL, '2025-07-22 16:24:51.892091');
+INSERT INTO gp_db.fw_menu VALUES (7, 'Pengguna', 'Y', '#', 'fa fa-user bg-grey', 7, 'A', NULL, NULL, '2025-05-22 16:59:18.702785');
 
 
 --
--- TOC entry 3668 (class 0 OID 18131)
+-- TOC entry 3672 (class 0 OID 18131)
 -- Dependencies: 247
 -- Data for Name: fw_submenu; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
 
 INSERT INTO gp_db.fw_submenu VALUES (1, 1, 'Terjemahan', 'm/m.fw_lang', 'fa fa-language text-theme m-l-5', 1, 'A', NULL, NULL, '2025-05-19 12:19:55.005292');
 INSERT INTO gp_db.fw_submenu VALUES (2, 2, 'Permohonan Baru', 'm/m.new_application', '', 2, 'A', '{"m_id":"2","sm_id":"2","modul":"ApplicationClass","dbschema":"gp_db","tabledb":"application_info","order":{"appinfo_id":"0","appinfo_no_permohonan":"1","appinfo_jenis_permohonan":"2","appinfo_nama_pemohon":"3","appinfo_no_kp":"4","appinfo_umur":"5","appinfo_no_telefon":"6","appinfo_emel":"7","appinfo_pekerjaan":"8","appinfo_alamat":"9","appinfo_poskod":"10","appinfo_bandar":"11","appinfo_negeri":"12","appinfo_tarikh_permohonan":"13","appinfo_tarikh_sah_sehingga":"14"},"fields":["appinfo_id","appinfo_no_permohonan","appinfo_jenis_permohonan","appinfo_nama_pemohon","appinfo_no_kp","appinfo_umur","appinfo_no_telefon","appinfo_emel","appinfo_pekerjaan","appinfo_alamat","appinfo_poskod","appinfo_bandar","appinfo_negeri","appinfo_tarikh_permohonan","appinfo_tarikh_sah_sehingga"],"typeselection":{"appinfo_no_permohonan":"tf","appinfo_jenis_permohonan":"tf","appinfo_nama_pemohon":"tf","appinfo_no_kp":"tf","appinfo_umur":"tf","appinfo_no_telefon":"tf","appinfo_emel":"tf","appinfo_pekerjaan":"tf","appinfo_alamat":"tf","appinfo_poskod":"tf","appinfo_bandar":"tf","appinfo_negeri":"tf","appinfo_tarikh_permohonan":"tf","appinfo_tarikh_sah_sehingga":"tf"},"compulsory":["appinfo_jenis_permohonan","appinfo_nama_pemohon","appinfo_no_kp","appinfo_no_telefon","appinfo_emel","appinfo_pekerjaan","appinfo_alamat","appinfo_poskod","appinfo_bandar","appinfo_negeri","appinfo_tarikh_permohonan"],"data_style":"dl","form_style":"df"}', 'admin', '2025-06-18 10:59:48');
-INSERT INTO gp_db.fw_submenu VALUES (6, 7, 'Maklumat Pengguna', 'm/m.user_profile', '', 6, 'A', '{"m_id":"7","sm_id":"6","modul":"RefUserProfileClass","dbschema":"gp_db","tabledb":"users","order":{"u_id":"0","u_ic":"1","u_fullname":"2","u_birthdate":"3","u_sex":"4","u_religion":"5","u_race":"6","u_phone_no":"7","u_home_no":"8","u_office_no":"9","u_fax":"10","u_email":"11","u_password":"12"},"fields":["u_id","u_ic","u_fullname","u_birthdate","u_sex","u_religion","u_race","u_phone_no","u_home_no","u_office_no","u_fax","u_email","u_password"],"typeselection":{"u_ic":"","u_fullname":"","u_birthdate":"","u_sex":"","u_religion":"","u_race":"","u_phone_no":"","u_home_no":"","u_office_no":"","u_fax":"","u_email":"","u_password":""},"data_style":"dlg","form_style":"df"}', 'admin', '2025-06-26 09:27:22');
 INSERT INTO gp_db.fw_submenu VALUES (5, 6, 'Senarai Laporan', 'm/m.report_list', '', 5, 'A', NULL, NULL, '2025-05-20 09:35:47.501212');
 INSERT INTO gp_db.fw_submenu VALUES (12, 4, 'Negeri', 'm/m.ref_states', '', 7, 'A', '{"m_id":"4","sm_id":"12","modul":"RefStatesClass","dbschema":"gp_db","tabledb":"ref_states","order":{"rstates_id":"0","rstates_desc":"1","rstates_ind_status":"2"},"fields":["rstates_id","rstates_desc","rstates_ind_status"],"typeselection":{"rstates_desc":"tf","rstates_ind_status":"tf"},"compulsory":["rstates_desc","rstates_ind_status"],"data_style":"dl","form_style":"rt"}', 'admin', '2025-06-18 15:41:27');
 INSERT INTO gp_db.fw_submenu VALUES (15, 10, 'Peranan Pengguna', 'm/m.ref_role', '', 17, 'A', '{"m_id":"10","sm_id":"15","modul":"RefRoleClass","dbschema":"gp_db","tabledb":"ref_role","order":{"rr_id":"0","rr_acronym":"1","rr_description":"2","rr_status":"3"},"fields":["rr_id","rr_acronym","rr_description","rr_status"],"typeselection":{"rr_acronym":"tf","rr_description":"tf","rr_status":"tf"},"compulsory":["rr_acronym","rr_description","rr_status"],"data_style":"dl","form_style":"rt"}', 'admin', '2025-06-18 15:30:45');
@@ -2998,16 +3022,20 @@ INSERT INTO gp_db.fw_submenu VALUES (20, 4, 'Jenis Permohonan', 'm/m.ref_applica
 INSERT INTO gp_db.fw_submenu VALUES (14, 10, 'Pengguna', 'm/m.user', '', 14, 'A', '{"m_id":"10","sm_id":"14","modul":"RefUserClass","dbschema":"gp_db","tabledb":"users","order":{"u_id":"0","u_ic":"1","u_fullname":"2"},"fields":["u_id","u_ic","u_fullname"],"typeselection":{"u_ic":"tf","u_fullname":"tf"},"compulsory":["u_ic","u_fullname"],"data_style":"dlg","form_style":"df"}', 'admin', '2025-06-19 13:49:34');
 INSERT INTO gp_db.fw_submenu VALUES (3, 2, 'Senarai Permohonan', 'm/m.application_list', '', 3, 'A', '{"m_id":"2","sm_id":"3","modul":"ApplicationList","dbschema":"gp_db","tabledb":"application_info","order":{"appinfo_id":"0","appinfo_no_permohonan":"1","appinfo_jenis_permohonan":"2","appinfo_nama_pemohon":"3","appinfo_no_kp":"4","appinfo_umur":"5","appinfo_no_telefon":"6","appinfo_emel":"7","appinfo_pekerjaan":"8","appinfo_alamat":"9","appinfo_poskod":"10","appinfo_bandar":"11","appinfo_negeri":"12","appinfo_tarikh_permohonan":"13","appinfo_tarikh_sah_sehingga":"14","appinfo_status_permohonan":"15"},"fields":["appinfo_id","appinfo_no_permohonan","appinfo_jenis_permohonan","appinfo_nama_pemohon","appinfo_no_kp","appinfo_umur","appinfo_no_telefon","appinfo_emel","appinfo_pekerjaan","appinfo_alamat","appinfo_poskod","appinfo_bandar","appinfo_negeri","appinfo_tarikh_permohonan","appinfo_tarikh_sah_sehingga","appinfo_status_permohonan"],"typeselection":{"appinfo_no_permohonan":"","appinfo_jenis_permohonan":"","appinfo_nama_pemohon":"","appinfo_no_kp":"","appinfo_umur":"","appinfo_no_telefon":"","appinfo_emel":"","appinfo_pekerjaan":"","appinfo_alamat":"","appinfo_poskod":"","appinfo_bandar":"","appinfo_negeri":"","appinfo_tarikh_permohonan":"","appinfo_tarikh_sah_sehingga":"","appinfo_status_permohonan":""},"data_style":"dlg","form_style":"rt"}', 'admin', '2025-06-25 15:35:32');
 INSERT INTO gp_db.fw_submenu VALUES (4, 5, 'Semakan Permohonan', 'm/m.application_check', '', 23, 'A', NULL, NULL, '2025-05-20 09:18:39.764721');
-INSERT INTO gp_db.fw_submenu VALUES (21, 11, 'Hebahan', 'm/m.new_announcement', '', 20, 'A', '{"m_id":"11","sm_id":"21","modul":"AnnouncementClass","dbschema":"gp_db","tabledb":"application_announcement","order":{"announce_id":"0","announce_info":"1","announce_date":"2","announce_status":"3"},"fields":["announce_id","announce_info","announce_date","announce_status"],"typeselection":{"announce_info":"ta","announce_date":"tf","announce_status":"tf"},"compulsory":["announce_info"],"data_style":"dl","form_style":"df"}', 'admin', '2025-06-26 22:47:07');
-INSERT INTO gp_db.fw_submenu VALUES (23, 11, 'FAQ', 'm/m.faq', '', 21, 'A', '{"m_id":"11","sm_id":"23","modul":"FaqClass","dbschema":"gp_db","tabledb":"application_faq","order":{"applicationfaq_id":"0","applicationfaq_title":"1","applicationfaq_desc":"2","applicationfaq_date":"3","applicationfaq_status_ind":"4"},"fields":["applicationfaq_id","applicationfaq_title","applicationfaq_desc","applicationfaq_date","applicationfaq_status_ind"],"typeselection":{"applicationfaq_title":"tf","applicationfaq_desc":"ta","applicationfaq_date":"tf","applicationfaq_status_ind":"tf"},"compulsory":["applicationfaq_title"],"data_style":"dl","form_style":"df"}', 'admin', '2025-06-27 19:31:39');
+INSERT INTO gp_db.fw_submenu VALUES (6, 7, 'Profil Pengguna', 'm/m.user_profile', '', 6, 'A', '{"m_id":"7","sm_id":"6","modul":"RefUserProfileClass","dbschema":"gp_db","tabledb":"users","order":{"u_id":"0","u_ic":"1","u_fullname":"2","u_birthdate":"3","u_sex":"4","u_religion":"5","u_race":"6","u_phone_no":"7","u_home_no":"8","u_office_no":"9","u_fax":"10","u_email":"11","u_password":"12"},"fields":["u_id","u_ic","u_fullname","u_birthdate","u_sex","u_religion","u_race","u_phone_no","u_home_no","u_office_no","u_fax","u_email","u_password"],"typeselection":{"u_ic":"","u_fullname":"","u_birthdate":"","u_sex":"","u_religion":"","u_race":"","u_phone_no":"","u_home_no":"","u_office_no":"","u_fax":"","u_email":"","u_password":""},"data_style":"dlg","form_style":"df"}', 'admin', '2025-06-26 09:27:22');
 INSERT INTO gp_db.fw_submenu VALUES (26, 5, 'Semakan No.Kenderaan', 'm/m.plate_check', '', 24, 'A', NULL, NULL, '2025-06-28 21:19:22.338739');
 INSERT INTO gp_db.fw_submenu VALUES (25, 5, 'Semakan I-Sekat', 'm/m.isekat_check', '', 4, 'A', NULL, NULL, '2025-06-28 21:18:57.342735');
 INSERT INTO gp_db.fw_submenu VALUES (24, 11, 'Terma dan Syarat', 'm/m.termsandcond', '', 22, 'A', '{"m_id":"11","sm_id":"24","modul":"TermClass","dbschema":"gp_db","tabledb":"application_term","order":{"applicationterm_id":"0","applicationterm_label":"1","applicationterm_desc":"2","applicationterm_status_ind":"3"},"fields":["applicationterm_id","applicationterm_label","applicationterm_desc","applicationterm_status_ind"],"typeselection":{"applicationterm_label":"tf","applicationterm_desc":"tf","applicationterm_status_ind":"tf"},"compulsory":["applicationterm_label"],"data_style":"dl","form_style":"df"}', 'admin', '2025-07-04 16:54:02');
 INSERT INTO gp_db.fw_submenu VALUES (16, 9, 'Bahagian Pelulus', 'm/m.approvalApplication', '', 13, 'A', '{"m_id":"9","sm_id":"16","modul":"ApprovalClass","dbschema":"gp_db","tabledb":"application_approval_info","order":{"applicationapprove_id":"0","applicationinfo_id":"1","application_approve_by":"2"},"fields":["applicationapprove_id","applicationinfo_id","application_approve_by"],"typeselection":{"applicationinfo_id":"tf","application_approve_by":"tf"},"data_style":"dl","form_style":"df"}', 'admin', '2025-06-30 14:09:37');
+INSERT INTO gp_db.fw_submenu VALUES (27, 12, 'Jabatan', 'm/m.ref_dept', '', 25, 'A', NULL, NULL, '2025-07-22 16:25:20.397185');
+INSERT INTO gp_db.fw_submenu VALUES (29, 12, 'Bahagian', 'm/m.ref_division', '', 26, 'A', NULL, NULL, '2025-07-22 16:26:08.050067');
+INSERT INTO gp_db.fw_submenu VALUES (28, 12, 'Cawangan', 'm/m.ref_branch', '', 27, 'A', NULL, NULL, '2025-07-22 16:25:33.823034');
+INSERT INTO gp_db.fw_submenu VALUES (21, 11, 'Hebahan', 'm/m.new_announcement', '', 21, 'A', '{"m_id":"11","sm_id":"21","modul":"AnnouncementClass","dbschema":"gp_db","tabledb":"application_announcement","order":{"announce_id":"0","announce_info":"1","announce_date":"2","announce_status":"3"},"fields":["announce_id","announce_info","announce_date","announce_status"],"typeselection":{"announce_info":"ta","announce_date":"tf","announce_status":"tf"},"compulsory":["announce_info"],"data_style":"dl","form_style":"df"}', 'admin', '2025-06-26 22:47:07');
+INSERT INTO gp_db.fw_submenu VALUES (23, 11, 'FAQ', 'm/m.faq', '', 20, 'A', '{"m_id":"11","sm_id":"23","modul":"FaqClass","dbschema":"gp_db","tabledb":"application_faq","order":{"applicationfaq_id":"0","applicationfaq_title":"1","applicationfaq_desc":"2","applicationfaq_date":"3","applicationfaq_status_ind":"4"},"fields":["applicationfaq_id","applicationfaq_title","applicationfaq_desc","applicationfaq_date","applicationfaq_status_ind"],"typeselection":{"applicationfaq_title":"tf","applicationfaq_desc":"ta","applicationfaq_date":"tf","applicationfaq_status_ind":"tf"},"compulsory":["applicationfaq_title"],"data_style":"dl","form_style":"df"}', 'admin', '2025-06-27 19:31:39');
 
 
 --
--- TOC entry 3670 (class 0 OID 18139)
+-- TOC entry 3674 (class 0 OID 18139)
 -- Dependencies: 249
 -- Data for Name: fw_uploads; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -3015,7 +3043,7 @@ INSERT INTO gp_db.fw_submenu VALUES (16, 9, 'Bahagian Pelulus', 'm/m.approvalApp
 
 
 --
--- TOC entry 3658 (class 0 OID 18098)
+-- TOC entry 3662 (class 0 OID 18098)
 -- Dependencies: 237
 -- Data for Name: ref_application_type; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -3025,7 +3053,7 @@ INSERT INTO gp_db.ref_application_type VALUES (2, 'Pembaharuan Permohonan', 1);
 
 
 --
--- TOC entry 3672 (class 0 OID 18146)
+-- TOC entry 3676 (class 0 OID 18146)
 -- Dependencies: 251
 -- Data for Name: ref_applicaton_status; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -3041,7 +3069,7 @@ INSERT INTO gp_db.ref_applicaton_status VALUES (8, 'Proses Selesai', 1, 'admin',
 
 
 --
--- TOC entry 3674 (class 0 OID 18152)
+-- TOC entry 3678 (class 0 OID 18152)
 -- Dependencies: 253
 -- Data for Name: ref_branch; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -3053,7 +3081,7 @@ INSERT INTO gp_db.ref_branch VALUES (4, 'WISMA MBSA', 1, 'admin', '2025-06-20 17
 
 
 --
--- TOC entry 3676 (class 0 OID 18158)
+-- TOC entry 3680 (class 0 OID 18158)
 -- Dependencies: 255
 -- Data for Name: ref_dept; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -3080,7 +3108,7 @@ INSERT INTO gp_db.ref_dept VALUES (19, 'JABATAN PENGANGKUTAN BANDAR', 1, 'admin'
 
 
 --
--- TOC entry 3678 (class 0 OID 18164)
+-- TOC entry 3682 (class 0 OID 18164)
 -- Dependencies: 257
 -- Data for Name: ref_gender; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -3090,7 +3118,7 @@ INSERT INTO gp_db.ref_gender VALUES (2, 'Perempuan', 1);
 
 
 --
--- TOC entry 3680 (class 0 OID 18170)
+-- TOC entry 3684 (class 0 OID 18170)
 -- Dependencies: 259
 -- Data for Name: ref_role; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -3103,7 +3131,7 @@ INSERT INTO gp_db.ref_role VALUES (6, 'approval', 'Pelulus', 1, 'admin', NULL);
 
 
 --
--- TOC entry 3682 (class 0 OID 18176)
+-- TOC entry 3686 (class 0 OID 18176)
 -- Dependencies: 261
 -- Data for Name: ref_states; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -3125,7 +3153,7 @@ INSERT INTO gp_db.ref_states VALUES (14, 'W.P PUTRAJAYA', 1, 'admin', '2025-06-2
 
 
 --
--- TOC entry 3646 (class 0 OID 18062)
+-- TOC entry 3650 (class 0 OID 18062)
 -- Dependencies: 225
 -- Data for Name: ref_status; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -3135,7 +3163,7 @@ INSERT INTO gp_db.ref_status VALUES (2, 2, 'Tidak Aktif');
 
 
 --
--- TOC entry 3684 (class 0 OID 18182)
+-- TOC entry 3688 (class 0 OID 18182)
 -- Dependencies: 263
 -- Data for Name: ref_user_type; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -3146,7 +3174,7 @@ INSERT INTO gp_db.ref_user_type VALUES (3, 'Syarikat Luar', 2, NULL, NULL);
 
 
 --
--- TOC entry 3689 (class 0 OID 18454)
+-- TOC entry 3693 (class 0 OID 18454)
 -- Dependencies: 268
 -- Data for Name: user_demographic; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -3154,7 +3182,7 @@ INSERT INTO gp_db.ref_user_type VALUES (3, 'Syarikat Luar', 2, NULL, NULL);
 
 
 --
--- TOC entry 3686 (class 0 OID 18188)
+-- TOC entry 3690 (class 0 OID 18188)
 -- Dependencies: 265
 -- Data for Name: users; Type: TABLE DATA; Schema: gp_db; Owner: aiman
 --
@@ -3162,7 +3190,7 @@ INSERT INTO gp_db.ref_user_type VALUES (3, 'Syarikat Luar', 2, NULL, NULL);
 
 
 --
--- TOC entry 3736 (class 0 OID 0)
+-- TOC entry 3740 (class 0 OID 0)
 -- Dependencies: 226
 -- Name: applcation_ref_status_ars_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -3171,7 +3199,7 @@ SELECT pg_catalog.setval('gp_db.applcation_ref_status_ars_id_seq', 5, true);
 
 
 --
--- TOC entry 3737 (class 0 OID 0)
+-- TOC entry 3741 (class 0 OID 0)
 -- Dependencies: 228
 -- Name: application_announcement_announce_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -3180,7 +3208,7 @@ SELECT pg_catalog.setval('gp_db.application_announcement_announce_id_seq', 5, tr
 
 
 --
--- TOC entry 3738 (class 0 OID 0)
+-- TOC entry 3742 (class 0 OID 0)
 -- Dependencies: 230
 -- Name: application_approval_info_applicationapprove_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -3189,7 +3217,7 @@ SELECT pg_catalog.setval('gp_db.application_approval_info_applicationapprove_id_
 
 
 --
--- TOC entry 3739 (class 0 OID 0)
+-- TOC entry 3743 (class 0 OID 0)
 -- Dependencies: 232
 -- Name: application_attachment_attachment_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -3198,7 +3226,7 @@ SELECT pg_catalog.setval('gp_db.application_attachment_attachment_id_seq', 1, fa
 
 
 --
--- TOC entry 3740 (class 0 OID 0)
+-- TOC entry 3744 (class 0 OID 0)
 -- Dependencies: 234
 -- Name: application_faq_applicationfaq_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -3207,7 +3235,7 @@ SELECT pg_catalog.setval('gp_db.application_faq_applicationfaq_id_seq', 2, true)
 
 
 --
--- TOC entry 3741 (class 0 OID 0)
+-- TOC entry 3745 (class 0 OID 0)
 -- Dependencies: 236
 -- Name: application_info_appinfo_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -3216,7 +3244,7 @@ SELECT pg_catalog.setval('gp_db.application_info_appinfo_id_seq', 95, true);
 
 
 --
--- TOC entry 3742 (class 0 OID 0)
+-- TOC entry 3746 (class 0 OID 0)
 -- Dependencies: 238
 -- Name: application_ref_type_art_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -3225,7 +3253,7 @@ SELECT pg_catalog.setval('gp_db.application_ref_type_art_id_seq', 6, true);
 
 
 --
--- TOC entry 3743 (class 0 OID 0)
+-- TOC entry 3747 (class 0 OID 0)
 -- Dependencies: 271
 -- Name: application_term_applicationterm_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -3234,7 +3262,7 @@ SELECT pg_catalog.setval('gp_db.application_term_applicationterm_id_seq', 1, fal
 
 
 --
--- TOC entry 3744 (class 0 OID 0)
+-- TOC entry 3748 (class 0 OID 0)
 -- Dependencies: 272
 -- Name: application_term_subitem_applicationterm_subitem_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -3243,52 +3271,52 @@ SELECT pg_catalog.setval('gp_db.application_term_subitem_applicationterm_subitem
 
 
 --
--- TOC entry 3745 (class 0 OID 0)
+-- TOC entry 3749 (class 0 OID 0)
 -- Dependencies: 240
 -- Name: fw_akses_fa_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
 
-SELECT pg_catalog.setval('gp_db.fw_akses_fa_id_seq', 127, true);
-
-
---
--- TOC entry 3746 (class 0 OID 0)
--- Dependencies: 242
--- Name: fw_audittrail_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
---
-
-SELECT pg_catalog.setval('gp_db.fw_audittrail_id_seq', 960, true);
-
-
---
--- TOC entry 3747 (class 0 OID 0)
--- Dependencies: 244
--- Name: fw_lang_fl_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
---
-
-SELECT pg_catalog.setval('gp_db.fw_lang_fl_id_seq', 475, true);
-
-
---
--- TOC entry 3748 (class 0 OID 0)
--- Dependencies: 246
--- Name: fw_menu_m_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
---
-
-SELECT pg_catalog.setval('gp_db.fw_menu_m_id_seq', 11, true);
-
-
---
--- TOC entry 3749 (class 0 OID 0)
--- Dependencies: 248
--- Name: fw_submenu_sm_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
---
-
-SELECT pg_catalog.setval('gp_db.fw_submenu_sm_id_seq', 26, true);
+SELECT pg_catalog.setval('gp_db.fw_akses_fa_id_seq', 133, true);
 
 
 --
 -- TOC entry 3750 (class 0 OID 0)
+-- Dependencies: 242
+-- Name: fw_audittrail_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
+--
+
+SELECT pg_catalog.setval('gp_db.fw_audittrail_id_seq', 986, true);
+
+
+--
+-- TOC entry 3751 (class 0 OID 0)
+-- Dependencies: 244
+-- Name: fw_lang_fl_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
+--
+
+SELECT pg_catalog.setval('gp_db.fw_lang_fl_id_seq', 478, true);
+
+
+--
+-- TOC entry 3752 (class 0 OID 0)
+-- Dependencies: 246
+-- Name: fw_menu_m_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
+--
+
+SELECT pg_catalog.setval('gp_db.fw_menu_m_id_seq', 12, true);
+
+
+--
+-- TOC entry 3753 (class 0 OID 0)
+-- Dependencies: 248
+-- Name: fw_submenu_sm_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
+--
+
+SELECT pg_catalog.setval('gp_db.fw_submenu_sm_id_seq', 29, true);
+
+
+--
+-- TOC entry 3754 (class 0 OID 0)
 -- Dependencies: 250
 -- Name: fw_uploads_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -3297,7 +3325,7 @@ SELECT pg_catalog.setval('gp_db.fw_uploads_id_seq', 1, false);
 
 
 --
--- TOC entry 3751 (class 0 OID 0)
+-- TOC entry 3755 (class 0 OID 0)
 -- Dependencies: 252
 -- Name: ref_applicaton_status_ras_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -3306,7 +3334,7 @@ SELECT pg_catalog.setval('gp_db.ref_applicaton_status_ras_id_seq', 15, true);
 
 
 --
--- TOC entry 3752 (class 0 OID 0)
+-- TOC entry 3756 (class 0 OID 0)
 -- Dependencies: 254
 -- Name: ref_branch_rb_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -3315,7 +3343,7 @@ SELECT pg_catalog.setval('gp_db.ref_branch_rb_id_seq', 4, true);
 
 
 --
--- TOC entry 3753 (class 0 OID 0)
+-- TOC entry 3757 (class 0 OID 0)
 -- Dependencies: 256
 -- Name: ref_dept_rd_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -3324,7 +3352,7 @@ SELECT pg_catalog.setval('gp_db.ref_dept_rd_id_seq', 20, true);
 
 
 --
--- TOC entry 3754 (class 0 OID 0)
+-- TOC entry 3758 (class 0 OID 0)
 -- Dependencies: 258
 -- Name: ref_gender_rgend_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -3333,7 +3361,7 @@ SELECT pg_catalog.setval('gp_db.ref_gender_rgend_id_seq', 2, true);
 
 
 --
--- TOC entry 3755 (class 0 OID 0)
+-- TOC entry 3759 (class 0 OID 0)
 -- Dependencies: 260
 -- Name: ref_role_rr_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -3342,7 +3370,7 @@ SELECT pg_catalog.setval('gp_db.ref_role_rr_id_seq', 6, true);
 
 
 --
--- TOC entry 3756 (class 0 OID 0)
+-- TOC entry 3760 (class 0 OID 0)
 -- Dependencies: 262
 -- Name: ref_states_rstates_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -3351,7 +3379,7 @@ SELECT pg_catalog.setval('gp_db.ref_states_rstates_id_seq', 14, true);
 
 
 --
--- TOC entry 3757 (class 0 OID 0)
+-- TOC entry 3761 (class 0 OID 0)
 -- Dependencies: 264
 -- Name: ref_user_type_rut_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -3360,7 +3388,7 @@ SELECT pg_catalog.setval('gp_db.ref_user_type_rut_id_seq', 3, true);
 
 
 --
--- TOC entry 3758 (class 0 OID 0)
+-- TOC entry 3762 (class 0 OID 0)
 -- Dependencies: 269
 -- Name: user_demographic_ud_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -3369,7 +3397,7 @@ SELECT pg_catalog.setval('gp_db.user_demographic_ud_id_seq', 1, false);
 
 
 --
--- TOC entry 3759 (class 0 OID 0)
+-- TOC entry 3763 (class 0 OID 0)
 -- Dependencies: 266
 -- Name: users_u_id_seq; Type: SEQUENCE SET; Schema: gp_db; Owner: aiman
 --
@@ -3378,7 +3406,7 @@ SELECT pg_catalog.setval('gp_db.users_u_id_seq', 7, true);
 
 
 --
--- TOC entry 3437 (class 2606 OID 18310)
+-- TOC entry 3441 (class 2606 OID 18310)
 -- Name: ref_status applcation_ref_status_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3387,7 +3415,7 @@ ALTER TABLE ONLY gp_db.ref_status
 
 
 --
--- TOC entry 3439 (class 2606 OID 18312)
+-- TOC entry 3443 (class 2606 OID 18312)
 -- Name: application_announcement application_announcement_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3396,7 +3424,7 @@ ALTER TABLE ONLY gp_db.application_announcement
 
 
 --
--- TOC entry 3441 (class 2606 OID 18314)
+-- TOC entry 3445 (class 2606 OID 18314)
 -- Name: application_approval_info application_approval_info_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3405,7 +3433,7 @@ ALTER TABLE ONLY gp_db.application_approval_info
 
 
 --
--- TOC entry 3443 (class 2606 OID 18316)
+-- TOC entry 3447 (class 2606 OID 18316)
 -- Name: application_attachment application_attachment_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3414,7 +3442,7 @@ ALTER TABLE ONLY gp_db.application_attachment
 
 
 --
--- TOC entry 3445 (class 2606 OID 18318)
+-- TOC entry 3449 (class 2606 OID 18318)
 -- Name: application_faq application_faq_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3423,7 +3451,7 @@ ALTER TABLE ONLY gp_db.application_faq
 
 
 --
--- TOC entry 3447 (class 2606 OID 18320)
+-- TOC entry 3451 (class 2606 OID 18320)
 -- Name: application_info application_info_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3432,7 +3460,7 @@ ALTER TABLE ONLY gp_db.application_info
 
 
 --
--- TOC entry 3449 (class 2606 OID 18322)
+-- TOC entry 3453 (class 2606 OID 18322)
 -- Name: ref_application_type application_ref_type_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3441,7 +3469,7 @@ ALTER TABLE ONLY gp_db.ref_application_type
 
 
 --
--- TOC entry 3481 (class 2606 OID 18495)
+-- TOC entry 3485 (class 2606 OID 18495)
 -- Name: application_term application_term_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3450,7 +3478,7 @@ ALTER TABLE ONLY gp_db.application_term
 
 
 --
--- TOC entry 3485 (class 2606 OID 18507)
+-- TOC entry 3489 (class 2606 OID 18507)
 -- Name: application_term_subitem application_term_subitem_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3459,7 +3487,7 @@ ALTER TABLE ONLY gp_db.application_term_subitem
 
 
 --
--- TOC entry 3451 (class 2606 OID 18324)
+-- TOC entry 3455 (class 2606 OID 18324)
 -- Name: fw_akses fw_akses_pkey; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3468,7 +3496,7 @@ ALTER TABLE ONLY gp_db.fw_akses
 
 
 --
--- TOC entry 3453 (class 2606 OID 18326)
+-- TOC entry 3457 (class 2606 OID 18326)
 -- Name: fw_audittrail fw_audittrail_pkey; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3477,7 +3505,7 @@ ALTER TABLE ONLY gp_db.fw_audittrail
 
 
 --
--- TOC entry 3455 (class 2606 OID 18328)
+-- TOC entry 3459 (class 2606 OID 18328)
 -- Name: fw_lang fw_lang_pkey; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3486,7 +3514,7 @@ ALTER TABLE ONLY gp_db.fw_lang
 
 
 --
--- TOC entry 3457 (class 2606 OID 18330)
+-- TOC entry 3461 (class 2606 OID 18330)
 -- Name: fw_menu fw_menu_pkey; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3495,7 +3523,7 @@ ALTER TABLE ONLY gp_db.fw_menu
 
 
 --
--- TOC entry 3459 (class 2606 OID 18332)
+-- TOC entry 3463 (class 2606 OID 18332)
 -- Name: fw_submenu fw_submenu_pkey; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3504,7 +3532,7 @@ ALTER TABLE ONLY gp_db.fw_submenu
 
 
 --
--- TOC entry 3461 (class 2606 OID 18334)
+-- TOC entry 3465 (class 2606 OID 18334)
 -- Name: fw_uploads fw_uploads_link_key; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3513,7 +3541,7 @@ ALTER TABLE ONLY gp_db.fw_uploads
 
 
 --
--- TOC entry 3463 (class 2606 OID 18336)
+-- TOC entry 3467 (class 2606 OID 18336)
 -- Name: fw_uploads fw_uploads_pkey; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3522,7 +3550,7 @@ ALTER TABLE ONLY gp_db.fw_uploads
 
 
 --
--- TOC entry 3465 (class 2606 OID 18338)
+-- TOC entry 3469 (class 2606 OID 18338)
 -- Name: ref_applicaton_status ref_applicaton_status_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3531,7 +3559,7 @@ ALTER TABLE ONLY gp_db.ref_applicaton_status
 
 
 --
--- TOC entry 3467 (class 2606 OID 18340)
+-- TOC entry 3471 (class 2606 OID 18340)
 -- Name: ref_branch ref_branch_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3540,7 +3568,7 @@ ALTER TABLE ONLY gp_db.ref_branch
 
 
 --
--- TOC entry 3469 (class 2606 OID 18342)
+-- TOC entry 3473 (class 2606 OID 18342)
 -- Name: ref_dept ref_dept_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3549,7 +3577,7 @@ ALTER TABLE ONLY gp_db.ref_dept
 
 
 --
--- TOC entry 3471 (class 2606 OID 18344)
+-- TOC entry 3475 (class 2606 OID 18344)
 -- Name: ref_gender ref_gender_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3558,7 +3586,7 @@ ALTER TABLE ONLY gp_db.ref_gender
 
 
 --
--- TOC entry 3473 (class 2606 OID 18346)
+-- TOC entry 3477 (class 2606 OID 18346)
 -- Name: ref_role ref_role_pkey; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3567,7 +3595,7 @@ ALTER TABLE ONLY gp_db.ref_role
 
 
 --
--- TOC entry 3475 (class 2606 OID 18348)
+-- TOC entry 3479 (class 2606 OID 18348)
 -- Name: ref_states ref_states_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3576,7 +3604,7 @@ ALTER TABLE ONLY gp_db.ref_states
 
 
 --
--- TOC entry 3477 (class 2606 OID 18350)
+-- TOC entry 3481 (class 2606 OID 18350)
 -- Name: ref_user_type ref_user_type_unique; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3585,7 +3613,7 @@ ALTER TABLE ONLY gp_db.ref_user_type
 
 
 --
--- TOC entry 3483 (class 2606 OID 18463)
+-- TOC entry 3487 (class 2606 OID 18463)
 -- Name: user_demographic user_demographic_pk; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3594,7 +3622,7 @@ ALTER TABLE ONLY gp_db.user_demographic
 
 
 --
--- TOC entry 3479 (class 2606 OID 18352)
+-- TOC entry 3483 (class 2606 OID 18352)
 -- Name: users users_unique; Type: CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3603,7 +3631,7 @@ ALTER TABLE ONLY gp_db.users
 
 
 --
--- TOC entry 3486 (class 2606 OID 18353)
+-- TOC entry 3490 (class 2606 OID 18353)
 -- Name: application_announcement application_announcement_ref_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3612,7 +3640,7 @@ ALTER TABLE ONLY gp_db.application_announcement
 
 
 --
--- TOC entry 3487 (class 2606 OID 18358)
+-- TOC entry 3491 (class 2606 OID 18358)
 -- Name: application_approval_info application_approval_info_application_info_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3621,7 +3649,7 @@ ALTER TABLE ONLY gp_db.application_approval_info
 
 
 --
--- TOC entry 3488 (class 2606 OID 18363)
+-- TOC entry 3492 (class 2606 OID 18363)
 -- Name: application_attachment application_attachment_application_info_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3630,7 +3658,7 @@ ALTER TABLE ONLY gp_db.application_attachment
 
 
 --
--- TOC entry 3489 (class 2606 OID 18446)
+-- TOC entry 3493 (class 2606 OID 18446)
 -- Name: application_faq application_faq_ref_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3639,7 +3667,7 @@ ALTER TABLE ONLY gp_db.application_faq
 
 
 --
--- TOC entry 3490 (class 2606 OID 18368)
+-- TOC entry 3494 (class 2606 OID 18368)
 -- Name: application_info application_info_ref_application_type_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3648,7 +3676,7 @@ ALTER TABLE ONLY gp_db.application_info
 
 
 --
--- TOC entry 3491 (class 2606 OID 18373)
+-- TOC entry 3495 (class 2606 OID 18373)
 -- Name: application_info application_info_ref_applicaton_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3657,7 +3685,7 @@ ALTER TABLE ONLY gp_db.application_info
 
 
 --
--- TOC entry 3492 (class 2606 OID 18378)
+-- TOC entry 3496 (class 2606 OID 18378)
 -- Name: application_info application_info_ref_states_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3666,7 +3694,7 @@ ALTER TABLE ONLY gp_db.application_info
 
 
 --
--- TOC entry 3493 (class 2606 OID 18383)
+-- TOC entry 3497 (class 2606 OID 18383)
 -- Name: ref_application_type application_ref_type_ref_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3675,7 +3703,7 @@ ALTER TABLE ONLY gp_db.ref_application_type
 
 
 --
--- TOC entry 3505 (class 2606 OID 18496)
+-- TOC entry 3509 (class 2606 OID 18496)
 -- Name: application_term application_term_ref_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3684,7 +3712,7 @@ ALTER TABLE ONLY gp_db.application_term
 
 
 --
--- TOC entry 3494 (class 2606 OID 18388)
+-- TOC entry 3498 (class 2606 OID 18388)
 -- Name: ref_applicaton_status ref_applicaton_status_ref_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3693,7 +3721,7 @@ ALTER TABLE ONLY gp_db.ref_applicaton_status
 
 
 --
--- TOC entry 3495 (class 2606 OID 18393)
+-- TOC entry 3499 (class 2606 OID 18393)
 -- Name: ref_branch ref_branch_ref_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3702,7 +3730,7 @@ ALTER TABLE ONLY gp_db.ref_branch
 
 
 --
--- TOC entry 3496 (class 2606 OID 18398)
+-- TOC entry 3500 (class 2606 OID 18398)
 -- Name: ref_dept ref_dept_ref_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3711,7 +3739,7 @@ ALTER TABLE ONLY gp_db.ref_dept
 
 
 --
--- TOC entry 3497 (class 2606 OID 18403)
+-- TOC entry 3501 (class 2606 OID 18403)
 -- Name: ref_gender ref_gender_ref_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3720,7 +3748,7 @@ ALTER TABLE ONLY gp_db.ref_gender
 
 
 --
--- TOC entry 3498 (class 2606 OID 18408)
+-- TOC entry 3502 (class 2606 OID 18408)
 -- Name: ref_role ref_role_applcation_ref_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3729,7 +3757,7 @@ ALTER TABLE ONLY gp_db.ref_role
 
 
 --
--- TOC entry 3499 (class 2606 OID 18413)
+-- TOC entry 3503 (class 2606 OID 18413)
 -- Name: ref_user_type ref_user_type_ref_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3738,7 +3766,7 @@ ALTER TABLE ONLY gp_db.ref_user_type
 
 
 --
--- TOC entry 3506 (class 2606 OID 18466)
+-- TOC entry 3510 (class 2606 OID 18466)
 -- Name: user_demographic user_demographic_users_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3747,7 +3775,7 @@ ALTER TABLE ONLY gp_db.user_demographic
 
 
 --
--- TOC entry 3500 (class 2606 OID 18418)
+-- TOC entry 3504 (class 2606 OID 18418)
 -- Name: users users_ref_branch_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3756,7 +3784,7 @@ ALTER TABLE ONLY gp_db.users
 
 
 --
--- TOC entry 3501 (class 2606 OID 18423)
+-- TOC entry 3505 (class 2606 OID 18423)
 -- Name: users users_ref_dept_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3765,7 +3793,7 @@ ALTER TABLE ONLY gp_db.users
 
 
 --
--- TOC entry 3502 (class 2606 OID 18428)
+-- TOC entry 3506 (class 2606 OID 18428)
 -- Name: users users_ref_role_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3774,7 +3802,7 @@ ALTER TABLE ONLY gp_db.users
 
 
 --
--- TOC entry 3503 (class 2606 OID 18433)
+-- TOC entry 3507 (class 2606 OID 18433)
 -- Name: users users_ref_status_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3783,7 +3811,7 @@ ALTER TABLE ONLY gp_db.users
 
 
 --
--- TOC entry 3504 (class 2606 OID 18438)
+-- TOC entry 3508 (class 2606 OID 18438)
 -- Name: users users_ref_user_type_fk; Type: FK CONSTRAINT; Schema: gp_db; Owner: aiman
 --
 
@@ -3791,7 +3819,7 @@ ALTER TABLE ONLY gp_db.users
     ADD CONSTRAINT users_ref_user_type_fk FOREIGN KEY (u_user_type) REFERENCES gp_db.ref_user_type(rut_id);
 
 
--- Completed on 2025-07-17 19:38:29
+-- Completed on 2025-07-22 16:48:03
 
 --
 -- PostgreSQL database dump complete
